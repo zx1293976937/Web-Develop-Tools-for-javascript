@@ -7,7 +7,7 @@
  * created by qiuwei
  */
 
-if (!!typeof milk) milk = {};
+if (!typeof milk) milk = {};
 
 milk.Console = (function() {
 	// 是否已调试模式启动

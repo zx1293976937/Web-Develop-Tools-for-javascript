@@ -35,7 +35,7 @@ mouse.onMouseWheel(function(detail, pt) {
 });
 //*/
 
-if (!!typeof milk) milk = {};
+if (!typeof milk) milk = {};
 
 milk.Mouse = (function(element){
 	var self = this;
