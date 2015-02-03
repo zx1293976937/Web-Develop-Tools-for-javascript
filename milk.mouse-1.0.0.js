@@ -12,35 +12,28 @@ var mouse = new milk.Mouse(div);
 // mouse.tiggerOnMoving = true;
 
 mouse.onLeftToRight(function(downPt, upPt) {
-	myConsole.log('从左到右, from ' + JSON.stringify(downPt) + ' to ' + JSON.stringify(upPt));
-	horizontal(null, 60);
+
 });
 mouse.onRightToLeft(function(downPt, upPt) {
-	myConsole.log('从右到左, from ' + JSON.stringify(downPt) + ' to ' + JSON.stringify(upPt));
-	horizontal(null, 0-60);
+
 });		
 mouse.onTopToBottom(function(downPt, upPt) {
-	myConsole.log('从上到下, from ' + JSON.stringify(downPt) + ' to ' + JSON.stringify(upPt));
-	vertical(null, 90 * (0-1));
-	myConsole.log(90 * (0-1));
+
 });
 mouse.onBottomToTop(function(downPt, upPt) {
-	myConsole.log('从下到上, from ' + JSON.stringify(downPt) + ' to ' + JSON.stringify(upPt));
-	vertical(null, 90 * (1));
-	myConsole.log(90 * (1));
+
 });
 mouse.onMouseWheel(function(detail, pt) {
-	vertical(null, 90 * (detail / 120));
-	myConsole.log(90 * (detail / 120));
+
 });
 //*/
 
 if (!typeof milk) milk = {};
 
-milk.Mouse = (function(element){
+milk.Mouse = (function(element, isTriggerOnMoving){
 	var self = this;
 
-	self.tiggerOnMoving = false;
+	self.tiggerOnMoving = !!isTriggerOnMoving;
 
 	element.addEvent = function(eventName, handler) {
 		if(this.addEventListener) {
@@ -72,8 +65,7 @@ milk.Mouse = (function(element){
 		isReadyToMove = true;
 	};
 	function end(e) {
-		if(!self.tiggerOnMoving) {
-			e = e || window.event;
+		e = e || window.event;
 
 		if(this.releaseCapture)
 			this.releaseCapture();
@@ -92,64 +84,24 @@ milk.Mouse = (function(element){
 			var dPt = {x:startX, y:startY};
 			var uPt = {x:currentX, y:currentY};
 
-				if(k >= -0.5 && k <= 0.5) {
-					if(currentX > startX)
-						_LeftToRightHandler(dPt, uPt);
-					else if(currentX < startX)
-						_RightToLeftHandler(dPt, uPt);
-					else
-						_JustClickHandler(dPt, uPt);
-				} else if(k >= 2 || k <= -2) {
-					if(currentY > startY) 
-						_TopToBottomHandler(dPt, uPt);
-					else if(currentY < startY)
-						_BottomToTopHandler(dPt, uPt);
-					else
-						_JustClickHandler(dPt, uPt);
-				};
+			if(k >= -0.5 && k <= 0.5) {
+				if(currentX > startX)
+					_LeftToRightHandler(dPt, uPt);
+				else if(currentX < startX)
+					_RightToLeftHandler(dPt, uPt);
+				else
+					_JustClickHandler(dPt, uPt);
+			} else if(k >= 2 || k <= -2) {
+				if(currentY > startY) 
+					_TopToBottomHandler(dPt, uPt);
+				else if(currentY < startY)
+					_BottomToTopHandler(dPt, uPt);
+				else
+					_JustClickHandler(dPt, uPt);
 			};
 		};
 
 		isReadyToMove = false;
-	};
-	function moving(e) {
-		if(self.tiggerOnMoving) {
-			e = e || window.event;
-
-			if(this.releaseCapture)
-				this.releaseCapture();
-			else if(window.captureEvents) {
-				window.captureEvents(Event.MOUSEMOVE | Event.MOUSEUP | Event.MOUSEOUT);
-			};
-
-			if(isReadyToMove) {
-
-				var currentX = e.screenX;
-				var currentY = e.screenY;
-
-				var detalX = currentX - startX;
-
-				var k = (currentY - startY) / (detalX == 0 ? 1 : detalX);
-				var dPt = {x:startX, y:startY};
-				var uPt = {x:currentX, y:currentY};
-
-				if(k >= -0.5 && k <= 0.5) {
-					if(currentX > startX)
-						_LeftToRightHandler(dPt, uPt);
-					else if(currentX < startX)
-						_RightToLeftHandler(dPt, uPt);
-					else
-						_JustClickHandler(dPt, uPt);
-				} else if(k >= 2 || k <= -2) {
-					if(currentY > startY) 
-						_TopToBottomHandler(dPt, uPt);
-					else if(currentY < startY)
-						_BottomToTopHandler(dPt, uPt);
-					else
-						_JustClickHandler(dPt, uPt);
-				};
-			};
-		};
 	};
 	function wheel(e) {
 		e = e || window.event;
@@ -161,9 +113,14 @@ milk.Mouse = (function(element){
 	};
 
 	element.addEvent('mousedown', start);
-	element.addEvent('mousemove', moving);
-	element.addEvent('mouseout', end);
-	element.addEvent('mouseup', end);
+
+	if (self.tiggerOnMoving)
+		element.addEvent('mousemove', moving);
+	else {
+		element.addEvent('mouseout', end);
+		element.addEvent('mouseup', end);
+	};
+
 	element.addEvent('mousewheel', wheel);
 
 	var _LeftToRightHandler = function() { /*myConsole.log('左到右方向未注册处理函数');*/ };
