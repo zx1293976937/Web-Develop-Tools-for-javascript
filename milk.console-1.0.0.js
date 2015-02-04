@@ -45,7 +45,7 @@ milk.Console = (function() {
 		var consoleWindow = document.createElement('div');
 		consoleWindow.setAttribute('id', 'Milk_Console');
 		consoleWindow.setAttribute('draggable', 'true');
-		consoleWindow.setAttribute('style', 'position:absolute; bottom: 0px; left: 0px; height: 180px; width: 400px; background-color: black; overflow-y: scroll; border: solid 4px gray; cursor: default; z-index: 9999;');
+		consoleWindow.setAttribute('style', 'position:absolute; bottom: 10px; left: 10px; height: 180px; width: 400px; background-color: black; overflow-y: scroll; border: solid 4px gray; cursor: default; z-index: 9999;');
 
 		document.body.appendChild(consoleWindow);
 

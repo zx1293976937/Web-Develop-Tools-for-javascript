@@ -1,0 +1,653 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"border",
+				"border"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"fot",
+				"footer	Tag"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"ani",
+				"animdir	animation-direction: ${1:normal};"
+			],
+			[
+				"json",
+				"jsonObject"
+			],
+			[
+				"ba",
+				"back"
+			],
+			[
+				"_so",
+				"_storyBoardOnEnter"
+			],
+			[
+				"_st",
+				"_storyBoardOnLeave"
+			],
+			[
+				"_s",
+				"_storyBoardOnEnter"
+			],
+			[
+				"l",
+				"logout"
+			],
+			[
+				"re",
+				"record"
+			],
+			[
+				"b",
+				"beginTime"
+			],
+			[
+				"Lin",
+				"linkedList"
+			],
+			[
+				"Ts",
+				"TestingTaskStoryBoardOnEnter"
+			],
+			[
+				"stor",
+				"storyBoardOnEnter"
+			],
+			[
+				"lea",
+				"leave"
+			],
+			[
+				"_sto",
+				"_storyBoard"
+			],
+			[
+				"read",
+				"readyState"
+			],
+			[
+				"rea",
+				"readyState"
+			],
+			[
+				"sto",
+				"storyBoard"
+			],
+			[
+				"tim",
+				"timerId"
+			],
+			[
+				"key",
+				"keyFrame"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"conte",
+				"content_length"
+			],
+			[
+				"conv",
+				"convert"
+			],
+			[
+				"conver",
+				"convertedValue"
+			],
+			[
+				"cone",
+				"content_length"
+			],
+			[
+				"sett",
+				"setTop"
+			],
+			[
+				"pap",
+				"paper"
+			],
+			[
+				"ke",
+				"keyCode"
+			],
+			[
+				"bo",
+				"board"
+			],
+			[
+				"ti",
+				"time"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"pro",
+				"propertyChanged"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"_p",
+				"_currentPaper"
+			],
+			[
+				"tem",
+				"template_height"
+			],
+			[
+				"te",
+				"template_height"
+			],
+			[
+				"off",
+				"offsetY"
+			],
+			[
+				"of",
+				"offsetX"
+			],
+			[
+				"client",
+				"clientY"
+			],
+			[
+				"spC",
+				"spColor_blue"
+			],
+			[
+				"se",
+				"self"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"js",
+				"jsonString"
+			],
+			[
+				"pas",
+				"pastePaper"
+			],
+			[
+				"bor",
+				"border-top"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"hea",
+				"header	Tag"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"src",
+				"srcElement"
+			],
+			[
+				"back",
+				"background-image"
+			],
+			[
+				"_at",
+				"_attributeName"
+			],
+			[
+				"att",
+				"attributeName"
+			],
+			[
+				"at",
+				"attributeName"
+			],
+			[
+				"con",
+				"convertBack"
+			],
+			[
+				"can",
+				"canConvertBack"
+			],
+			[
+				"_c",
+				"_converter"
+			],
+			[
+				"_can",
+				"_canConvertBack"
+			],
+			[
+				"canc",
+				"canConvertBack"
+			],
+			[
+				"canCon",
+				"canConvertBack"
+			],
+			[
+				"expre",
+				"expression"
+			],
+			[
+				"on",
+				"oneWay"
+			],
+			[
+				"new",
+				"newValue"
+			],
+			[
+				"o",
+				"o"
+			],
+			[
+				"_",
+				"_ObserverMap"
+			],
+			[
+				"load",
+				"loadDataContext"
+			],
+			[
+				"obs",
+				"observer"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"ob",
+				"observer"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 150.0,
+		"selected_items":
+		[
+			[
+				"setjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sethtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"html",
+				"Snippet: html"
+			],
+			[
+				"htl",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"packinstal",
+				"Package Control: Install Package"
+			],
+			[
+				"packremo",
+				"Package Control: Remove Package"
+			],
+			[
+				"packlis",
+				"Package Control: List Packages"
+			],
+			[
+				"packlist",
+				"Package Control: List Packages"
+			],
+			[
+				"packinsta",
+				"Package Control: Install Package"
+			],
+			[
+				"packconins",
+				"Package Control: Install Package"
+			],
+			[
+				"packc",
+				"Package Control: List Packages"
+			],
+			[
+				"packcup",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"sethml",
+				"Set Syntax: HTML"
+			],
+			[
+				"sht",
+				"Set Syntax: HTML"
+			],
+			[
+				"sh",
+				"Set Syntax: HTML"
+			],
+			[
+				"seth",
+				"Set Syntax: HTML"
+			],
+			[
+				"SH",
+				"Set Syntax: HTML"
+			],
+			[
+				"shtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packre",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Emmet: Reload Extensions"
+			],
+			[
+				"bak",
+				"Preferences: Browse Packages"
+			],
+			[
+				"packrem",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"packinsp",
+				"Package Control: Install Package"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"packinstap",
+				"Package Control: Install Package"
+			],
+			[
+				"setcss",
+				"Set Syntax: CSS"
+			],
+			[
+				"pacinstp",
+				"Package Control: Install Package"
+			],
+			[
+				"pacinsta",
+				"Package Control: Install Package"
+			],
+			[
+				"pacins",
+				"Package Control: Install Package"
+			],
+			[
+				"setja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"setjavasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sethtm",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 153.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.core-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/milk.linker-1.0.0.js",
+		"/C/Users/T430/Desktop/baidu.html",
+		"/C/Users/T430/Desktop/WebApplication/Index.html",
+		"/C/Users/T430/Desktop/WebApplication/users/新建文件夹1/lianxi.html",
+		"/C/Users/T430/Desktop/ertwy.html",
+		"/C/Users/T430/Desktop/WebApplication/users/新建文件夹1/hehe.html",
+		"/C/Users/T430/Desktop/WebApplication/users/home.html",
+		"/C/Users/T430/Desktop/WebApplication/users/新建文件夹/hhe.html",
+		"/C/Users/T430/Desktop/16.html",
+		"/C/Users/T430/Desktop/WebApplication/Login.html",
+		"/C/Users/T430/Desktop/2014-06-09.html",
+		"/C/Users/T430/Desktop/demo.js",
+		"/C/Users/T430/Desktop/ADTS.html",
+		"/C/Users/T430/Documents/Tencent Files/403321075/FileRecv/zhedie.html",
+		"/C/Users/T430/Desktop/for mac/bootstrap/ADTS.html",
+		"/C/Users/T430/Desktop/bindExpression.Ex-1.0.3.js",
+		"/C/Users/T430/Desktop/PapersWall.html",
+		"/C/Users/T430/Desktop/我的店铺-自定义-样式表.css",
+		"/C/Users/T430/Desktop/我的店铺-自定义-html代码.html",
+		"/C/Users/T430/Desktop/PaperWall.html",
+		"/C/Users/T430/Desktop/demo.html",
+		"/C/Users/T430/Desktop/ImagePlayer.html",
+		"/C/Users/T430/Desktop/Index.html",
+		"/C/Users/T430/Desktop/bindExpression.Ex-1.0.0.js",
+		"/C/Users/T430/Desktop/VideoTaskManager.js",
+		"/C/Users/T430/Desktop/BindingExpression.Ex-1.0.0.js",
+		"/C/Users/T430/Desktop/BindingExpression.Ex.js",
+		"/C/Users/T430/Desktop/jquery-1.6.4.min.js",
+		"/C/Users/T430/Desktop/bootstrap/bootstrap/Index.html",
+		"/C/Users/T430/Desktop/untitled-1.fw.png"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"	<",
+			"getPrevious",
+			"_views",
+			"                    ",
+			"readyState",
+			"template",
+			"button",
+			"paper_advance",
+			"blue_text",
+			"addObserver",
+			"hotpink",
+			"paper_editer",
+			"blue_text",
+			"partOfAttributeName"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"_state",
+			"paper_history",
+			"pink",
+			"last"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"sethtml",
+				"/C/Users/T430/Desktop/WebApplication/Index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 339.0,
+	"status_bar_visible": true
+}
