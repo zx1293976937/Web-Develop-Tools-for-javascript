@@ -123,36 +123,36 @@ milk.Mouse = (function(element, isTriggerOnMoving){
 
 	element.addEvent('mousewheel', wheel);
 
-	var _LeftToRightHandler = function() { /*myConsole.log('左到右方向未注册处理函数');*/ };
-	var _RightToLeftHandler = function() { /*myConsole.log('右到左方向未注册处理函数');*/ };
-	var _TopToBottomHandler = function() { /*myConsole.log('上到下方向未注册处理函数');*/ };
-	var _BottomToTopHandler = function() { /*myConsole.log('下到上方向未注册处理函数');*/ };
-	var _JustClickHandler = function() { /*myConsole.log('单击一下而已.');*/ };
+	var _LeftToRightHandler = [];	// function() { /*myConsole.log('左到右方向未注册处理函数');*/ };
+	var _RightToLeftHandler = [];	// function() { /*myConsole.log('右到左方向未注册处理函数');*/ };
+	var _TopToBottomHandler = [];	// function() { /*myConsole.log('上到下方向未注册处理函数');*/ };
+	var _BottomToTopHandler = [];	// function() { /*myConsole.log('下到上方向未注册处理函数');*/ };
+	var _JustClickHandler = [];		// function() { /*myConsole.log('单击一下而已.');*/ };
 
-	var _MouseWheelHandler = function() { /*myConsole.log('鼠标滑轮滚动.');*/ };
+	var _MouseWheelHandler = [];	// function() { /*myConsole.log('鼠标滑轮滚动.');*/ };
 
 	self.onLeftToRight = function(handler) {
-		_LeftToRightHandler = handler;
+		_LeftToRightHandler.push(handler);
 		/*myConsole.log('_LeftToRightHandler');*/
 	};
 	self.onRightToLeft = function(handler) {
-		_RightToLeftHandler = handler;
+		_RightToLeftHandler.push(handler);
 		/*myConsole.log('_RightToLeftHandler');*/
 	};
 	self.onTopToBottom = function(handler) {
-		_TopToBottomHandler = handler;
+		_TopToBottomHandler.push(handler);
 		/*myConsole.log('_TopToBottomHandler');*/
 	};
 	self.onBottomToTop = function(handler) {
-		_BottomToTopHandler = handler;
+		_BottomToTopHandler.push(handler);
 		/*myConsole.log('_BottomToTopHandler');*/
 	};
 	self.onClick = function(handler) {
-		_JustClickHandler = handler;
+		_JustClickHandler.push(handler);
 		/*myConsole.log('_JustClickHandler');*/
 	};
 	self.onMouseWheel = function(handler) {
-		_MouseWheelHandler = handler;
+		_MouseWheelHandler.push(handler);
 		/*myConsole.log('_MouseWheelHandler');*/
 	};
 

@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getIdentifier"
+			],
+			[
+				"ini",
+				"initWithString"
+			],
+			[
+				"del",
+				"delayId"
+			],
+			[
+				"curr",
+				"currentTagName"
+			],
+			[
+				"SO",
+				"STORAGE_POSITION_KEY"
+			],
+			[
+				"con",
+				"consoleWindow"
+			],
+			[
+				"Class",
+				"CClass"
+			],
+			[
+				"sel",
+				"self"
+			],
+			[
 				"win",
 				"winOnLoadEventHandler"
 			],
@@ -272,10 +304,6 @@
 				"attributeName"
 			],
 			[
-				"con",
-				"convertBack"
-			],
-			[
 				"can",
 				"canConvertBack"
 			],
@@ -336,34 +364,26 @@
 	"buffers":
 	[
 		{
-			"file": "milk.base-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 1739,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "milk.linker-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 3074,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "milk.core-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 2085,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "test.html",
 			"settings":
 			{
-				"buffer_size": 594,
+				"buffer_size": 1150,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "milk.base-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 1617,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "milk.storage-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 910,
 				"line_ending": "Windows"
 			}
 		},
@@ -371,7 +391,23 @@
 			"file": "milk.console-1.0.0.js",
 			"settings":
 			{
-				"buffer_size": 2701,
+				"buffer_size": 5350,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/F/Github/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 3801,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "milk.linker-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 3051,
 				"line_ending": "Windows"
 			}
 		}
@@ -556,10 +592,15 @@
 	},
 	"file_history":
 	[
+		"/F/Github/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.console-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.base-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.core-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/test.html",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.core-1.0.2.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/jquery.linker-2.0.2.js",
-		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.core-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.linker-1.0.0.js",
 		"/C/Users/T430/Desktop/baidu.html",
 		"/C/Users/T430/Desktop/WebApplication/Index.html",
@@ -607,6 +648,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"__storage",
+			"delayHandler",
+			"delayId",
+			"consoleWindow",
+			"currentTagName",
 			"	<",
 			"getPrevious",
 			"_views",
@@ -647,99 +693,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "milk.base-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 1739,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								778,
-								784
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 285.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "milk.linker-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 3074,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								310,
-								310
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 114.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "milk.core-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 2085,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								190,
-								205
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 57.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "test.html",
 					"settings":
 					{
-						"buffer_size": 594,
+						"buffer_size": 1150,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								254,
-								258
+								1117,
+								1117
 							]
 						],
 						"settings":
@@ -754,19 +719,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "milk.console-1.0.0.js",
+					"buffer": 1,
+					"file": "milk.base-1.0.0.js",
 					"settings":
 					{
-						"buffer_size": 2701,
+						"buffer_size": 1617,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2695,
-								2695
+								1146,
+								1146
 							]
 						],
 						"settings":
@@ -775,7 +740,114 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1425.0,
+						"translation.y": 684.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "milk.storage-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 910,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								302,
+								302
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "milk.console-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 5350,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5315,
+								5315
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/F/Github/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 3801,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2853,
+								2865
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2109.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "milk.linker-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 3051,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								358,
+								418
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 57.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -843,6 +915,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 339.0,
+	"side_bar_width": 197.0,
 	"status_bar_visible": true
 }

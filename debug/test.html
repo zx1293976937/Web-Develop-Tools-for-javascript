@@ -41,69 +41,6 @@
 		milk.dealloc(b1);
 
 	</script>
-
-	<script type="text/javascript">
-		// milk.define("AClass", [], function() {
-		// 	var self = milk.ObjectClass.call(this);
-
-		// 	// self.init = function() {
-		// 	// 	document.write("Create an AClass<br>");
-		// 	// 	return self;
-		// 	// };
-
-		// 	self.sayHello = function() {
-		// 		milk.Console.log("Hello!");
-		// 	};
-		// });
-
-		// milk.define("BClass", ["AClass"], function(a) {
-		// 	// var self = a;
-
-		// 	// self.init = function() {
-		// 	// 	return self;
-		// 	// };
-
-		// 	// self.init = function() {
-		// 	// 	document.write("Create a BClass<br>");
-		// 	// 	a.init();
-		// 	// 	return self;
-		// 	// };
-
-		// 	// self.str = null;
-			
-		// 	// self.initWithString = function(str) {
-
-		// 	// 	self.str = str;
-		// 	// 	return self.init();
-		// 	// };
-		// });
-
-		// var b = milk.use("BClass").init();
-		// b.sayHello();
-
-	</script>
-	<!--	
-	<script type="text/javascript">
-		milk.define("CClass", ["milk.storage.LocalDataManager"], function(dataManager) {
-			var self = milk.ObjectClass.call(this);
-
-			self.init = function() {
-				dataManager.initWithStorage(window.sessionStorage);
-
-				var aKey = "STORAGE.TEST.DATA";
-				var aValue = dataManager.getData(aKey);
-				if (aValue) {
-					document.write(aValue+"<br>");
-					dataManager.clear();
-				} else {
-					dataManager.setData(aKey, "created by Weller Qu");
-				};
-			};
-		});
-
-		var c = milk.use("CClass").init();
-	</script>
-	-->
 </head>
 <body>
 	

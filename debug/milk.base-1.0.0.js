@@ -55,7 +55,7 @@
 		use: (function(name) {
 			var module = moduleMap[name];
 
-			if (!module) return null;
+			if (!module) throw new Error(name + " is undefined, Are you forget to reference special file?");
 
 			var dependencieDescriptors = module.dependencieDescriptors;
 
