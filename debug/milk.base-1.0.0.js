@@ -8,15 +8,24 @@
  */
  
 (function() {
+	// 已申明的模块
 	var moduleMap = {};
-	// var javascriptFileMap = {};
+	// 已创建的模块实例
+	var allocedMap = {};
 
 	var milk = {
 		ObjectClass: (function() {
 			var self = this;
 
+			var _identifier = null;
+
 			self.init = function() {
+				_identifier = parseInt(Math.random() * Math.pow(10, 15));
 				return self;
+			};
+
+			self.getIdentifier = function() {
+				return _identifier;
 			};
 
 			return self.init();
@@ -50,11 +59,18 @@
 
 			var dependencieDescriptors = module.dependencieDescriptors;
 
-			return new (function() {
+			return (function() {
 				var self = module.descriptor.apply(this, dependencieDescriptors);
 
 				return self;
 			});	
+		}),
+		alloc: (function(name) {
+			var unInitedInstance = new (milk.use(name));
+			return (allocedMap[unInitedInstance.getIdentifier()] = unInitedInstance);
+		}),
+		dealloc: (function(instance) {
+			 delete allocedMap[instance.getIdentifier()];
 		})
 	};
 

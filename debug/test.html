@@ -12,6 +12,34 @@
 	-->
 	<script type="text/javascript">
 		// milk.Console.log("Hello World");
+		milk.define("AClass", [], function() {
+			var self = milk.ObjectClass.call(this);
+
+			// self.init = function() {
+			// 	document.write("Create an AClass<br>");
+			// 	return self;
+			// };
+			self.str = null;
+			self.initWithString = function(str) {
+				self.str = str;
+				return self;
+			};
+
+			self.sayHello = function() {
+				//milk.Console.log("Hello!");
+				document.write("Hello! "+self.str+"<br>");
+			};
+		});
+
+		milk.define("BClass", ["AClass"], function(A) {
+			var self = A.call(this);
+		});
+
+		var b1 = milk.alloc("BClass").initWithString("Hello B");;
+		b1.sayHello();
+
+		milk.dealloc(b1);
+
 	</script>
 
 	<script type="text/javascript">

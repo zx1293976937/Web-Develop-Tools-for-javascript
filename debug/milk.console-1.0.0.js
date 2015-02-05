@@ -140,7 +140,7 @@
 					currentTagName = resultArray[1];
 				};
 			
-				dataManager = dm.initWithStorage(window.sessionStorage);
+				dataManager = (new dm()).initWithStorage(window.sessionStorage);
 
 				// 在html的window对象的onload事件队列中添加一个处理函数
 				// 用来初始化日志窗口对象
@@ -204,5 +204,5 @@
 		};
 	});
 
-	window.milk.Console = window.milk.use("milk.util.Console").init();
+	window.milk.Console = window.milk.alloc("milk.util.Console").init();
 })();

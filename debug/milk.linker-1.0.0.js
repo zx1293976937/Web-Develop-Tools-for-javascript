@@ -12,8 +12,7 @@
 		throw new Error("requires milk.base.js file");
 
 	window.milk.define("milk.linker.EntityClass", 
-		["milk.core.ArrayController",
-		"milk.util.Console"], 
+		["milk.core.ArrayController"], 
 		function(ArrayController, Console) {
 			var self = this;
 			var observerMap = new ArrayController();
