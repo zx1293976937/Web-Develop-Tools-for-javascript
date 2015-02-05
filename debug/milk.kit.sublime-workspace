@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"win",
+				"winOnLoadEventHandler"
+			],
+			[
+				"mo",
+				"module"
+			],
+			[
+				"sc",
+				"scriptNode"
+			],
+			[
+				"modu",
+				"moduleMap"
+			],
+			[
 				"border",
 				"border"
 			],
@@ -319,6 +335,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "milk.base-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 1739,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "milk.linker-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 3074,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "milk.core-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 2085,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test.html",
+			"settings":
+			{
+				"buffer_size": 594,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "milk.console-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 2701,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -331,12 +387,12 @@
 				"Set Syntax: JavaScript"
 			],
 			[
-				"sethtml",
-				"Set Syntax: HTML"
-			],
-			[
 				"html",
 				"Snippet: html"
+			],
+			[
+				"sethtml",
+				"Set Syntax: HTML"
 			],
 			[
 				"htl",
@@ -483,7 +539,7 @@
 				"Set Syntax: HTML"
 			]
 		],
-		"width": 512.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -500,6 +556,9 @@
 	},
 	"file_history":
 	[
+		"/F/Github/Web-Develop-Tools-for-javascript/milk.console-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/milk.core-1.0.2.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/jquery.linker-2.0.2.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.core-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.linker-1.0.0.js",
 		"/C/Users/T430/Desktop/baidu.html",
@@ -583,8 +642,144 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "milk.base-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 1739,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								778,
+								784
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 285.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "milk.linker-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 3074,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								310,
+								310
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "milk.core-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 2085,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								190,
+								205
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 57.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "test.html",
+					"settings":
+					{
+						"buffer_size": 594,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								254,
+								258
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "milk.console-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 2701,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2695,
+								2695
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1425.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -594,7 +789,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"layout":
 	{
