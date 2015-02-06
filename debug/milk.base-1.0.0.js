@@ -91,5 +91,5 @@
 		})
 	};
 
-	window.milk = milk;
+	window.milk = window.$M = milk;
 })();
