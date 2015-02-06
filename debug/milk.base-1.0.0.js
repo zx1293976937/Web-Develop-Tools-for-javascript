@@ -14,6 +14,7 @@
 	var allocedMap = {};
 
 	var milk = {
+		// 基础类
 		ObjectClass: (function() {
 			var self = this;
 
@@ -23,7 +24,7 @@
 			self.init = function() {
 				if (!_identifier)
 					_identifier = parseInt(Math.random() * Math.pow(10, 15));
-				
+
 				return self;
 			};
 
@@ -42,6 +43,7 @@
 
 			return self.init();
 		}),
+		// 定义个类型模块
 		define: (function(name, dependencies, descriptor) {
 			if (!moduleMap[name]) {
 				var dependencieDescriptors = [];
@@ -64,6 +66,7 @@
 
 			return moduleMap[name];	// get a module's define
 		}), 
+		// 使用类型模块, name为define时的name
 		use: (function(name) {
 			var module = moduleMap[name];
 
@@ -77,10 +80,12 @@
 				return self.initWithClassName(name);
 			});	
 		}),
+		// 创建一个并未初始化的实例, name为define时的name
 		alloc: (function(name) {
 			var unInitedInstance = new (milk.use(name));
 			return (allocedMap[unInitedInstance.getIdentifier()] = unInitedInstance);
 		}),
+		// 销毁从alloc出去的实例, name为define时的name
 		dealloc: (function(instance) {
 			 delete allocedMap[instance.getIdentifier()];
 		})
