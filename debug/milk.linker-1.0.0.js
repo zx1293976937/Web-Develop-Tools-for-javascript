@@ -11,29 +11,30 @@
 	if (!window.milk) 
 		throw new Error("requires milk.base.js file");
 
-	window.milk.define("milk.linker.EntityClass", 
-		["milk.core.ArrayController"], 
-		function(ArrayController, Console) {
-			var self = this;
-			var observerMap = new ArrayController();
+	window.milk.define("milk.linker.Entity", 
+		["milk.controller.ArrayController"], function(ArrayController) {
+			var self = window.milk.ObjectClass.call(this);
 
-			var identifier = parseInt(Math.random() * Math.pow(10, 15));
+			// 观察者集合
+			var observers = new ArrayController();
 
 			self.property = function(name, value) {
 				Object.defineProperty(self, name, {
 				    set: function (value) {
-				        this["__" + name] = value;
+				        this["_" + name] = value;
 				        //do something
 				    },
 				    get: function () {
-				        return this["__" + name];
+				        return this["_" + name];
 				    },
 				    enumerable: true,
 				    configurable: true
 				});
+
+				self[name] = value;
 			};
 
-			self.property("Identifer", identifier);
+			self.property("property1111", "1");
 
 			/*
 		    // decode from json

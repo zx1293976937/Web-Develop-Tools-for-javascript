@@ -7,11 +7,11 @@
 	<script type="text/javascript" src="milk.storage-1.0.0.js"></script>
 	<script type="text/javascript" src="milk.console-1.0.0.js"></script>
 	
-	<script type="text/javascript" src="milk.collection-1.0.0.js"></script>
+	<script type="text/javascript" src="milk.controller-1.0.0.js"></script>
 	<script type="text/javascript" src="milk.mouse-1.0.0.js"></script>
-	<!--
+	
 	<script type="text/javascript" src="milk.linker-1.0.0.js"></script>
-	-->
+	<!---->
 	<script type="text/javascript">
 		// milk.define("AClass", [], function() {
 		// 	var self = milk.ObjectClass.call(this);
@@ -62,12 +62,19 @@
 
 		// milk.dealloc(ac);
 	</script>
+	
+	<script type="text/javascript">
+		var a = $M.alloc("milk.linker.Entity").init();
+		$M.Console.log(a.property1111);
+	</script>
+
 </head>
 <body>
 	<div id="testArea" style="background: LightPink; width: 400px; height: 300px;">
 		Hello World!
 	</div>
 	<script type="text/javascript">
+		/*
 		var mouse = $M.alloc("milk.util.Mouse").initWithPanel(document.getElementById("testArea"));
 		mouse
 			.onLeftToRight(function(p1, p2) {
@@ -81,6 +88,7 @@
 			}).onMove(function(p1, p2) {
 				milk.Console.log("(x: "+p1.x + ", y:"+p1.y+") to (" +"x: "+p2.x + ", y:"+p2.y+")");
 			});
+		*/
 	</script>
 </body>
 </html>

@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"_bou",
+				"_boundMousemove"
+			],
+			[
+				"_bound",
+				"_boundMousemove"
+			],
+			[
+				"_ca",
+				"_canTriggerMoveHandler"
+			],
+			[
+				"_can",
+				"_canTriggerWhenUnClick"
+			],
+			[
+				"ha",
+				"handlers"
+			],
+			[
+				"even",
+				"eventName"
+			],
+			[
+				"han",
+				"handler"
+			],
+			[
+				"_lef",
+				"_onLeftToRightEventHandlers"
+			],
+			[
 				"get",
 				"getIdentifier"
 			],
@@ -312,10 +344,6 @@
 				"_converter"
 			],
 			[
-				"_can",
-				"_canConvertBack"
-			],
-			[
 				"canc",
 				"canConvertBack"
 			],
@@ -363,13 +391,33 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "milk.linker-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 3035,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test.html",
+			"settings":
+			{
+				"buffer_size": 2471,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 150.0,
+		"height": 173.0,
 		"selected_items":
 		[
+			[
+				"setjas",
+				"Set Syntax: JavaScript"
+			],
 			[
 				"setjs",
 				"Set Syntax: JavaScript"
@@ -527,7 +575,7 @@
 				"Set Syntax: HTML"
 			]
 		],
-		"width": 400.0
+		"width": 472.0
 	},
 	"console":
 	{
@@ -546,13 +594,23 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug"
+	],
 	"file_history":
 	[
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.storage-1.0.0.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.base-1.0.0.js",
 		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/test.html",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/milk.core-1.0.2.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.controller-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.collection-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.mouse-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.storage-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
+		"/E/1_事业一部/125-TrinityAres-xServer-融合监管云平台系统/Code/trunk/TrinityAres-xServer/src/main/webapp/resources/js/linker/vm/VM.Index.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.base-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.console-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
@@ -609,6 +667,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"_canTriggerMoveHandler",
+			"_canTriggerMoveEvent",
+			"_isTriggerOnMoving",
+			"moving",
+			"_JustClickHandler",
+			"observerMap",
 			"__storage",
 			"delayHandler",
 			"delayId",
@@ -649,14 +713,71 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "milk.linker-1.0.0.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3035,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								779,
+								779
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2471,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1656,
+								1656
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 22.0
 	},
 	"input":
 	{
@@ -692,7 +813,7 @@
 	"project": "milk.kit.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":
