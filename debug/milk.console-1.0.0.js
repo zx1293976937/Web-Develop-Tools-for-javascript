@@ -202,6 +202,8 @@
 
 			delayHandler(p);
 		};
+
+		return self;
 	});
 
 	window.milk.Console = window.milk.alloc("milk.util.Console").init();

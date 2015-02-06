@@ -18,14 +18,26 @@
 			var self = this;
 
 			var _identifier = null;
+			var _className = null;
 
 			self.init = function() {
-				_identifier = parseInt(Math.random() * Math.pow(10, 15));
+				if (!_identifier)
+					_identifier = parseInt(Math.random() * Math.pow(10, 15));
+				
+				return self;
+			};
+
+			self.initWithClassName = function(name) {
+				_className = name;
 				return self;
 			};
 
 			self.getIdentifier = function() {
 				return _identifier;
+			};
+
+			self.getClassName = function() {
+				return _className;
 			};
 
 			return self.init();
@@ -62,7 +74,7 @@
 			return (function() {
 				var self = module.descriptor.apply(this, dependencieDescriptors);
 
-				return self;
+				return self.initWithClassName(name);
 			});	
 		}),
 		alloc: (function(name) {

@@ -11,35 +11,40 @@
 	<script type="text/javascript" src="milk.linker-1.0.0.js"></script>
 	-->
 	<script type="text/javascript">
-		// milk.Console.log("Hello World");
 		milk.define("AClass", [], function() {
 			var self = milk.ObjectClass.call(this);
 
-			// self.init = function() {
-			// 	document.write("Create an AClass<br>");
-			// 	return self;
-			// };
-			self.str = null;
-			self.initWithString = function(str) {
-				self.str = str;
+			self.init = function() {
+				milk.Console.log(self.getIdentifier());
 				return self;
 			};
 
 			self.sayHello = function() {
-				//milk.Console.log("Hello!");
-				document.write("Hello! "+self.str+"<br>");
+				milk.Console.log("Hello", null, "#FF0000");
 			};
+
+			return self;
 		});
 
-		milk.define("BClass", ["AClass"], function(A) {
-			var self = A.call(this);
+		milk.define("BClass", ["AClass"], function(AClass) {
+			var self = AClass.call(this);
+
+			self.methodB = function() {
+				milk.Console.log("MethodB");
+			};
+
+			return self;
 		});
 
-		var b1 = milk.alloc("BClass").initWithString("Hello B");;
-		b1.sayHello();
+		milk.define("CClass", ["BClass"], function(BClass) {
+			var self = BClass.call(this);
 
-		milk.dealloc(b1);
+			return self;
+		});
 
+		var c = milk.alloc("CClass").init();
+		c.sayHello();
+		c.methodB();
 	</script>
 </head>
 <body>
