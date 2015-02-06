@@ -1,5 +1,5 @@
 /*
- * collection.js
+ * controller.js
  * 数组对象强化, 增加对集合的处理方法
  *
  * v1.0.0
@@ -11,7 +11,7 @@
 	if (!window.milk) 
 		throw new Error("requires milk.base.js file");
 
-	window.milk.define("milk.collection.ArrayController", [], function() {
+	window.milk.define("milk.controller.ArrayController", [], function() {
 		var self = window.milk.ObjectClass.call(this);
 
 		var _arrangedObjects = [];
@@ -104,7 +104,7 @@
 		return self;
 	});
 
-	window.milk.define("milk.collection.StackController", [], function() {
+	window.milk.define("milk.controller.StackController", [], function() {
 		var self = window.milk.ObjectClass.call(this);
 
 		var _stackedObjects = [];
@@ -162,7 +162,7 @@
 		return self;
 	});
 
-	window.milk.define("milk.collection.StringController", [], function() {
+	window.milk.define("milk.controller.StringController", [], function() {
 		var self = window.milk.ObjectClass.call(this);
 
 		var _string = null;
@@ -202,7 +202,7 @@
 		return self;
 	});
 
-	window.milk.define("milk.collection.DateController", [], function() {
+	window.milk.define("milk.controller.DateController", [], function() {
 		var self = window.milk.ObjectClass.call(this);
 
 		var _dateObject = null;
