@@ -14,15 +14,15 @@
 	window.milk.define("milk.storage.LocalDataManager", [], function() {
 		var self = window.milk.ObjectClass.call(this);
 
-		var storage = null; 
+		var _storage = null; 
 
 		self.initWithStorage = function(storage) {
-			storage = storage;
+			_storage = storage;
 		};
 
 		self.setData = function(key, value) {
-			if (storage) {
-				storage.setItem(key, value);
+			if (_storage) {
+				_storage.setItem(key, value);
 			};
 
 			return self;
@@ -31,25 +31,25 @@
 		self.getData = function(key) {
 			var t = null;
 
-			if (storage) {
-				t = storage.getItem(key);
+			if (_storage) {
+				t = _storage.getItem(key);
 			};
 
 			return t;
 		};
 
 		self.removeData = function(key) {
-			if (storage) {
-				storage.removeItem(key);
+			if (_storage) {
+				_storage.removeItem(key);
 			};
 
 			return self;
 		};
 
 		self.clear = function() {
-			if (storage) {
+			if (_storage) {
 				for (var key in storage) {
-					storage.removeItem(key);
+					_storage.removeItem(key);
 				};
 			};
 
