@@ -363,54 +363,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "test.html",
-			"settings":
-			{
-				"buffer_size": 1150,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "milk.base-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 1617,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "milk.storage-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 910,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "milk.console-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 5350,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/F/Github/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 3801,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "milk.linker-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 3051,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -579,7 +531,11 @@
 	},
 	"console":
 	{
-		"height": 153.0
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
 	},
 	"distraction_free":
 	{
@@ -592,6 +548,11 @@
 	},
 	"file_history":
 	[
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.storage-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.base-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/test.html",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.console-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
@@ -638,7 +599,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 		]
@@ -688,170 +649,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "test.html",
-					"settings":
-					{
-						"buffer_size": 1150,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1117,
-								1117
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "milk.base-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 1617,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1146,
-								1146
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 684.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "milk.storage-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 910,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								302,
-								302
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "milk.console-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 5350,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5315,
-								5315
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/F/Github/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 3801,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2853,
-								2865
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2109.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "milk.linker-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 3051,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								358,
-								418
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 57.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -886,6 +685,11 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "milk.kit.sublime-project",
 	"replace":
 	{
 		"height": 64.0
@@ -911,10 +715,25 @@
 		],
 		"width": 380.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 197.0,
-	"status_bar_visible": true
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }

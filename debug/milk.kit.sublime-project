@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/F/Github/Web-Develop-Tools-for-javascript/debug"
+			"follow_symlinks": true,
+			"path": "."
 		}
 	]
 }

@@ -6,47 +6,56 @@
 	<script type="text/javascript" src="milk.base-1.0.0.js"></script>
 	<script type="text/javascript" src="milk.storage-1.0.0.js"></script>
 	<script type="text/javascript" src="milk.console-1.0.0.js"></script>
+	
+	<script type="text/javascript" src="milk.collection-1.0.0.js"></script>
 	<!--
-	<script type="text/javascript" src="milk.core-1.0.0.js"></script>
 	<script type="text/javascript" src="milk.linker-1.0.0.js"></script>
 	-->
 	<script type="text/javascript">
-		milk.define("AClass", [], function() {
-			var self = milk.ObjectClass.call(this);
+		// milk.define("AClass", [], function() {
+		// 	var self = milk.ObjectClass.call(this);
 
-			self.init = function() {
-				milk.Console.log(self.getIdentifier());
-				return self;
-			};
+		// 	self.init = function() {
+		// 		milk.Console.log(self.getIdentifier());
+		// 		return self;
+		// 	};
 
-			self.sayHello = function() {
-				milk.Console.log("Hello", null, "#FF0000");
-			};
+		// 	self.sayHello = function() {
+		// 		milk.Console.log("Hello", null, "#FF0000");
+		// 	};
 
-			return self;
-		});
+		// 	return self;
+		// });
 
-		milk.define("BClass", ["AClass"], function(AClass) {
-			var self = AClass.call(this);
+		// milk.define("BClass", ["AClass"], function(AClass) {
+		// 	var self = AClass.call(this);
 
-			self.methodB = function() {
-				milk.Console.log("MethodB");
-			};
+		// 	self.methodB = function() {
+		// 		milk.Console.log("MethodB");
+		// 	};
 
-			return self;
-		});
+		// 	return self;
+		// });
 
-		milk.define("CClass", ["BClass"], function(BClass) {
-			var self = BClass.call(this);
+		// milk.define("CClass", ["BClass"], function(BClass) {
+		// 	var self = BClass.call(this);
 
-			return self;
-		});
+		// 	return self;
+		// });
 
-		var c = milk.alloc("CClass").init();
-		c.sayHello();
-		c.methodB();
+		// var c = milk.alloc("CClass").init();
+		// c.sayHello();
+		// c.methodB();
 
-		milk.dealloc(c);
+		// milk.dealloc(c);
+	</script>
+	<script type="text/javascript">
+		var array = ["A", "B", "C"];
+		var ac = milk.alloc("milk.collection.ArrayController").initWithArray(array);
+
+		milk.Console.log(ac.size());
+
+		milk.dealloc(ac);
 	</script>
 </head>
 <body>

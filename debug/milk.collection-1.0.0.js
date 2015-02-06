@@ -1,5 +1,5 @@
 /*
- * core.js
+ * collection.js
  * 
  *
  * v1.0.0
@@ -11,10 +11,10 @@
 	if (!window.milk) 
 		throw new Error("requires milk.base.js file");
 
-	window.milk.define("milk.core.ArrayController",
+	window.milk.define("milk.collection.ArrayController",
 		[],
 		function() {
-		var self = this;
+		var self = window.milk.ObjectClass.call(this);
 
 		var _arrangedObjects = [];
 
