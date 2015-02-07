@@ -41,7 +41,29 @@
 				return _className;
 			};
 
-			return self.init();
+			self.setValue = function(value, forKey) {
+				var setter = self["set" + forKey];
+				if (setter)
+					setter(value);
+				else
+					throw new Error("Key: " + forKey + " is not exists key or cant write.");
+
+				return self;
+			};
+
+			self.getValue = function(forKey) {
+				var getter = self["get" + forKey];
+				if (getter)
+					return getter();
+
+				throw new Error("Key: " + forKey + " is not exists key or cant read.");
+			};
+
+			return (self.init());
+		}),
+		// 判断是否是数组
+		isArray: (function(obj) {
+			return window.Object.prototype.toString.call(obj) === '[object Array]';
 		}),
 		// 定义个类型模块
 		define: (function(name, dependencies, descriptor) {
