@@ -137,6 +137,11 @@
 
 			return module.entity;	
 		}),
+		// 获取一个已alloc的实例对象
+		getObject: (function(key) {
+			var instance = allocedMap[key];
+			return instance;
+		}),
 		// 创建一个类的新实例, name为define时的name
 		alloc: (function(name) {
 			var unInitedInstance = new (milk.use(name));
