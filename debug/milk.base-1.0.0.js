@@ -8,79 +8,84 @@
  */
  
 (function() {
+	// milk 框架基类描述符, 用于创建基类
+	var milkObjectDescriptor = (function() {
+		var self = this;
+
+		var _identifier = parseInt(Math.random() * Math.pow(10, 15));
+
+		self.init = function() {
+			if (window.console)
+				window.console.log("Object is created: " + self.getIdentifier());
+
+			return self;
+		};
+
+		self.getIdentifier = function() {
+			return _identifier;
+		};
+
+		self.setValue = function(value, forKey) {
+			var setter = self["set" + forKey];
+			if (setter)
+				setter(value);
+			else
+				throw new Error("Key: " + forKey + " is not exists key or cant write.");
+
+			return self;
+		};
+
+		self.getValue = function(forKey) {
+			var getter = self["get" + forKey];
+			if (getter)
+				return getter();
+
+			throw new Error("Key: " + forKey + " is not exists key or cant read.");
+		};
+
+		self.print = function() {
+			for (var key in self) {
+				if (window.console)
+					window.console.log(key);
+			};
+
+			return self;
+		};
+
+		return self;
+	});
+
 	// 已申明的模块
-	var moduleMap = {};
+	var moduleMap = {"milk.Object": {
+		name: "milk.Object",
+		dependencies: [],
+		descriptor: milkObjectDescriptor
+	}};
+
 	// 已创建的模块实例
 	var allocedMap = {};
+	// 已销毁的对象数量
+	var deallocedCount = 0;
 
+	// 初始化milk框架
 	var milk = {
-		// 基础类
-		ObjectClass: (function() {
-			var self = this;
-
-			var _identifier = null;
-			var _className = null;
-
-			self.init = function() {
-				if (!_identifier)
-					_identifier = parseInt(Math.random() * Math.pow(10, 15));
-
-				return self;
-			};
-
-			self.initWithClassName = function(name) {
-				_className = name;
-				return self;
-			};
-
-			self.getIdentifier = function() {
-				return _identifier;
-			};
-
-			self.getClassName = function() {
-				return _className;
-			};
-
-			self.setValue = function(value, forKey) {
-				var setter = self["set" + forKey];
-				if (setter)
-					setter(value);
-				else
-					throw new Error("Key: " + forKey + " is not exists key or cant write.");
-
-				return self;
-			};
-
-			self.getValue = function(forKey) {
-				var getter = self["get" + forKey];
-				if (getter)
-					return getter();
-
-				throw new Error("Key: " + forKey + " is not exists key or cant read.");
-			};
-
-			return (self.init());
-		}),
 		// 判断是否是数组
 		isArray: (function(obj) {
-			return window.Object.prototype.toString.call(obj) === '[object Array]';
+			return window.Object.prototype.toString.call(obj) === "[object Array]";
 		}),
 		// 定义个类型模块
 		define: (function(name, dependencies, descriptor) {
 			if (!moduleMap[name]) {
-				var dependencieDescriptors = [];
-				if (dependencies) {
-					for (var i = 0; i < dependencies.length; i++) {
-						var item = dependencies[i];
+				dependencies = dependencies || [];
 
-						dependencieDescriptors.push(this.use(item));
-					};
-				};
+				if (dependencies.length == 0)
+					dependencies.push("milk.Object");
 
 				var module = {
 					name: name,
-					dependencieDescriptors: dependencieDescriptors,
-					descriptor: descriptor
+					dependencies: dependencies,
+					descriptor: descriptor,
+					entity: null
 				};
 
 				moduleMap[name] = module;
@@ -92,24 +97,65 @@
 		use: (function(name) {
 			var module = moduleMap[name];
 
-			if (!module) throw new Error(name + " is undefined, Are you forget to reference special file?");
+			if (!module) throw new Error(name + " is undefined, Did you forget to reference special file?");
 
-			var dependencieDescriptors = module.dependencieDescriptors;
+			if (!module.entity) {
+				module.entity = (function() {
+					var self = this;
+					var initializers = [];
 
-			return (function() {
-				var self = module.descriptor.apply(this, dependencieDescriptors);
+					var dependencies = module.dependencies;
+					for (var i = 0; i < dependencies.length; i++) {
+						var dep = dependencies[i];
+						var descriptor = milk.use(dep);
+						self = descriptor.call(self);
 
-				return self.initWithClassName(name);
-			});	
+						if (self.init) {
+							initializers.push(self.init);
+							//delete self.init;
+							self.init = null;
+						};
+					};
+
+					self = module.descriptor.call(self);
+
+					if (self.init) {
+						initializers.push(self.init);
+					};
+
+					self.init = function() {
+						for (var i = 0; i < initializers.length; i++) {
+							initializers[i]();
+						};
+
+						return self;
+					};
+
+					return self;
+				});
+			};
+
+			return module.entity;	
 		}),
-		// 创建一个并未初始化的实例, name为define时的name
+		// 创建一个类的新实例, name为define时的name
 		alloc: (function(name) {
 			var unInitedInstance = new (milk.use(name));
-			return (allocedMap[unInitedInstance.getIdentifier()] = unInitedInstance);
+			return (allocedMap[unInitedInstance.getIdentifier()] = unInitedInstance).init();
 		}),
 		// 销毁从alloc出去的实例, name为define时的name
 		dealloc: (function(instance) {
-			 delete allocedMap[instance.getIdentifier()];
+			allocedMap[instance.getIdentifier()] = null;
+			deallocedCount++;
+			
+			if (deallocedCount >= 25) {
+				for (var key in allocedMap) {
+					if (allocedMap[key] == null)
+						delete allocedMap[key];
+				};
+				deallocedCount = 0;
+			};
+
+			return this;
 		})
 	};
 

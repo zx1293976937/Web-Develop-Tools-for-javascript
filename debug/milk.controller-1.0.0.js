@@ -12,7 +12,7 @@
 		throw new Error("requires milk.base.js file");
 
 	window.milk.define("milk.controller.ArrayController", [], function() {
-		var self = window.milk.ObjectClass.call(this);
+		var self = this;
 
 		var _arrangedObjects = [];
 
@@ -105,7 +105,7 @@
 	});
 
 	window.milk.define("milk.controller.StackController", [], function() {
-		var self = window.milk.ObjectClass.call(this);
+		var self = this;
 
 		var _stackedObjects = [];
 
@@ -163,7 +163,7 @@
 	});
 
 	window.milk.define("milk.controller.StringController", [], function() {
-		var self = window.milk.ObjectClass.call(this);
+		var self = this;
 
 		var _string = null;
 
@@ -203,7 +203,7 @@
 	});
 
 	window.milk.define("milk.controller.DateController", [], function() {
-		var self = window.milk.ObjectClass.call(this);
+		var self = this;
 
 		var _dateObject = null;
 

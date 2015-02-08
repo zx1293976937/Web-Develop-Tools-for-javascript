@@ -11,8 +11,8 @@
 	if (!typeof window.milk) 
 		throw new Error("requires milk.base.js file");
 
-	window.milk.define("milk.util.Console", ["milk.storage.LocalDataManager"], function(dm) {
-		var self = milk.ObjectClass.call(this);
+	window.milk.define("milk.util.Console", [], function() {
+		var self = this;
 
 		// 是否已初始化
 		var isInited = false;
@@ -130,6 +130,7 @@
 		});
 
 		self.init = function() {
+
 			// 是否已调试模式启动
 			var regex = /^.+\?(debug=yes).*$/igm;
 			if(regex.test(document.location)) {
@@ -140,7 +141,7 @@
 					currentTagName = resultArray[1];
 				};
 			
-				dataManager = (new dm()).initWithStorage(window.sessionStorage);
+				dataManager = window.milk.alloc("milk.storage.LocalDataManager").initWithStorage(window.sessionStorage);
 
 				// 在html的window对象的onload事件队列中添加一个处理函数
 				// 用来初始化日志窗口对象
@@ -149,20 +150,23 @@
 				} else {
 					window.attachEvent("onload", onWindowLoadHandler);
 				};
-
-				isInited = true;
-
-				self.log('-------------------------------', currentTagName);
-				self.log('Version: 1.0.0', currentTagName);
-				self.log('Date:    2014-07-29', currentTagName);
-				self.log('Author:  qiuwei', currentTagName);
-				self.log('It can run on Chrome, IE10.', currentTagName);
-				self.log('Welcome to use my milk script.', currentTagName);
-				self.log('-------------------------------', currentTagName);
 			};
 
-			return self;
+			isInited = true;
 		};
+
+		self.initWithWelcome = function() {
+
+			self.log('-------------------------------', currentTagName);
+			self.log('Version: 1.0.0', currentTagName);
+			self.log('Date:    2014-07-29', currentTagName);
+			self.log('Author:  qiuwei', currentTagName);
+			self.log('It can run on Chrome, IE10.', currentTagName);
+			self.log('Welcome to use my milk script.', currentTagName);
+			self.log('-------------------------------', currentTagName);
+
+			return self;
+		}
 
 		self.log = function(message, tagName, color) {
 			if (!isInited)
@@ -206,5 +210,6 @@
 		return self;
 	});
 
-	window.milk.Console = window.milk.alloc("milk.util.Console").init();
+	window.milk.Console = window.milk.alloc("milk.util.Console").initWithWelcome();
+	window.$M.Console = window.milk.Console;
 })();

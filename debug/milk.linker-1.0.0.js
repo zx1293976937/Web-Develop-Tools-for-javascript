@@ -11,95 +11,133 @@
 	if (!window.milk) 
 		throw new Error("requires milk.base.js file");
 
+	// Linker标识, 使用类的唯一标识Identifier的值
+	window.milk.LINKER_IDENTIFIER_KEY 
+		= window.$M.LINKER_IDENTIFIER_KEY 
+		= "linker-vm-id";
+
+	// 通知模式
+	window.milk.LinkMode 
+		= window.$M.LinkMode
+		= { ONEWAY: 0, TWOWAY: 1};
+
+	// 视图模型实体类
 	window.milk.define("milk.linker.Entity", [], function() {
-			var self = window.milk.ObjectClass.call(this);
+		var self = this;
 
-			// 观察者
-			var observerMap = {};
+		// 观察者
+		var observerMap = {};
+		// 属性列表
+		var properties = {};
 
-			self.addObserver = function(attributeClass, keyPath) {
-		        var observers = observerMap[keyPath];
-		        if (!observers) {
-		            observers = observerMap[keyPath] = [];
-		        };
-		        observers.push(attributeClass);
+		// decode from json
+	    self.initWithJson = function(jsonObject, map) {
+	    	map = map || {};
 
-		        return self;
-		    };
+	        for (var key in properties) {
+	        	var mapKey = map[key];
 
-		    self.removeObserver = function(attributeClass, keyPath) {
-		        var observers = observerMap[keyPath];
-		        if (observers) {
-		            for (var i = 0; i < observers.length; i++) {
-		                var item = observers[i];
-		                if (item == attributeClass) {
-		                    observers.splice(i, 1);
-		                    break;
-		                };
-		            };
-		        };
+	        	if (mapKey) 
+	        		self.setValue(jsonObject[mapKey], key);
+	        	else
+	        		self.setValue(jsonObject[key], key);
+	        };
 
-		        return self;
-		    };
+	        return self;
+	    };
 
-		    self.onPropertyChanged = function(name) {
-	            var value = self.getValue(name);
+	    // code to json
+	    self.toJson = function(map) {
+	    	map = map || {};
 
-	            var observers = observerMap[name];
-	            if (observers) {
-	                var item = null;
+	        var jsonObject = {};
 
-	                for (var i = 0; i < observers.length; i++) {
-	                    item = observers[i];	// item is a milk.linker.DOMAttribute object
-	                    item.setAttributeValue(value);
+	        for (var key in properties) {
+	        	var mapKey = map[key];
+	        	var value = self.getValue(key);
+
+	        	if (mapKey)
+	        		jsonObject[mapKey] = value
+	        	else
+	        		jsonObject[key] = value;
+	        };
+
+	        return jsonObject;
+	    };
+
+		self.addObserver = function(attributeClass, keyPath) {
+	        var observers = observerMap[keyPath];
+	        if (!observers) {
+	            observers = observerMap[keyPath] = [];
+	        };
+	        observers.push(attributeClass);
+
+	        return self;
+	    };
+
+	    self.removeObserver = function(attributeClass, keyPath) {
+	        var observers = observerMap[keyPath];
+	        if (observers) {
+	            for (var i = 0; i < observers.length; i++) {
+	                var item = observers[i];
+	                if (item == attributeClass) {
+	                    observers.splice(i, 1);
+	                    break;
 	                };
 	            };
-		        return true;
-		    };
+	        };
 
-			/*
-		    // decode from json
-		    self.initWithJson = function(jsonObject, map) {
-		        for (var key in jsonObject) {
-		            var setter = self["set" + key];
-		            if (setter && typeof setter == "function") {
-		                setter(jsonObject[key]);
-		            };
-		        };
+	        return self;
+	    };
 
-		        return self;
-		    };
+	    self.onPropertyChanged = function(name) {
+            var value = self.getValue(name);
 
-			// code to json
-		    self.toJson = function(map) {
-		        var jsonObject = {};
-		        for (var key in self) {
-		            if (key.indexOf("get") > -1) {
-		                var getter = self[key];
-		                if (getter && typeof getter == "function") {
-		                    jsonObject[key.replace("get", "")] = getter();
-		                };
-		            };
-		        };
+            var observers = observerMap[name];
+            if (observers) {
+                var item = null;
 
-		        return jsonObject;
-		    };
+                for (var i = 0; i < observers.length; i++) {
+                    item = observers[i];	// item is a milk.linker.DOMAttribute object
+                    item.setAttributeValue(value);
+                };
+            };
+	        return true;
+	    };
 
-		    // notify all observer to change
-		    self.notify = function() {
-		        for (var key in observerMap) {
-		            self.onPropertyChanged(key);
-		        };
+	    self.declareProperty = function(name, value) {
+	    	properties[name] = { name: name, value: value };
 
-		        return self;
-		    };
-		    */
+	    	self["set" + name] = function(v) {
+	    		properties[name].value = v;
+	    		self.onPropertyChanged(name);
 
-			return self;
+	    		return self;
+	    	};
+	    	self["get" + name] = function() {
+	    		return properties[name].value;
+	    	};
+	    };
+
+	    self.getProperties = function() {
+	    	return properties;
+	    };
+
+	    // notify all observer to change
+	    self.notify = function() {
+	        for (var key in observerMap) {
+	            self.onPropertyChanged(key);
+	        };
+
+	        return self;
+	    };
+
+		return self;
 	});
 
+	// 可以链接到视图模型实体类对象的属性类
 	window.milk.define("milk.linker.DOMAttribute", [], function() {
-		var self = window.milk.ObjectClass.call(this);
+		var self = this;
 
 		// DOM Object 的属性名或样式名
 		var _attribute = null;
@@ -109,6 +147,8 @@
 		var _converter = null;
 		// subject context
 		var _context = null;
+		// subject keyPath
+		var _keyPath = null;
 		// 子项创造器
 		var _childrenCreater = null;
 
@@ -119,20 +159,19 @@
 
 		// 属性变化事件处理函数
 		var onChangeEventHandler = (function(event) {
-			event = event || window.event;
+			// event = event || window.event;
+			// var sender = event.srcElement || event.target;
+			var value = self.getAttributeValue();
 
-			var keyPath = event.data.keyPath;
-	        var context = event.data.context;
-	        var self = event.data.self;
+			var keyPathParts = _keyPath.split('.');
+			var path = keyPathParts[keyPathParts.length - 1];
 
-	        var value = self.getValue();
+			if (window.console)
+				window.console.log("onchange shot: " + value);
 
-	        var setter = context["set" + keyPath];
-	        if (setter) {
-	            setter(value);
-	        };
+			_context.setValue(value, path);
 
-	        return false;
+	        return true;
 		});
 
 		self.initWithDOMObject = function(DOMObject, keyPath) {
@@ -247,8 +286,18 @@
 			return self;
 		};
 
+		// 链接到视图模型实体类实例
+		// mode:
+		// 0 单向模式, 仅从主体通知到观察者, 默认值
+		// 1 双向模式, 从主体通知到观察者, 也从观察者通知到主体
+		// 请使用window.milk.LinkMode来获取值
 		self.linkTo  = function(entity, keyPath, mode) {
-			var keyPathParts = keyPath.split('.');
+			if (_keyPath)
+				throw new Error("have linked a subject with " + _keyPath);
+
+			_keyPath = keyPath;
+
+			var keyPathParts = _keyPath.split('.');
 			var path = keyPathParts[keyPathParts.length - 1];
 
 			_context = entity;
@@ -260,9 +309,11 @@
 
 			_context.addObserver(self, path);
 
-			// mode:
-			// 0 单向模式, 仅从主体通知到观察者, 默认值
-			// 1 双向模式, 从主体通知到观察者, 也从观察者通知到主体
+			if (_DOMObject.setAttribute)
+				_DOMObject.setAttribute(window.milk.LINKER_IDENTIFIER_KEY, _context.getIdentifier());
+			else
+				_DOMObject[window.milk.LINKER_IDENTIFIER_KEY] = _context.getIdentifier();
+
 			if (mode === 1) {
 				if (_DOMObject.addEventListener)
 					_DOMObject.addEventListener("change", onChangeEventHandler, false);
@@ -273,7 +324,8 @@
 			return self;
 		};
 
-		self.breakTo = function(entity, keyPath) {
+		// 从链接的视图模型实体类实例断开指定链接
+		self.breakTo = function(keyPath) {
 			_context.removeObserver(self, keyPath);
 			_context = null;
 

@@ -12,7 +12,7 @@
 		throw new Error("requires milk.base.js file");
 
 	window.milk.define("milk.util.Mouse", [], function() {
-		var self = window.milk.ObjectClass.call(this);
+		var self = this;
 
 		// 是否绑定过相关事件, 默认为未绑定
 		var _boundMouseup = false;

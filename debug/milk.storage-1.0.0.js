@@ -12,12 +12,13 @@
 		throw new Error("requires milk.base.js file");
 
 	window.milk.define("milk.storage.LocalDataManager", [], function() {
-		var self = window.milk.ObjectClass.call(this);
+		var self = this;
 
 		var _storage = null; 
 
 		self.initWithStorage = function(storage) {
 			_storage = storage;
+			return self;
 		};
 
 		self.setData = function(key, value) {

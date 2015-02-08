@@ -4,63 +4,100 @@
 	<title>test</title>
 	<meta charset="utf-8">
 	<script type="text/javascript" src="milk.base-1.0.0.js"></script>
+	
 	<script type="text/javascript" src="milk.storage-1.0.0.js"></script>
+	
 	<script type="text/javascript" src="milk.console-1.0.0.js"></script>
 	
 	<script type="text/javascript" src="milk.controller-1.0.0.js"></script>
+	
 	<script type="text/javascript" src="milk.mouse-1.0.0.js"></script>
 	
 	<script type="text/javascript" src="milk.linker-1.0.0.js"></script>
 	<!---->
 	<script type="text/javascript">
 		// milk.define("AClass", [], function() {
-		// 	var self = milk.ObjectClass.call(this);
+		// 	var self = this;
+
+		// 	self.str = null;
 
 		// 	self.init = function() {
-		// 		milk.Console.log(self.getIdentifier());
-		// 		console.log(self.getIdentifier());
-		// 		return self;
+		// 		//milk.Console.log("AClass init: " + self.getIdentifier());
+		// 		console.log("A is created: " + self.getIdentifier());
+		// 		self.str = "nihao";
 		// 	};
 
+		// 	// delete self.init;
+
 		// 	self.sayHello = function() {
-		// 		milk.Console.log("Hello", null, "#FF0000");
+		// 		//milk.Console.log("Hello", null, "#FF0000");
 		// 		console.log("Hello");
 		// 	};
 
 		// 	return self;
 		// });
 
-		// milk.define("BClass", ["AClass"], function(AClass) {
-		// 	var self = AClass.call(this);
+		//var a = $M.alloc("AClass");
 
-		// 	self.methodB = function() {
-		// 		milk.Console.log("MethodB");
-		// 		console.log("MethodB");
+		// milk.define("BClass", ["AClass"], function() {
+		// 	var self = this;
+
+		// 	self.init = function() {
+		// 		console.log("B is created: " + self.getIdentifier());
+		// 		return self;
+		// 	};
+
+		// 	self.sayYeah = function() {
+		// 		//milk.Console.log("MethodB");
+		// 		console.log("Yeah");
 		// 	};
 
 		// 	return self;
 		// });
 
-		// milk.define("CClass", ["BClass"], function(BClass) {
-		// 	var self = BClass.call(this);
+		// var b = $M.alloc("BClass");
+		// $M.dealloc(b);
+		// // b.sayHello();
+
+		// milk.define("CClass", ["BClass"], function() {
+		// 	var self = this;
+
+		// 	self.name = null;
+
+		// 	self.init = function() {
+		// 		console.log("C is created: " + self.getIdentifier());
+		// 		self.name = "qiuwei";
+		// 		return self;
+		// 	};
+
+		// 	self.initWithName = function(name) {
+		// 		self.name = name;
+		// 		return self;
+		// 	};
 
 		// 	return self;
 		// });
 
-		// var c = milk.alloc("CClass").init();
+		// var c = milk.alloc("CClass").initWithName("weller");//.init();
 		// c.sayHello();
-		// c.methodB();
+		// c.sayYeah();
 
 		// milk.dealloc(c);
 	</script>
 	<script type="text/javascript">
-		// var array = ["A", "B", "C"];
-		// var ac = milk.alloc("milk.collection.ArrayController").initWithArray(array);
+		// var dm = $M.alloc("milk.storage.LocalDataManager").initWithStorage(window.sessionStorage);
+	</script>
+	<script type="text/javascript">
+		$M.Console.log("Hello World!");
+	</script>
+	<script type="text/javascript">
+		var array = ["A", "B", "C"];
+		var ac = $M.alloc("milk.controller.ArrayController").initWithArray(array);
 
-		// milk.Console.log(ac.size());
-		// //console.log(ac.size());
+		$M.Console.log(ac.size());
+		//console.log(ac.size());
 
-		// milk.dealloc(ac);
+		$M.dealloc(ac);
 	</script>
 	
 	
@@ -70,9 +107,9 @@
 	<div id="testArea" style="background: LightPink; width: 400px; height: 300px;">
 		Hello World!
 	</div>
-	<script type="text/javascript">
-		/*
-		var mouse = $M.alloc("milk.util.Mouse").initWithPanel(document.getElementById("testArea"));
+	<input type="text" id="txt" />
+	<script type="text/javascript">	
+		/*var mouse = $M.alloc("milk.util.Mouse").initWithPanel(document.getElementById("testArea"));
 		mouse
 			.onLeftToRight(function(p1, p2) {
 				milk.Console.log("x: "+p2.x + ", y:"+p2.y);
@@ -82,14 +119,13 @@
 				milk.Console.log("x: "+p2.x + ", y:"+p2.y, null, "#00FF00");
 			}).onBottomToTop(function(p1, p2) {
 				milk.Console.log("x: "+p2.x + ", y:"+p2.y, null, "#0000FF");
-			}).onMove(function(p1, p2) {
+			}).canTriggerMoving(true).onMove(function(p1, p2) {
 				milk.Console.log("(x: "+p1.x + ", y:"+p1.y+") to (" +"x: "+p2.x + ", y:"+p2.y+")");
-			});
-		*/
+			});*/
 	</script>
 	<script type="text/javascript">
 		var dom = document.getElementById("testArea");
-
+		var txt = document.getElementById("txt");
 		/*
 		var attr1 = $M.alloc("milk.linker.DOMAttribute").initWithDOMObject(dom, "innerHTML");
 		attr1.setAttributeValue("Weller Qu");
@@ -120,47 +156,67 @@
 		alert(value.join(','));
 		//*/
 		
-		$M.define("milk.vm.Task", ["milk.linker.Entity"], function(Entity) {
-			var self = Entity.call(this);
+		/*$M.define("milk.vm.Task", ["milk.linker.Entity"], function(Entity) {
+			var self = this;
 
-			var _taskName = null;
-
-			self.setTaskName = function(t) {
-				_taskName = t;
-				self.onPropertyChanged("TaskName");
-			};
-			self.getTaskName = function() {
-				return _taskName;
+			self.init = function() {
+				self.declareProperty("TaskName", "888");
+				// var ps = self.getProperties();
+				// ps["TaskName"].value = "777";
+				return self;
 			};
 
 			return self;
 		});
 
 		$M.define("milk.vm.Block", ["milk.linker.Entity"], function(Entity) {
-			var self = Entity.call(this);
+			var self = this;
 
-			var _task = null;
+			var ps = self.getProperties();
+			self.init = function() {
+				self.declareProperty("Task");
+			};
 
 			self.setTask = function(t) {
-				_task = t;
+				ps["Task"].value = t;
 				self.onPropertyChanged("Task");
 			};
 			self.getTask = function() {
-				return _task;
+				return ps["Task"].value;
 			};
 
 			return self;
 		});
 
-		var task = $M.alloc("milk.vm.Task").init();
+		var task = $M.alloc("milk.vm.Task");
 
-		var block = $M.alloc("milk.vm.Block").init();
+		var block = $M.alloc("milk.vm.Block");
 		block.setTask(task);
 
 		var attr4 = $M.alloc("milk.linker.DOMAttribute").initWithDOMObject(dom, "innerHTML");
-		attr4.linkTo(block, "Task.TaskName");
+		attr4.linkTo(block, "Task.TaskName");//.breakTo("Task.TaskName");
 
-		task.setTaskName("hahahahahaha");
+		// task.setTaskName("hahahahahaha");
+
+		var attr5 = $M.alloc("milk.linker.DOMAttribute").initWithDOMObject(txt, "value");
+		attr5.linkTo(block, "Task.TaskName", $M.LinkMode.TWOWAY)//.linkTo(task, "TaskName");
+
+		block.getTask().notify();*/
+	</script>
+	<script type="text/javascript">
+		$M.define("TestEntity", ["milk.linker.Entity"], function() {
+			var self = this;
+
+			self.declareProperty("ID");
+			self.declareProperty("Name");
+			self.declareProperty("Age");
+
+			return self;
+		});
+
+		var t = $M.alloc("TestEntity").initWithJson({p1: 1, p2: "WellerQu", p3: 26}, {ID: "p1", Name: "p2", Age: "p3"});
+
+		console.log(t.toJson({ID: "p1", Name: "p2", Age: "p3"}));
 	</script>
 </body>
 </html>
