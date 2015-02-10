@@ -46,6 +46,44 @@
 		subject: function() {
 			var key = this.attr(window.milk.LINKER_IDENTIFIER_KEY);
 			return window.milk.getObject(key);
+		},
+		/* Mouse 需要的方法 */
+		smartMouse: function() {
+			var self = this;
+
+			var panel = self.get(0);
+			var mouseObject = window.milk.alloc("milk.util.Mouse").initWithPanel(panel);
+
+			return {
+				onLeftToRight: function(handler) { 
+					mouseObject.onLeftToRight(handler);
+					return self;
+				},
+				onRightToLeft: function(handler) {
+					mouseObject.onRightToLeft(handler);
+					return self;
+				},
+				onTopToBottom: function(handler) {
+					mouseObject.onTopToBottom(handler);
+					return self;
+				},
+				onBottomToTop: function(handler) {
+					mouseObject.onBottomToTop(handler);
+					return self;
+				},
+				onWheel: function(handler) {
+					mouseObject.onWheel(handler);
+					return self;
+				},
+				onMove: function(handler) {
+					mouseObject.onMove(handler);
+					return self;
+				},
+				onClickUp: function(handler) {
+					mouseObject.onClickUp(handler);
+					return self;
+				}
+			};
 		}
 	});
 

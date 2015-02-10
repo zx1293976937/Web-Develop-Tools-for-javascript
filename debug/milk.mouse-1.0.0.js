@@ -98,7 +98,7 @@
 				if (handlers != null) {
 					for (var i = 0; i < handlers.length; i++) {
 						var handler = handlers[i];
-						handler(dPt, uPt);
+						handler(_panel, dPt, uPt);
 					};
 				};
 			};
@@ -112,7 +112,7 @@
 
 			for (var i = 0; i < _onWheelEventHandlers.length; i++) {
 				var handler = _onWheelEventHandlers[i];
-				handler(detail, pt);
+				handler(_panel, detail, pt);
 			};
 		};
 
