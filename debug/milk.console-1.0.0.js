@@ -209,7 +209,4 @@
 
 		return self;
 	});
-
-	window.milk.Console = window.milk.alloc("milk.util.Console").initWithWelcome();
-	window.$M.Console = window.milk.Console;
 })();

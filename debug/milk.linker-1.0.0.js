@@ -262,7 +262,10 @@
 				if (_converter && _converter.convert)
 					v = _converter.convert(value);
 
-				_DOMObject[_attribute] = v;
+				if (_DOMObject[_attribute] == undefined)
+					_DOMObject.setAttribute(_attribute, v);
+				else
+					_DOMObject[_attribute] = v;
 			};
 
 			return self;
@@ -290,7 +293,10 @@
 					};
 				};
 			} else {
-				v = _DOMObject[_attribute];
+				if (_DOMObject[_attribute] == undefined)
+					v = _DOMObject[_attribute];
+				else
+					v = _DOMObject.getAttribute(_attribute);
 
 				if (_converter && _converter.convertBack)
 					v = _converter.convertBack(v);

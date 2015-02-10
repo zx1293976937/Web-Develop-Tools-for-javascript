@@ -4,16 +4,23 @@
 	<title>test</title>
 	<meta charset="utf-8">
 	<script type="text/javascript" src="milk.base-1.0.0.js"></script>
-	<!--
+
 	<script type="text/javascript" src="milk.storage-1.0.0.js"></script>
 	
 	<script type="text/javascript" src="milk.console-1.0.0.js"></script>
+	<!--
+	
+	
+	
 	
 	<script type="text/javascript" src="milk.controller-1.0.0.js"></script>
 	
 	<script type="text/javascript" src="milk.mouse-1.0.0.js"></script>
 	-->
 	<script type="text/javascript" src="milk.linker-1.0.0.js"></script>
+
+	<script type="text/javascript" src="../jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="jquery.milk-1.0.0.js"></script>
 	
 	<script type="text/javascript">
 		// milk.define("AClass", [], function() {
@@ -101,7 +108,10 @@
 	</script>
 	
 	
-
+	<style type="text/css">
+		.Oh {}
+		.yeah {}
+	</style>
 </head>
 <body>
 	<div id="testArea" style="background: LightPink; width: 400px; height: 300px;">
@@ -124,8 +134,11 @@
 			});*/
 	</script>
 	<script type="text/javascript">
-		var dom = document.getElementById("testArea");
-		var txt = document.getElementById("txt");
+		// var dom = document.getElementById("testArea");
+		// var txt = document.getElementById("txt");
+
+
+
 		/*
 		var attr1 = $M.alloc("milk.linker.DOMAttribute").initWithDOMObject(dom, "innerHTML");
 		attr1.setAttributeValue("Weller Qu");
@@ -218,18 +231,39 @@
 
 		// console.log(t.toJson({ID: "p1", Name: "p2", Age: "p3"}));
 
-		$M.define("EClass", [], function() {
+		$M.define("EClass", ["milk.linker.Entity"], function() {
 			var self = this;
 
 			self.declareProperty("Name");
+			self.declareProperty("Type");
 
 			return self;
 		});
 
-		var e = $M.alloc("EClass");
-		e.Name = "Hello World";
+		$M.define("FClass", ["milk.linker.Entity"], function() {
 
-		console.log(e.Name);
+			this.declareProperty("Name");
+			this.declareProperty("Type");
+
+			return this;
+		});
+
+		var e = $M.alloc("EClass");
+		var f = $M.alloc("FClass");
+		
+		$("#testArea")
+			.property("innerHTML").linkTo(e, "Name")
+			.property("class").linkTo(f, "Type");
+
+		e.Name = "lalalalalallaal";
+
+		f.Name = "fff";
+		f.Type = "Oh yeah";
+
+		var vm = $("#testArea").subject();
+		console.log(vm.Name);
+
+		$.log("Hello World");
 	</script>
 </body>
 </html>
