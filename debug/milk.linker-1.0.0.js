@@ -28,13 +28,53 @@
 		// 观察者
 		var observerMap = {};
 		// 属性列表
-		var properties = {};
+		var properties = self.getProperties();
+
+		// @Override
+		self.declareProperty = function(name, value) {
+	    	properties[name] = { 
+	    		name: name, 
+	    		value: value, 
+	    		setter: (function(newValue) {
+	    			properties[name].value = newValue;
+	    			self.onPropertyChanged(properties[name].name);
+
+		    		if (window.console)
+		    			window.console.log(self.className() +"'s setAccessor was called: " + properties[name].value);
+
+	    			return self;
+	    		}), 
+	    		getter: (function() {
+	    			if (window.console)
+		    			window.console.log(self.className() +"'s getAccessor was called: " + properties[name].value);
+
+	    			return properties[name].value;
+	    		}) 
+	    	};
+
+	    	var setAccessor = self["set" + name];
+	    	if (setAccessor) {
+		    	properties[name].setter = setAccessor;
+		    };
+
+		    var getAccessor = self["get" + name];
+		    if (getAccessor) {
+		    	properties[name].getter = getAccessor;
+		    };
+
+		    Object.defineProperty(self, name, {
+		    	set: properties[name].setter,
+		    	get: properties[name].getter,
+		    	enumerable: true,
+		    	configurable: true
+		    });
+	    };
 
 		// decode from json
 	    self.initWithJson = function(jsonObject, map) {
 	    	map = map || {};
 
-	        for (var key in properties) {
+	        for (var key in _properties) {
 	        	var mapKey = map[key];
 
 	        	if (mapKey) 
@@ -52,7 +92,7 @@
 
 	        var jsonObject = {};
 
-	        for (var key in properties) {
+	        for (var key in _properties) {
 	        	var mapKey = map[key];
 	        	var value = self.getValue(key);
 
@@ -65,6 +105,7 @@
 	        return jsonObject;
 	    };
 
+	    // 添加一个观察者
 		self.addObserver = function(attributeClass, keyPath) {
 	        var observers = observerMap[keyPath];
 	        if (!observers) {
@@ -75,6 +116,7 @@
 	        return self;
 	    };
 
+	    // 移除一个观察者
 	    self.removeObserver = function(attributeClass, keyPath) {
 	        var observers = observerMap[keyPath];
 	        if (observers) {
@@ -90,6 +132,7 @@
 	        return self;
 	    };
 
+	    // 属性变化通知
 	    self.onPropertyChanged = function(name) {
             var value = self.getValue(name);
 
@@ -103,24 +146,6 @@
                 };
             };
 	        return true;
-	    };
-
-	    self.declareProperty = function(name, value) {
-	    	properties[name] = { name: name, value: value };
-
-	    	self["set" + name] = function(v) {
-	    		properties[name].value = v;
-	    		self.onPropertyChanged(name);
-
-	    		return self;
-	    	};
-	    	self["get" + name] = function() {
-	    		return properties[name].value;
-	    	};
-	    };
-
-	    self.getProperties = function() {
-	    	return properties;
 	    };
 
 	    // notify all observer to change
