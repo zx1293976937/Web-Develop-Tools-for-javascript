@@ -4,44 +4,64 @@
 		"selected_items":
 		[
 			[
-				"_bou",
-				"_boundMousemove"
+				"vali",
+				"validate"
 			],
 			[
-				"_bound",
-				"_boundMousemove"
+				"ele",
+				"element"
 			],
 			[
-				"_ca",
-				"_canTriggerMoveHandler"
+				"sel",
+				"selected"
 			],
 			[
-				"_can",
-				"_canTriggerWhenUnClick"
+				"_",
+				"_formObject"
 			],
 			[
-				"ha",
-				"handlers"
+				"initw",
+				"initWithFormObject"
 			],
 			[
-				"even",
-				"eventName"
+				"_con",
+				"_context"
 			],
 			[
-				"han",
-				"handler"
+				"allo",
+				"allocedMap"
 			],
 			[
-				"_lef",
-				"_onLeftToRightEventHandlers"
-			],
-			[
-				"get",
-				"getIdentifier"
+				"allc",
+				"allocedMap"
 			],
 			[
 				"ini",
-				"initWithString"
+				"init"
+			],
+			[
+				"dep",
+				"dependencies"
+			],
+			[
+				"modu",
+				"module"
+			],
+			[
+				"get",
+				"getClassName"
+			],
+			[
+				"Obje",
+				"ObjectClass"
+			],
+			[
+				"pro",
+				"properties"
+			],
+			[
+				"pr",
+				"properties"
 			],
 			[
 				"del",
@@ -64,10 +84,6 @@
 				"CClass"
 			],
 			[
-				"sel",
-				"self"
-			],
-			[
 				"win",
 				"winOnLoadEventHandler"
 			],
@@ -78,10 +94,6 @@
 			[
 				"sc",
 				"scriptNode"
-			],
-			[
-				"modu",
-				"moduleMap"
 			],
 			[
 				"border",
@@ -244,10 +256,6 @@
 				"callback"
 			],
 			[
-				"pro",
-				"propertyChanged"
-			],
-			[
 				"co",
 				"color"
 			],
@@ -344,6 +352,10 @@
 				"_converter"
 			],
 			[
+				"_can",
+				"_canConvertBack"
+			],
+			[
 				"canc",
 				"canConvertBack"
 			],
@@ -368,10 +380,6 @@
 				"o"
 			],
 			[
-				"_",
-				"_ObserverMap"
-			],
-			[
 				"load",
 				"loadDataContext"
 			],
@@ -392,18 +400,42 @@
 	"buffers":
 	[
 		{
-			"file": "milk.linker-1.0.0.js",
+			"file": "test.html",
 			"settings":
 			{
-				"buffer_size": 3035,
+				"buffer_size": 6736,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test.html",
+			"file": "milk.base-1.0.0.js",
 			"settings":
 			{
-				"buffer_size": 2599,
+				"buffer_size": 4795,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "milk.linker-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 8855,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "milk.validater-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 2813,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "jquery.valider-1.0.1.js",
+			"settings":
+			{
+				"buffer_size": 5930,
 				"line_ending": "Windows"
 			}
 		}
@@ -411,13 +443,9 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 173.0,
+		"height": 150.0,
 		"selected_items":
 		[
-			[
-				"setjas",
-				"Set Syntax: JavaScript"
-			],
 			[
 				"setjs",
 				"Set Syntax: JavaScript"
@@ -575,15 +603,11 @@
 				"Set Syntax: HTML"
 			]
 		],
-		"width": 472.0
+		"width": 400.0
 	},
 	"console":
 	{
-		"height": 153.0,
-		"history":
-		[
-			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
-		]
+		"height": 153.0
 	},
 	"distraction_free":
 	{
@@ -594,32 +618,20 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug"
-	],
 	"file_history":
 	[
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/test.html",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/milk.core-1.0.2.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.controller-1.0.0.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.collection-1.0.0.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.mouse-1.0.0.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.storage-1.0.0.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
-		"/E/1_事业一部/125-TrinityAres-xServer-融合监管云平台系统/Code/trunk/TrinityAres-xServer/src/main/webapp/resources/js/linker/vm/VM.Index.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.base-1.0.0.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.mouse-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.controller-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.storage-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/jquery.linker-2.0.2.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.console-1.0.0.js",
-		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.base-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.core-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/test.html",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.core-1.0.2.js",
-		"/F/Github/Web-Develop-Tools-for-javascript/jquery.linker-2.0.2.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.linker-1.0.0.js",
 		"/C/Users/T430/Desktop/baidu.html",
 		"/C/Users/T430/Desktop/WebApplication/Index.html",
@@ -657,9 +669,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
+			"F:\\Github\\Web-Develop-Tools-for-javascript\\debug"
 		]
 	},
 	"find_state":
@@ -667,12 +680,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"_canTriggerMoveHandler",
-			"_canTriggerMoveEvent",
-			"_isTriggerOnMoving",
-			"moving",
-			"_JustClickHandler",
-			"observerMap",
+			"onWindowLoadHandler",
+			"_inits",
+			";\n",
+			"initWithClassName",
 			"__storage",
 			"delayHandler",
 			"delayId",
@@ -699,6 +710,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"setClassName",
 			"_state",
 			"paper_history",
 			"pink",
@@ -713,65 +725,141 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "milk.linker-1.0.0.js",
-					"semi_transient": false,
+					"file": "test.html",
 					"settings":
 					{
-						"buffer_size": 3035,
+						"buffer_size": 6736,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								762,
-								774
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 684.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test.html",
-					"semi_transient": false,
+					"file": "milk.base-1.0.0.js",
 					"settings":
 					{
-						"buffer_size": 2599,
+						"buffer_size": 4795,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1772,
-								1772
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 42.0,
+						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "milk.linker-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 8855,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								306,
+								306
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 57.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "milk.validater-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 2813,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								277,
+								288
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 399.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "jquery.valider-1.0.1.js",
+					"settings":
+					{
+						"buffer_size": 5930,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1964,
+								1980
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2850.0,
+						"zoom_level": 1.0
+					},
 					"type": "text"
 				}
 			]
@@ -779,7 +867,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 22.0
+		"height": 0.0
 	},
 	"input":
 	{
@@ -808,14 +896,9 @@
 		]
 	},
 	"menu_visible": true,
-	"output.find_results":
-	{
-		"height": 0.0
-	},
-	"project": "milk.kit.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -838,25 +921,10 @@
 		],
 		"width": 380.0
 	},
-	"select_symbol":
-	{
-		"height": 0.0,
-		"selected_items":
-		[
-		],
-		"width": 0.0
-	},
-	"selected_group": 0,
-	"settings":
-	{
-	},
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 197.0,
-	"status_bar_visible": true,
-	"template_settings":
-	{
-	}
+	"status_bar_visible": true
 }
