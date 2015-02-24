@@ -39,6 +39,9 @@
 				return true;
 			}) },
 			regExp: { on: false, msg: "", process: (function(value) { 
+				if (value == "")
+					return true;
+
 				var reg = new RegExp(this.on, "igm");
 				if (!reg.test(value)) {
 					this.msg = "格式不符合正则表达式规则[" + this.on + "]";
@@ -47,6 +50,9 @@
 				return true;
 			}) },
 			max: { on: false, msg: "", process: (function(value) { 
+				if (value == "")
+					return true;
+
 				var v = parseInt(value);
 				if (isNaN(v)) {
 					this.msg = "值不是数字, 无法比较大小";
@@ -58,6 +64,9 @@
 				return true;
 			}) },
 			min: { on: false, msg: "", process: (function(value) { 
+				if (value == "")
+					return true;
+
 				var v = parseInt(value);
 				if (isNaN(v)) {
 					this.msg = "值不是数字, 无法比较大小";
@@ -69,6 +78,9 @@
 				return true;
 			}) },
 			maxLength: { on: false, msg: "", process: (function(value) {
+				if (value == "")
+					return true;
+
 				var v = value.length;
 				if (v > this.on) {
 					this.msg = "超过最大长度";
@@ -77,6 +89,9 @@
 				return true;
 			}) },
 			equals: { on: false, msg: "与目标值不相等", process: (function(value) {
+				if (value == "")
+					return true;
+				
 				var another = document.getElementById(this.on);
 				if (another) {
 					return another.value === value;
