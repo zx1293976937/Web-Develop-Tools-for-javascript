@@ -11,6 +11,8 @@
 	if (!typeof window.milk) 
 		throw new Error("requires milk.base.js file");
 
+	window.milk.readonly("MILK_CONSOLE_DEFINE", true);
+
 	window.milk.define("milk.util.Console", [], function() {
 		var self = this;
 

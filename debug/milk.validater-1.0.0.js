@@ -11,6 +11,14 @@
 	if (!window.milk) 
 		throw new Error("requires milk.base.js file");
 
+	window.milk.readonly("MILK_VALIDATER_DEFINE", true);
+
+	// 常用正则表达式
+	window.milk.readonly("regExps", {
+		IP: "^((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$",
+		digits: "^[1-9]\\d*$"
+	});
+
 	// 表单元素类
 	window.milk.define("milk.validater.ElementObject", [], function() {
 		var self = this;
@@ -67,6 +75,13 @@
 					return false;
 				}; 
 				return true;
+			}) },
+			equals: { on: false, msg: "与目标值不相等", process: (function(value) {
+				var another = document.getElementById(this.on);
+				if (another) {
+					return another.value === value;
+				};
+				return false;
 			}) },
 			ajax: { on: false, msg: "", process: (function(value) { 
 				return true;
@@ -205,7 +220,7 @@
 				};
 			};
 
-			if (!finalResult) _onErrorHandler(self, summary);
+			if (!finalResult && _onErrorHandler) _onErrorHandler(self, summary);
 
 			return finalResult;
 		};

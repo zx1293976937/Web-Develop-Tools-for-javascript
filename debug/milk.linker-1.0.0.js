@@ -11,15 +11,14 @@
 	if (!window.milk) 
 		throw new Error("requires milk.base.js file");
 
+	window.milk.readonly("MILK_LINKER_DEFINE", true);
+
 	// Linker标识, 使用类的唯一标识Identifier的值
-	window.milk.LINKER_IDENTIFIER_KEY 
-		= window.$M.LINKER_IDENTIFIER_KEY 
-		= "linker-vm-id";
+	window.milk.readonly("LINKER_IDENTIFIER_KEY", "linker-vm-id");
 
 	// 通知模式
-	window.milk.LinkMode 
-		= window.$M.LinkMode
-		= { ONEWAY: 0, TWOWAY: 1};
+	window.milk.readonly("LINK_MODE_ONEWAY", 0);
+	window.milk.readonly("LINK_MODE_TWOWAY", 1);
 
 	// 视图模型实体类
 	window.milk.define("milk.linker.Entity", [], function() {

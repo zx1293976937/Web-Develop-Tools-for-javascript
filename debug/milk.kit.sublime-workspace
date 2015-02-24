@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"va",
+				"value"
+			],
+			[
 				"sele",
 				"selected"
 			],
@@ -408,26 +412,10 @@
 	"buffers":
 	[
 		{
-			"file": "test.html",
+			"file": "/F/Github/Web-Develop-Tools-for-javascript/jquery.valider-1.0.1.js",
 			"settings":
 			{
-				"buffer_size": 6736,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "milk.base-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 4795,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "milk.linker-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 8855,
+				"buffer_size": 5930,
 				"line_ending": "Windows"
 			}
 		},
@@ -435,15 +423,23 @@
 			"file": "milk.validater-1.0.0.js",
 			"settings":
 			{
-				"buffer_size": 3831,
+				"buffer_size": 4861,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "jquery.valider-1.0.1.js",
+			"file": "test2.html",
 			"settings":
 			{
-				"buffer_size": 5930,
+				"buffer_size": 1083,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "jquery.milk-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 3129,
 				"line_ending": "Windows"
 			}
 		}
@@ -451,9 +447,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 150.0,
+		"height": 196.0,
 		"selected_items":
 		[
+			[
+				"sethtml",
+				"Snippet: html"
+			],
 			[
 				"setjs",
 				"Set Syntax: JavaScript"
@@ -461,10 +461,6 @@
 			[
 				"html",
 				"Snippet: html"
-			],
-			[
-				"sethtml",
-				"Set Syntax: HTML"
 			],
 			[
 				"htl",
@@ -611,7 +607,7 @@
 				"Set Syntax: HTML"
 			]
 		],
-		"width": 400.0
+		"width": 512.0
 	},
 	"console":
 	{
@@ -628,17 +624,18 @@
 	},
 	"file_history":
 	[
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.mouse-1.0.0.js",
-		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.controller-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.base-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/test.html",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/jquery.valider-1.0.1.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.controller-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.storage-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/jquery.linker-2.0.2.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.console-1.0.0.js",
-		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.base-1.0.0.js",
-		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.core-1.0.0.js",
-		"/F/Github/Web-Develop-Tools-for-javascript/debug/test.html",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.core-1.0.2.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/milk.linker-1.0.0.js",
 		"/C/Users/T430/Desktop/baidu.html",
@@ -688,6 +685,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"方法",
+			"txt2",
 			"onWindowLoadHandler",
 			"_inits",
 			";\n",
@@ -738,115 +737,7 @@
 			[
 				{
 					"buffer": 0,
-					"file": "test.html",
-					"settings":
-					{
-						"buffer_size": 6736,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 684.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "milk.base-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 4795,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 114.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "milk.linker-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 8855,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								306,
-								306
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 57.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "milk.validater-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 3831,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								350,
-								350
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "jquery.valider-1.0.1.js",
+					"file": "/F/Github/Web-Develop-Tools-for-javascript/jquery.valider-1.0.1.js",
 					"settings":
 					{
 						"buffer_size": 5930,
@@ -856,8 +747,8 @@
 						"selection":
 						[
 							[
-								5451,
-								5694
+								3454,
+								3454
 							]
 						],
 						"settings":
@@ -866,7 +757,88 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4104.0,
+						"translation.y": 2622.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "milk.validater-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 4861,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4598,
+								4598
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 171.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test2.html",
+					"settings":
+					{
+						"buffer_size": 1083,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								165,
+								165
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "jquery.milk-1.0.0.js",
+					"settings":
+					{
+						"buffer_size": 3129,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2509,
+								2509
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 57.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

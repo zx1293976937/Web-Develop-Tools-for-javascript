@@ -121,6 +121,15 @@
 		isArray: (function(obj) {
 			return window.Object.prototype.toString.call(obj) === "[object Array]";
 		}),
+		// 定义只读字段
+		readonly: (function(name, value) {
+			Object.defineProperty(this, name, {
+				value: value,
+				writable: false,
+		    	enumerable: true,
+		    	configurable: true
+		    });
+		}),
 		// 定义个类型模块
 		define: (function(name, dependencies, descriptor) {
 			if (!moduleMap[name]) {
