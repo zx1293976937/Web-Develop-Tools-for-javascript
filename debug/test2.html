@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="milk.base-1.0.0.js"></script>
+	<script src="milk.validater-1.0.0.js"></script>
+</head>
+<body>
+	<div>
+		<input id="txt" type="text" />
+		<input id="max" type="text" />
+	</div>
+	<div>
+		<input id="btn" type="button" value="submit" />
+	</div>
+	<script>
+		var formObject = $M.alloc("milk.validater.FormObject").initWithName("f1");
+		formObject.onError(function(n, s) {
+			alert(s.join(','));
+		});
+
+		var txtObject = $M.alloc("milk.validater.ElementObject").initWithDOMObjectId("txt", formObject);
+		txtObject.config.isRequired.on = true;
+		txtObject.onError(function(sender, error) {
+			alert(error);
+		});
+
+		var maxObject = $M.alloc("milk.validater.ElementObject").initWithDOMObjectId("max", formObject);
+		maxObject.config.max.on = 5;
+		maxObject.onError(function(sender, error) {
+			alert(error);
+		});
+
+		btn.onclick = function(evt) { if (formObject.validate()) alert("验证通过") };
+	</script>
+</body>
+</html>

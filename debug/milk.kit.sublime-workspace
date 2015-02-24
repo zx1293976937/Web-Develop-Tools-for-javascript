@@ -4,12 +4,20 @@
 		"selected_items":
 		[
 			[
-				"vali",
-				"validate"
+				"sele",
+				"selected"
+			],
+			[
+				"sl",
+				"selected"
 			],
 			[
 				"ele",
-				"element"
+				"elements"
+			],
+			[
+				"vali",
+				"validate"
 			],
 			[
 				"sel",
@@ -427,7 +435,7 @@
 			"file": "milk.validater-1.0.0.js",
 			"settings":
 			{
-				"buffer_size": 2813,
+				"buffer_size": 3831,
 				"line_ending": "Windows"
 			}
 		},
@@ -725,7 +733,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -814,23 +822,24 @@
 					"file": "milk.validater-1.0.0.js",
 					"settings":
 					{
-						"buffer_size": 2813,
+						"buffer_size": 3831,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								277,
-								288
+								350,
+								350
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 399.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -847,8 +856,8 @@
 						"selection":
 						[
 							[
-								1964,
-								1980
+								5451,
+								5694
 							]
 						],
 						"settings":
@@ -857,7 +866,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2850.0,
+						"translation.y": 4104.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

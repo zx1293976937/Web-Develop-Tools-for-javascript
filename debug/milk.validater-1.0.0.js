@@ -25,6 +25,7 @@
 		self.config = {
 			isRequired: { on: false, msg: "", process: (function(value) { 
 				if (value == "") {
+					this.msg = "不能为空";
 					return false;
 				};
 				return true;
@@ -32,6 +33,7 @@
 			regExp: { on: false, msg: "", process: (function(value) { 
 				var reg = new RegExp(this.on, "igm");
 				if (!reg.test(value)) {
+					this.msg = "格式不符合正则表达式规则[" + this.on + "]";
 					return false;
 				};
 				return true;
@@ -39,8 +41,10 @@
 			max: { on: false, msg: "", process: (function(value) { 
 				var v = parseInt(value);
 				if (isNaN(v)) {
+					this.msg = "值不是数字, 无法比较大小";
 					return false;
 				} else if (v > this.on) {
+					this.msg = "[" + value + "]大于最大边界[" + this.on + "]";
 					return false;
 				};
 				return true;
@@ -48,8 +52,10 @@
 			min: { on: false, msg: "", process: (function(value) { 
 				var v = parseInt(value);
 				if (isNaN(v)) {
+					this.msg = "值不是数字, 无法比较大小";
 					return false;
 				} else if (v < this.on) {
+					this.msg = "[" + value + "]小于最小边界[" + this.on + "]";
 					return false;
 				};
 				return true;
@@ -57,6 +63,7 @@
 			maxLength: { on: false, msg: "", process: (function(value) {
 				var v = value.length;
 				if (v > this.on) {
+					this.msg = "超过最大长度";
 					return false;
 				}; 
 				return true;
@@ -81,9 +88,15 @@
 				_DOMObject.attachEvent("onblur", onBlurEventHandler);
 			};
 
-			_formObject.addElement(_DOMObject);
+			_formObject.addElementObject(self);
 
 			return self;
+		};
+
+		self.initWithDOMObjectId = function(id, formObject) {
+			var obj = document.getElementById(id);
+
+			return self.initWithDOMObject(obj, formObject);
 		};
 
 		self.getFormObject = function() {
@@ -101,7 +114,6 @@
 		};
 
 		self.validate = function() {
-			var result = true;
 			var value = _DOMObject.value;
 
 			for (var key in self.config) {
@@ -110,19 +122,19 @@
 				if (item.on !== false && !item.process(value)) {
 					for (var i = 0; i < _onErrorHandler.length; i++) {
 						try {
-							(_onErrorHandler[i])(_DOMObject, item.msg);
+							(_onErrorHandler[i])(self, item.msg);
 						} catch(e) {
-							
+							// do nothing
 						};
 					};
 
 					_errorMessage = item.msg;
 
-					break;
+					return false;
 				};
 			};
 
-			return result;
+			return true;
 		};
 
 		return self;
@@ -142,29 +154,29 @@
 			return self;
 		};
 
-		var _onErrorHandler = function(summary) {
+		var _onErrorHandler = function(formName, summary) {
 			var text = "请修正以下错误: \r\n";
 			for (var i = 0; i < summary.length; i++) {
 				var str = summary[i];
-				text += (str + "\r\n");
+				text += ("    " + str + "\r\n");
 			};
 
 			alert(text);
 		};
 
-		var elements = {};
+		var elementObjects = {};
 
-		self.addElement = function(element) {
-			var selected = elements[element.id];
+		self.addElementObject = function(obj) {
+			var selected = elementObjects[obj.getIdentifier()];
 			if (!selected) 
-				elements[element.id] = element;
+				elementObjects[obj.getIdentifier()] = obj;
 
 			return self;
 		};
-		self.delElement = function(element) {
-			var selected = elements[element.id];
-			if (selected)
-				elements[element.id] = null;
+		self.delElementObject = function(element) {
+			var selected = elementObjects[obj.getIdentifier()];
+			if (!selected) 
+				elementObjects[obj.getIdentifier()] = null;
 
 			return self;
 		};
@@ -179,18 +191,21 @@
 			var finalResult = true;
 			var summary = [];
 
-			for (var key in elements) {
-				var selected = elements[key];
+			for (var key in elementObjects) {
+				var selected = elementObjects[key];
 
 				if (selected) {
 					var result = selected.validate();
-					finalResult = (finalResult && result);
 
 					if (!result) {
 						summary.push(selected.getErrorMessage());
 					};
+
+					finalResult = (finalResult && result);
 				};
 			};
+
+			if (!finalResult) _onErrorHandler(self, summary);
 
 			return finalResult;
 		};
