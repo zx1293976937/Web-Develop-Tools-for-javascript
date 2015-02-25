@@ -72,14 +72,9 @@
 
 	        var t = null;
 
-	        for (var i = 0; i < _arrangedObjects.length; i++) {
-	            var item = _arrangedObjects[i];
-
-	            if (is(i, item)) {
-	                t = item;
-	                break;
-	            };
-	        };
+	       	var results = self.findMore(is);
+	       	if (results.length > 0)
+	       		t = results[0];
 
 	        return t;
 	    };

@@ -129,6 +129,15 @@
 			return self.initWithDOMObject(obj, formObject);
 		};
 
+		self.setFormObject = function(f) {
+			if (_formObject)
+				_formObject.delElementObject(self);
+
+			_formObject = f;
+			_formObject.addElementObject(self);
+
+			return self;
+		};
 		self.getFormObject = function() {
 			return _formObject;
 		};
@@ -203,7 +212,7 @@
 
 			return self;
 		};
-		self.delElementObject = function(element) {
+		self.delElementObject = function(obj) {
 			var selected = elementObjects[obj.getIdentifier()];
 			if (!selected) 
 				elementObjects[obj.getIdentifier()] = null;
