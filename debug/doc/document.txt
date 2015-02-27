@@ -1,0 +1,63 @@
+[title]
+jquery.milk
+
+[file]
+jquery.milk-1.0.0.js
+
+[version]
+1.0.0
+
+[download]
+/js/jquery.milk-1.0.0.js
+
+[description]
+与jquery联合使用的快捷函数库
+
+[dependencies]
+
+[Optional]
+milk.linker.DOMAttribute
+milk.linker.Entity
+milk.util.Mouse
+milk.validater.FormObject
+milk.validater.ElementObject
+milk.util.Console
+
+[api]
+void	property	从DOM对象的属性列表中选取需要绑定数据的属性对象
+void	subject		获得视图的视图模型对象
+void	smartMouse
+void	isRequired
+void	regExp
+void	IP
+void	digits
+void	maxLength
+void	max
+void	min
+void	range
+void	equals
+void	group
+void 	onError
+void	__regsiter
+void	validate
+void	log
+
+[example]
+<head>
+	<script src="jquery.milk-版本号.js" />
+</head>
+
+[modules]
+milk
+milk.Object
+milk.util.Console
+milk.controller.ArrayController
+milk.controller.StackController
+milk.controller.StringController
+milk.controller.DateController
+milk.linker.Entity
+milk.linker.DOMAttribute
+milk.util.Mouse
+milk.storage.LocalDataManager
+milk.validater.ElementObject
+milk.validater.FormObject
