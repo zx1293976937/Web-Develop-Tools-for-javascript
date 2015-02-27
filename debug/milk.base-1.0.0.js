@@ -89,6 +89,8 @@
 		    	enumerable: true,
 		    	configurable: true
 		    });
+
+		    return self;
 	    };
 
 		self.print = function() {

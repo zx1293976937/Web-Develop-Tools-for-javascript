@@ -67,6 +67,8 @@
 		    	enumerable: true,
 		    	configurable: true
 		    });
+
+		    return self;
 	    };
 
 		// decode from json
