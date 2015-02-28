@@ -1,0 +1,52 @@
+[title]
+smartMouse
+
+[description]
+使视图获得绑定鼠标滑动手势的可能, 从smartMouse函数返回的对象可以接着调用onLeftToRight, onRightToLeft等函数
+
+[dependencies]
+jquery.milk-1.0.0.js
+milk.linker-1.0.0.js
+
+[returnType]
+JSON
+
+[parameters]
+不需要任何参数		
+
+[example]
+<!-- 示例一: 监听鼠标从左到右滑动 -->
+<div id="panel"></div>
+<script>
+	var sm = $("#panel").smartMouse();
+	sm.onLeftToRight(function(dom, downPoint, upPoint) {
+		// 鼠标左键按下并在ID为panel的元素上划过时触发此handler
+		// dom ID为Panel的HTML元素对象
+		// downPoint 鼠标按下时的坐标 {x, y}
+		// upPoint 鼠标释放时的坐标 {x, y}
+	});
+</script>
+------------------------------------------------------------------
+<!-- 示例二: 监听鼠标从左到右滑动和从右到左滑动 -->
+<div id="panel"></div>
+<script>
+	var sm = $("#panel").smartMouse();
+	sm.onLeftToRight(function(dom, downPoint, upPoint) {
+		// 鼠标左键按下并在ID为panel的元素上划过时触发此handler
+		// dom ID为Panel的HTML元素对象
+		// downPoint 鼠标按下时的坐标 {x, y}
+		// upPoint 鼠标释放时的坐标 {x, y}
+	}).onRightToLeft(function(dom, downPoint, upPoint) {
+		// 鼠标左键按下并在ID为panel的元素上划过时触发此handler
+		// dom ID为Panel的HTML元素对象
+		// downPoint 鼠标按下时的坐标 {x, y}
+		// upPoint 鼠标释放时的坐标 {x, y} 
+	});
+</script>
+------------------------------------------------------------------
+<!-- 其他函数 -->
+// onTopToBottom	从上到下
+// onBottomToTop	从下到上
+// onWheel			滑动滚轮
+// onMove			朝任意方向滑动
+// onClickUp		点击一下, 在释放时触发

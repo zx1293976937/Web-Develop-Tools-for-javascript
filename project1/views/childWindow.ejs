@@ -8,11 +8,11 @@
 			<div style="clear: both;"></div>
 		</div>
 		<div class="contentPart">
-			<div id="nav" class="stayLeft">
-				<ul>
+			<div id="nav" class="stayLeft" style="position: relative;">
+				<ul style="position: fixed;">
 					<li><a href="#desc">概述</a></li>
-					<li><a href="javascript:void(0)">参数列表</a></li>
-					<li><a href="javascript:void(0)">示例</a></li>
+					<li><a href="#params">参数列表</a></li>
+					<li><a href="#example">示例</a></li>
 				</ul>
 			</div>
 			<div id="content" class="stayLeft">
@@ -22,7 +22,7 @@
 				<div id="dependencies"></div>
 				<div><a href="javascript:void(0)">返回</a></div>
 				<div id="returnType"></div>
-				<div><a href="javascript:void(0)">参数列表</a></div>
+				<div><a name="params" href="javascript:void(0)">参数列表</a></div>
 				<div id="parametersItemTemplate" style="display:none;">
 					<div class="parameterItem">
 						<div class="stayLeft"></div>
@@ -32,7 +32,7 @@
 					</div>
 				</div>
 				<div id="parameters"></div>
-				<div><a href="javascript:void(0)">示例</a></div>
+				<div><a name="example" href="javascript:void(0)">示例</a></div>
 				<code id="example"></code>
 			</div>
 			<div style="clear: both;"></div>
@@ -71,6 +71,12 @@
 
 				return view.get(0);
 			}}).linkTo(childWindowEntity, "Parameters");
+
+		$("#example", "#child_window_content_layer")
+			.property("items", null, {build: function(str) {
+				var view = $("<pre>").text(str);
+				return view.get(0);
+			}}).linkTo(childWindowEntity, "Example");
 
 		var cover = document.getElementById("child_window_cover_layer");
 		var content = document.getElementById("child_window_content_layer");
@@ -118,8 +124,6 @@
 			},
 			close: function() {
 				onCoverClick();
-
-				childWindowEntity.Title = "";
 			},
 			setData: function(dataJson) {
 				childWindowEntity.Title = dataJson.title;

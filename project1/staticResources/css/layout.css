@@ -41,7 +41,7 @@ a:active  {color:blue;}
 	width: 100%;
 	min-width: 800px;
 	height: 100px;
-	line-height: 100px;
+	line-height: 90px;
 	background: #B00000;
 	position: fixed;
 	top: 0;
@@ -50,7 +50,7 @@ a:active  {color:blue;}
 
 .headPanel .title {
 	height: 100px;
-	width: 350px;
+	width: 400px;
 	margin-left: 20px;
 }
 

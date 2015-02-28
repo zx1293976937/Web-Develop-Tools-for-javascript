@@ -28,8 +28,10 @@ $M.define("milk.helper.App", ["milk.linker.Entity"], function() {
 		.declareProperty("Modules")
 		.declareProperty("JqDescription")
 		.declareProperty("MdDescription")
-		.declareProperty("DownloadUrl")
-		.declareProperty("FileName");
+		.declareProperty("JqDownloadUrl")
+		.declareProperty("JqFileName")
+		.declareProperty("MdDownloadUrl")
+		.declareProperty("MdFileName");
 
 	self.load = function(dataUrl) {
 		$.getJSON(dataUrl, function(res) {
@@ -38,8 +40,11 @@ $M.define("milk.helper.App", ["milk.linker.Entity"], function() {
 				self.JqDescription = res.description;
 				self.MdDescription = res.description2;
 
-				self.DownloadUrl = res.download;
-				self.FileName = res.file;
+				self.JqDownloadUrl = res.download;
+				self.JqFileName = res.file;
+
+				self.MdDownloadUrl = res.download2;
+				self.MdFileName = res.file2;
 
 				var array = [];
 				for (var i=0;i<res.api.length;i++) {
@@ -101,8 +106,10 @@ $M.define("milk.helper.ChildWindow", ["milk.linker.Entity"], function() {
 		.declareProperty("Example");
 
 	self.loadMore = function(dataUrl) {
+		self.clear();
 		dataUrl = dataUrl.replace(":key", self.Title);
-		$.getJSON(dataUrl, {name: self.Title}, function(res) {
+
+		$.getJSON(dataUrl, function(res) {
 			if (res && res.success) {
 				self.Desc = res.description;
 				self.Dependencies = res.dependencies;
@@ -125,9 +132,22 @@ $M.define("milk.helper.ChildWindow", ["milk.linker.Entity"], function() {
 				self.Example = res.example;
 			} else {
 				// res.error
-				alert("帮助文档仍在编辑中, 请等待.");
+
+				// alert("帮助文档仍在编辑中, 请等待.");
+				self.Desc = ["帮助文档仍在编辑中, 请等待."];
 			};
 		});
+
+		return self;
+	};
+
+	self.clear = function() {
+		// self.Title = "";
+		self.Desc = "";
+		self.Dependencies = [];
+		self.ReturnType = "";
+		self.Parameters = [];
+		self.Example = [];
 
 		return self;
 	};

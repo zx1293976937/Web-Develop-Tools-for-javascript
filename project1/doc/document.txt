@@ -24,8 +24,8 @@ min 	使DOM对象在失去焦点或调用验证方法时判断其值是否小于
 range	使DOM对象在失去焦点或调用验证方法时判断其值是否大于最大值或小于最小值
 equals	使DOM对象在失去焦点或调用验证方法时判断其值是否是否与目标ID的DOM对象值的字面值相等
 group	将DOM对象划分到指定组, 以便于按组进行验证
-vonError	设置DOM对象在验证不通过时的处理函数
-__regsiter	不推荐调用的函数
+onError	设置DOM对象在验证不通过时的处理函数
+__regsiter	不希望被调用的函数, 所以就不告诉你是干嘛用的了
 validate 	开始验证
 log 	在以HTML形式的控制台中输出内容
 
@@ -33,7 +33,13 @@ log 	在以HTML形式的控制台中输出内容
 Milk模块
 
 [description2]
-milk中的各个模块
+milk中的各个模块, 适用于基于Milk的高级编程
+
+[file2]
+下载 milk.zip
+
+[download2]
+/staticResources/js/milk/milk.zip
 
 [modules]
 milk 	milk全局对象

@@ -55,7 +55,7 @@ app.set("view engine", "ejs");
 
 // 处理404
 app.use(function(req, res, next) {
-	res.status(404).end("Sorry, 404了");
+	res.status(404).end("Sorry, 404");
 	next();
 });
 

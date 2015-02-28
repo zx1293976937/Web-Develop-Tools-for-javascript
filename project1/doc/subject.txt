@@ -1,0 +1,29 @@
+[title]
+subject
+
+[description]
+获得视图的视图模型对象, 必须确保之前调用过linkTo函数.
+
+[dependencies]
+jquery.milk-1.0.0.js
+milk.linker-1.0.0.js
+
+[returnType]
+milk.linker.Entity 或 milk.linker.Entity的派生类
+
+[parameters]
+不需要任何参数		
+
+[example]
+<!-- 示例一 -->
+<div id="userName"></div>
+<script>
+	var vm = $M.alloc("viewmodel");
+	$("#userName").property("innerHTML").linkTo(vm, "UserName");
+	vm.UserName = "Hello World";
+	// ... 其他代码 ...
+	var subject = $("#userName").subject();	// 将获得vm
+	console.log(vm.UserName);
+	// output:
+	// Hello World
+</script>

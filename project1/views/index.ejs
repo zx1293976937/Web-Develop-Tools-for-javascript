@@ -18,7 +18,7 @@
 	<div class="layoutPanel_center mainPanel">
 		<div><a name="jq" href="javascript:void(0)"><h1>with jQuery</h1></a></div>
 		<div id="jqDescription" class="description"></div>
-		<a id="download" href="#"></a>
+		<a id="jqDownload" href="#"></a>
 		<ul id="jqMethodPanelItemTemplate" style="display: none;">
 			<li>
 				<div class="stayLeft"><!-- property --></div>
@@ -42,6 +42,7 @@
 	<div class="layoutPanel_center mainPanel">
 		<div><a name="md" href="javascript:void(0)"><h1>the Modules</h1></a></div>
 		<div id="moduleDescription" class="description"></div>
+		<a id="mdDownload" href="#"></a>
 		<ul id="modulePanelItemTemplate" style="display: none;">
 			<li>
 				<div class="stayLeft"><!-- property --></div>
@@ -97,8 +98,11 @@
 			$("#jqDescription").property("innerHTML").linkTo(app, "JqDescription");
 			$("#moduleDescription").property("innerHTML").linkTo(app, "MdDescription");
 
-			$("#download").property("href").linkTo(app, "DownloadUrl");
-			$("#download").property("innerHTML").linkTo(app, "FileName");
+			$("#jqDownload").property("href").linkTo(app, "JqDownloadUrl");
+			$("#jqDownload").property("innerHTML").linkTo(app, "JqFileName");
+
+			$("#mdDownload").property("href").linkTo(app, "MdDownloadUrl");
+			$("#mdDownload").property("innerHTML").linkTo(app, "MdFileName");
 
 			app.load("/document/query");
 		});

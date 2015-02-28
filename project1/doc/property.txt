@@ -2,13 +2,14 @@
 property
 
 [description]
-从DOM对象的属性列表中选取需要绑定数据的属性对象
+从DOM对象的属性列表中选取需要绑定数据的属性对象, 之后可以接着调用linkTo函数, 将视图关联到指定视图模型对象的特定属性上
 
 [dependencies]
+jquery.milk-1.0.0.js
 milk.linker-1.0.0.js
 
 [returnType]
-milk.linker.DOMAttribute
+JSON
 
 [parameters]
 String	attrName	DOM对象的属性名

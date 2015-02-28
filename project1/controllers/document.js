@@ -74,6 +74,8 @@ router.get("/query", function(req, res) {
 		description: "",
 		api: [],
 		title2: "",
+		file2: "",
+		download2: "",
 		description2: "",
 		modules: []
 	};
