@@ -88,49 +88,53 @@
 
 		function showCover() {
 			cover.style.display = "";
+			cover.style.opacity = 0.6;
+			
+			content.style.display = "";
+			content.className = className + " cw_open";
+
 			document.body.style.overflow = "hidden";
 			document.body.style.paddingRight = "20px";
+
 			if (endHeaderItem)
-			endHeaderItem.style.marginRight = "20px";
+				endHeaderItem.style.marginRight = "21px";
 		};
 
 		function hideCover() {
-			cover.style.display = "none";
-			document.body.style.overflow = "auto";
-			document.body.style.paddingRight = "0";
-			if (endHeaderItem)
-			endHeaderItem.style.marginRight = "0";
-		};
-
-		function onCoverClick() {
+			cover.style.opacity = 0;
 			content.className = className + " cw_close";
 
 			if (timeoutId)
 				clearTimeout(timeoutId);
 
 			timeoutId = setTimeout(function() {
-				hideCover();
+				
 				content.className = className;
 				content.style.display = "none";
-			}, 900);
+
+				cover.style.display = "none";
+				document.body.style.overflow = "auto";
+				document.body.style.paddingRight = "0";
+
+				if (endHeaderItem)
+					endHeaderItem.style.marginRight = "0";
+			}, 950);
 		};
 
 		if(cover.addEventListener) {
 			if (cover.addEventListener) {
-				cover.addEventListener("click", onCoverClick, false);
+				cover.addEventListener("click", hideCover, false);
 			} else {
-				cover.attachEvent("onclick", onCoverClick);
+				cover.attachEvent("onclick", hideCover);
 			};
 		}
 
 		return {
 			open: function() {
 				showCover();
-				content.style.display = "";
-				content.className = className + " cw_open";
 			},
 			close: function() {
-				onCoverClick();
+				hideCover();
 			},
 			setData: function(dataJson) {
 				childWindowEntity.Title = dataJson.title;

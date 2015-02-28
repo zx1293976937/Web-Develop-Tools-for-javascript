@@ -24,7 +24,7 @@ h1 {
 }
 
 #child_window_cover_layer {
-	position:fixed; top: 0; bottom: 0; left: 0; right: 0; background: #FFF; opacity: 0.6; 
+	position:fixed; top: 0; bottom: 0; left: 0; right: 0; background: #FFF;
 }
 
 #child_window_content_layer, .child_window_content_layer {
