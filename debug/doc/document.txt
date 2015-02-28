@@ -26,26 +26,29 @@ milk.util.Console
 [api]
 void	property	从DOM对象的属性列表中选取需要绑定数据的属性对象
 void	subject		获得视图的视图模型对象
-void	smartMouse
-void	isRequired
-void	regExp
-void	IP
-void	digits
-void	maxLength
-void	max
-void	min
-void	range
-void	equals
-void	group
-void 	onError
-void	__regsiter
-void	validate
-void	log
+void	smartMouse	使DOM对象可以捕获鼠标手势
+void	isRequired	使DOM对象在失去焦点或调用验证方法时进行非空验证
+void	regExp	使DOM对象在失去焦点或调用验证方法时按提供的正则表达式进行验证
+void	IP	使DOM对象在失去焦点或调用验证方法时判断其值是否是IP地址
+void	digits	使DOM对象在失去焦点或调用验证方法时判断其值是否是正整数
+void	maxLength	使DOM对象在失去焦点或调用验证方法时判断其值长度是否超过最大长度
+void	max 	使DOM对象在失去焦点或调用验证方法时判断其值是否大于最大值
+void	min		使DOM对象在失去焦点或调用验证方法时判断其值是否小于最小值
+void	range	使DOM对象在失去焦点或调用验证方法时判断其值是否大于最大值或小于最小值
+void	equals	使DOM对象在失去焦点或调用验证方法时判断其值是否是否与目标ID的DOM对象值的字面值相等
+void	group	将DOM对象划分到指定组, 以便于按组进行验证
+void 	onError	设置DOM对象在验证不通过时的处理函数
+void	__regsiter	不推荐调用的函数
+void	validate 	开始验证
+void	log 	在以HTML形式的控制台中输出内容
 
 [example]
 <head>
 	<script src="jquery.milk-版本号.js" />
 </head>
+
+[title2]
+Milk模块
 
 [modules]
 milk
