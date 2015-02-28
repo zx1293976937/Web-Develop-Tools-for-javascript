@@ -1,0 +1,28 @@
+[title]
+property
+
+[description]
+从DOM对象的属性列表中选取需要绑定数据的属性对象
+
+[dependencies]
+milk.linker-1.0.0.js
+
+[returnType]
+milk.linker.DOMAttribute
+
+[parameters]
+String	attrName	DOM对象的属性名
+JSON	converter	值转换器
+JSON	creater 	数据转换器
+
+[example]
+<!-- 示例一 -->
+<div id="userName"></div>
+<script>
+	var vm = $M.alloc("viewmodel");
+	$("#userName").property("innerHTML").linkTo(vm, "UserName");
+
+	vm.UserName = "Hello World";
+	// result:
+	// ID为userName的DIV的内容将被改变为"Hello World"
+</script>

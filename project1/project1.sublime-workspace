@@ -1,0 +1,938 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"cons",
+				"consoleObject"
+			],
+			[
+				"pro",
+				"properties"
+			],
+			[
+				"set",
+				"setter"
+			],
+			[
+				"gropu",
+				"groupkey_open"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"group",
+				"Group"
+			],
+			[
+				"_bou",
+				"_boundMousemove"
+			],
+			[
+				"_bound",
+				"_boundMousemove"
+			],
+			[
+				"_ca",
+				"_canTriggerMoveHandler"
+			],
+			[
+				"_can",
+				"_canTriggerWhenUnClick"
+			],
+			[
+				"ha",
+				"handlers"
+			],
+			[
+				"even",
+				"eventName"
+			],
+			[
+				"han",
+				"handler"
+			],
+			[
+				"_lef",
+				"_onLeftToRightEventHandlers"
+			],
+			[
+				"get",
+				"getIdentifier"
+			],
+			[
+				"ini",
+				"initWithString"
+			],
+			[
+				"del",
+				"delayId"
+			],
+			[
+				"curr",
+				"currentTagName"
+			],
+			[
+				"SO",
+				"STORAGE_POSITION_KEY"
+			],
+			[
+				"con",
+				"consoleWindow"
+			],
+			[
+				"Class",
+				"CClass"
+			],
+			[
+				"sel",
+				"self"
+			],
+			[
+				"win",
+				"winOnLoadEventHandler"
+			],
+			[
+				"mo",
+				"module"
+			],
+			[
+				"sc",
+				"scriptNode"
+			],
+			[
+				"modu",
+				"moduleMap"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"fot",
+				"footer	Tag"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"ani",
+				"animdir	animation-direction: ${1:normal};"
+			],
+			[
+				"json",
+				"jsonObject"
+			],
+			[
+				"ba",
+				"back"
+			],
+			[
+				"_so",
+				"_storyBoardOnEnter"
+			],
+			[
+				"_st",
+				"_storyBoardOnLeave"
+			],
+			[
+				"_s",
+				"_storyBoardOnEnter"
+			],
+			[
+				"l",
+				"logout"
+			],
+			[
+				"re",
+				"record"
+			],
+			[
+				"b",
+				"beginTime"
+			],
+			[
+				"Lin",
+				"linkedList"
+			],
+			[
+				"Ts",
+				"TestingTaskStoryBoardOnEnter"
+			],
+			[
+				"stor",
+				"storyBoardOnEnter"
+			],
+			[
+				"lea",
+				"leave"
+			],
+			[
+				"_sto",
+				"_storyBoard"
+			],
+			[
+				"read",
+				"readyState"
+			],
+			[
+				"rea",
+				"readyState"
+			],
+			[
+				"sto",
+				"storyBoard"
+			],
+			[
+				"tim",
+				"timerId"
+			],
+			[
+				"key",
+				"keyFrame"
+			],
+			[
+				"conte",
+				"content_length"
+			],
+			[
+				"conv",
+				"convert"
+			],
+			[
+				"conver",
+				"convertedValue"
+			],
+			[
+				"cone",
+				"content_length"
+			],
+			[
+				"sett",
+				"setTop"
+			],
+			[
+				"pap",
+				"paper"
+			],
+			[
+				"ke",
+				"keyCode"
+			],
+			[
+				"bo",
+				"board"
+			],
+			[
+				"ti",
+				"time"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"_p",
+				"_currentPaper"
+			],
+			[
+				"tem",
+				"template_height"
+			],
+			[
+				"te",
+				"template_height"
+			],
+			[
+				"off",
+				"offsetY"
+			],
+			[
+				"of",
+				"offsetX"
+			],
+			[
+				"client",
+				"clientY"
+			],
+			[
+				"spC",
+				"spColor_blue"
+			],
+			[
+				"se",
+				"self"
+			],
+			[
+				"js",
+				"jsonString"
+			],
+			[
+				"pas",
+				"pastePaper"
+			],
+			[
+				"bor",
+				"border-top"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"hea",
+				"header	Tag"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"src",
+				"srcElement"
+			],
+			[
+				"_at",
+				"_attributeName"
+			],
+			[
+				"att",
+				"attributeName"
+			],
+			[
+				"at",
+				"attributeName"
+			],
+			[
+				"can",
+				"canConvertBack"
+			],
+			[
+				"_c",
+				"_converter"
+			],
+			[
+				"canc",
+				"canConvertBack"
+			],
+			[
+				"canCon",
+				"canConvertBack"
+			],
+			[
+				"expre",
+				"expression"
+			],
+			[
+				"on",
+				"oneWay"
+			],
+			[
+				"new",
+				"newValue"
+			],
+			[
+				"o",
+				"o"
+			],
+			[
+				"_",
+				"_ObserverMap"
+			],
+			[
+				"load",
+				"loadDataContext"
+			],
+			[
+				"obs",
+				"observer"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"ob",
+				"observer"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 1108,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/index.hp",
+			"settings":
+			{
+				"buffer_size": 252,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "staticResources/css/bgColor.css",
+			"settings":
+			{
+				"buffer_size": 162,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 219.0,
+		"selected_items":
+		[
+			[
+				"setcss",
+				"Set Syntax: CSS"
+			],
+			[
+				"html",
+				"Snippet: html"
+			],
+			[
+				"sethtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"setjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"setjson",
+				"Set Syntax: JSON"
+			],
+			[
+				"setjas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"htl",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"packinstal",
+				"Package Control: Install Package"
+			],
+			[
+				"packremo",
+				"Package Control: Remove Package"
+			],
+			[
+				"packlis",
+				"Package Control: List Packages"
+			],
+			[
+				"packlist",
+				"Package Control: List Packages"
+			],
+			[
+				"packinsta",
+				"Package Control: Install Package"
+			],
+			[
+				"packconins",
+				"Package Control: Install Package"
+			],
+			[
+				"packc",
+				"Package Control: List Packages"
+			],
+			[
+				"packcup",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"sethml",
+				"Set Syntax: HTML"
+			],
+			[
+				"sht",
+				"Set Syntax: HTML"
+			],
+			[
+				"sh",
+				"Set Syntax: HTML"
+			],
+			[
+				"seth",
+				"Set Syntax: HTML"
+			],
+			[
+				"SH",
+				"Set Syntax: HTML"
+			],
+			[
+				"shtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packre",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Emmet: Reload Extensions"
+			],
+			[
+				"bak",
+				"Preferences: Browse Packages"
+			],
+			[
+				"packrem",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"packinsp",
+				"Package Control: Install Package"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"packinstap",
+				"Package Control: Install Package"
+			],
+			[
+				"pacinstp",
+				"Package Control: Install Package"
+			],
+			[
+				"pacinsta",
+				"Package Control: Install Package"
+			],
+			[
+				"pacins",
+				"Package Control: Install Package"
+			],
+			[
+				"setja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"setjavasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sethtm",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"file",
+			"cls",
+			"clear",
+			"echo",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/Private Workspace/Demo/nodejs/project1",
+		"/E/Private Workspace/Demo/nodejs/project1/staticResources",
+		"/E/Private Workspace/Demo/nodejs/project1/staticResources/css"
+	],
+	"file_history":
+	[
+		"/E/Private Workspace/Demo/nodejs/project1/well.js",
+		"/E/Private Workspace/Demo/nodejs/project1/staticResources/css/bgColor.css",
+		"/E/Private Workspace/Demo/nodejs/project1/package.json",
+		"/E/Private Workspace/Demo/nodejs/project1/README.MD",
+		"/E/1_事业一部/101-TrinityAres-Server/Code/trunk/101-TrinityAres-Server/Web/Config/Basic/ChannelManage/ChannelManageV2.aspx",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/test.html",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/milk.core-1.0.2.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.controller-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.collection-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.mouse-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.storage-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
+		"/E/1_事业一部/125-TrinityAres-xServer-融合监管云平台系统/Code/trunk/TrinityAres-xServer/src/main/webapp/resources/js/linker/vm/VM.Index.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.base-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/milk.mouse-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/milk.console-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.base-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.core-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/test.html",
+		"/F/Github/Web-Develop-Tools-for-javascript/milk.core-1.0.2.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/jquery.linker-2.0.2.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/milk.linker-1.0.0.js",
+		"/C/Users/T430/Desktop/baidu.html",
+		"/C/Users/T430/Desktop/WebApplication/Index.html",
+		"/C/Users/T430/Desktop/WebApplication/users/新建文件夹1/lianxi.html",
+		"/C/Users/T430/Desktop/ertwy.html",
+		"/C/Users/T430/Desktop/WebApplication/users/新建文件夹1/hehe.html",
+		"/C/Users/T430/Desktop/WebApplication/users/home.html",
+		"/C/Users/T430/Desktop/WebApplication/users/新建文件夹/hhe.html",
+		"/C/Users/T430/Desktop/16.html",
+		"/C/Users/T430/Desktop/WebApplication/Login.html",
+		"/C/Users/T430/Desktop/2014-06-09.html",
+		"/C/Users/T430/Desktop/demo.js",
+		"/C/Users/T430/Desktop/ADTS.html",
+		"/C/Users/T430/Documents/Tencent Files/403321075/FileRecv/zhedie.html",
+		"/C/Users/T430/Desktop/for mac/bootstrap/ADTS.html",
+		"/C/Users/T430/Desktop/bindExpression.Ex-1.0.3.js",
+		"/C/Users/T430/Desktop/PapersWall.html",
+		"/C/Users/T430/Desktop/我的店铺-自定义-样式表.css",
+		"/C/Users/T430/Desktop/我的店铺-自定义-html代码.html",
+		"/C/Users/T430/Desktop/PaperWall.html",
+		"/C/Users/T430/Desktop/demo.html",
+		"/C/Users/T430/Desktop/ImagePlayer.html",
+		"/C/Users/T430/Desktop/Index.html",
+		"/C/Users/T430/Desktop/bindExpression.Ex-1.0.0.js",
+		"/C/Users/T430/Desktop/VideoTaskManager.js",
+		"/C/Users/T430/Desktop/BindingExpression.Ex-1.0.0.js",
+		"/C/Users/T430/Desktop/BindingExpression.Ex.js",
+		"/C/Users/T430/Desktop/jquery-1.6.4.min.js",
+		"/C/Users/T430/Desktop/bootstrap/bootstrap/Index.html",
+		"/C/Users/T430/Desktop/untitled-1.fw.png"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"getter",
+			"setter",
+			"/1_事业一部/101-TrinityAres-Server",
+			"live",
+			"delegate",
+			"_canTriggerMoveHandler",
+			"_canTriggerMoveEvent",
+			"_isTriggerOnMoving",
+			"moving",
+			"_JustClickHandler",
+			"observerMap",
+			"__storage",
+			"delayHandler",
+			"delayId",
+			"consoleWindow",
+			"currentTagName",
+			"	<",
+			"getPrevious",
+			"_views",
+			"                    ",
+			"readyState",
+			"template",
+			"button",
+			"paper_advance",
+			"blue_text",
+			"addObserver",
+			"hotpink",
+			"paper_editer",
+			"blue_text",
+			"partOfAttributeName"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"_state",
+			"paper_history",
+			"pink",
+			"last"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1108,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								816,
+								816
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/index.hp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 252,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								218,
+								218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "staticResources/css/bgColor.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								47,
+								47
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "project1.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"sethtml",
+				"/C/Users/T430/Desktop/WebApplication/Index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 197.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

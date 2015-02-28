@@ -1,0 +1,92 @@
+* {
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	font-family:"Lucida Grande",Verdana,Lucida,Arial,Helvetica,宋体，sans-serif;
+}
+
+body {
+	padding-top: 120px;
+	background: #E8E8E8;
+	padding-right: 17px;
+}
+
+a { text-decoration:none; }
+a:link    {color:blue;}
+a:visited {color:blue;}
+a:hover   {color:blue;}
+a:active  {color:blue;}
+
+.layoutPanel_center {
+	margin: 0 auto;
+}
+
+.text_center {
+	text-align: center;
+}
+
+.mainPanel {
+	padding: 15px;
+	width: 800px;
+	border-left: solid 0.5px #DCDCDC;
+	border-right: solid 0.5px #DCDCDC;
+	background: #F8F8F8;
+}
+
+.footPanel {
+	margin: 20px auto;
+}
+
+.headPanel {
+	width: 100%;
+	min-width: 800px;
+	height: 100px;
+	line-height: 100px;
+	background: #B00000;
+	position: fixed;
+	top: 0;
+	color: #E8E8E8;
+}
+
+.headPanel .title {
+	height: 100px;
+	width: 350px;
+	margin-left: 20px;
+}
+
+.headPanel .menu {
+	cursor: pointer;
+	width: 100px;
+	text-align: center;
+}
+
+.headPanel .menuSplit {
+	width: 5px;
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.headPanel .menu a {
+	height: 100%;
+	width: 100%;
+	font-size: 15px;
+	color: #D0D0D0;
+}
+
+.headPanel .menu a:hover {
+	color: #FFF;
+}
+
+.headPanel a {
+	color: #FFF;
+	font-size: 55pt;
+}
+
+.stayLeft {
+	float: left;
+}
+
+.stayRight {
+	float: right;
+}

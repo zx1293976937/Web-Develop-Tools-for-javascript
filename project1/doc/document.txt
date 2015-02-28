@@ -1,0 +1,51 @@
+[title]
+jquery.milk
+
+[description]
+与jquery联合使用的快捷函数库
+
+[file]
+下载 jquery.milk-1.0.0.js
+
+[download]
+/staticResources/js/milk/jquery.milk-1.0.0.js
+
+[api]
+property	从DOM对象的属性列表中选取需要绑定数据的属性对象
+subject 	获得视图的视图模型对象
+smartMouse	使DOM对象可以捕获鼠标手势
+isRequired	使DOM对象在失去焦点或调用验证方法时进行非空验证
+regExp	使DOM对象在失去焦点或调用验证方法时按提供的正则表达式进行验证
+IP	使DOM对象在失去焦点或调用验证方法时判断其值是否是IP地址
+digits	使DOM对象在失去焦点或调用验证方法时判断其值是否是正整数
+maxLength	使DOM对象在失去焦点或调用验证方法时判断其值长度是否超过最大长度
+max 	使DOM对象在失去焦点或调用验证方法时判断其值是否大于最大值
+min 	使DOM对象在失去焦点或调用验证方法时判断其值是否小于最小值
+range	使DOM对象在失去焦点或调用验证方法时判断其值是否大于最大值或小于最小值
+equals	使DOM对象在失去焦点或调用验证方法时判断其值是否是否与目标ID的DOM对象值的字面值相等
+group	将DOM对象划分到指定组, 以便于按组进行验证
+vonError	设置DOM对象在验证不通过时的处理函数
+__regsiter	不推荐调用的函数
+validate 	开始验证
+log 	在以HTML形式的控制台中输出内容
+
+[title2]
+Milk模块
+
+[description2]
+milk中的各个模块
+
+[modules]
+milk 	milk全局对象
+milk.Object 	milk基础类
+milk.util.Console	控制台类
+milk.controller.ArrayController 	数组强化
+milk.controller.StackController 	数组强化
+milk.controller.StringController 	字符串强化
+milk.controller.DateController 	日期强化
+milk.linker.Entity	视图模型基类
+milk.linker.DOMAttribute 	DOM对象属性类
+milk.util.Mouse 	鼠标手势类
+milk.storage.LocalDataManager 	本地存储类
+milk.validater.ElementObject 	表单元素类
+milk.validater.FormObject 	表单类

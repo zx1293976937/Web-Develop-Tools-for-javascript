@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+	!title
+	</title>
+	<link rel="stylesheet" type="text/css" href="/staticResources/css/bgColor.css">
+</head>
+<body>
+	<h1>!Hello World</h1>
+	<div class="red">
+	!content
+	</div>
+</body>
+</html>

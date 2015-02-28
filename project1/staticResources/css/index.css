@@ -1,0 +1,97 @@
+#jqMethodPanel li, #modulePanel li {
+	list-style: none;
+	height: 20px;
+	line-height: 20px;
+	cursor: pointer;
+}
+#jqMethodPanel li>div, #modulePanel li>div {
+	min-width: 200px;
+}
+
+#jqMethodPanel, #modulePanel {
+	margin: 30px 0;
+}
+
+.description {
+	margin-top: 20px;
+	text-align: left;
+	color: #989898;
+}
+
+h1 {
+	font-size: 24px;
+	color: #000;
+}
+
+#child_window_cover_layer {
+	position:fixed; top: 0; bottom: 0; left: 0; right: 0; background: #FFF; opacity: 0.6; 
+}
+
+#child_window_content_layer, .child_window_content_layer {
+	position:fixed; min-height: 5px; min-width: 40px; right: 400px; left: 400px; bottom: 200px;  overflow: hidden;
+	min-width: 850px;
+	background: #F0F0F0;
+}
+
+#child_window_content_layer .headerPart {
+	height: 60px;
+	background: #B00000;
+}
+
+#child_window_content_layer .contentPart {
+	height: 470px;
+}
+
+#child_window_content_layer .footerPart {
+	height: 30px;
+	background: #B00000;
+}
+
+#child_window_content_layer #title {
+	color: #FFF;
+	width: 300px;
+	line-height: 60px;
+	font-size: 35px;
+	margin-left: 20px;
+}
+
+#child_window_content_layer #nav {
+	width: 100px;
+	height: 100%;
+	text-align: right;
+	background: #B00000;
+}
+
+#child_window_content_layer #nav li {
+	margin: 10px;
+}
+
+#child_window_content_layer #content {
+	min-width: 720px;
+}
+
+#child_window_content_layer #content a,
+#child_window_content_layer #content a:hover {
+	color: #000;
+}
+
+#child_window_content_layer #content>div {
+	margin: 5px 20px;
+}
+
+.parameterItem>div {
+	min-width: 100px;
+}
+
+#child_window_content_layer #lnkClose {
+	margin-right: 10px;
+}
+
+#child_window_content_layer a {
+	color: #C0C0C0;
+	font-size: 14px;
+}
+
+#child_window_content_layer a:hover {
+	color: #FFF;
+}

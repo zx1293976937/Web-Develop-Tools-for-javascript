@@ -1,0 +1,43 @@
+@-webkit-keyframes cw_open {
+	0% { left: 400px; right: 400px; bottom: 200px; height: 5px; opacity: 0; }
+	50% { left: 0; right: 0;}
+	100% { left: 0; right: 0; bottom: 40px; height: 560px; opacity: 1; }
+}
+
+@keyframes cw_open {
+	0% { left: 400px; right: 400px; bottom: 200px; height: 5px; opacity: 0; }
+	50% { left: 0; right: 0;}
+	100% { left: 0; right: 0; bottom: 40px; height: 560px; opacity: 1; }
+}
+
+.cw_open {
+	-webkit-animation: cw_open 1s;
+	-o-animation: cw_open 1s;
+	animation: cw_open 1s;
+
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes cw_close {
+	0% { left: 0; right: 0; bottom: 40px; height: 560px; opacity: 1;}
+	50% { left: 0; right: 0;}
+	100% { left: 400px; right: 400px; bottom: 200px; height: 5px; opacity: 0 }
+}
+
+@keyframes cw_close {
+	0% { left: 0; right: 0; bottom: 40px; height: 560px; opacity: 1;}
+	50% { left: 0; right: 0;}
+	100% { left: 400px; right: 400px; bottom: 200px; height: 5px; opacity: 0 }
+}
+
+.cw_close {
+	-webkit-animation: cw_close 1s;
+	-o-animation: cw_close 1s;
+	animation: cw_close 1s;
+
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
