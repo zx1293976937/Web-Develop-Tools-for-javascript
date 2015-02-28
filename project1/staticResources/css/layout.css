@@ -8,7 +8,6 @@
 body {
 	padding-top: 120px;
 	background: #E8E8E8;
-	padding-right: 17px;
 }
 
 a { text-decoration:none; }
@@ -46,6 +45,7 @@ a:active  {color:blue;}
 	position: fixed;
 	top: 0;
 	color: #E8E8E8;
+	
 }
 
 .headPanel .title {

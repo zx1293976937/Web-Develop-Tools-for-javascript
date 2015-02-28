@@ -80,6 +80,7 @@
 
 		var cover = document.getElementById("child_window_cover_layer");
 		var content = document.getElementById("child_window_content_layer");
+		var endHeaderItem = document.getElementById("endHeaderItem");
 
 		var timeoutId = 0;
 
@@ -88,11 +89,17 @@
 		function showCover() {
 			cover.style.display = "";
 			document.body.style.overflow = "hidden";
+			document.body.style.paddingRight = "20px";
+			if (endHeaderItem)
+			endHeaderItem.style.marginRight = "20px";
 		};
 
 		function hideCover() {
 			cover.style.display = "none";
 			document.body.style.overflow = "auto";
+			document.body.style.paddingRight = "0";
+			if (endHeaderItem)
+			endHeaderItem.style.marginRight = "0";
 		};
 
 		function onCoverClick() {
