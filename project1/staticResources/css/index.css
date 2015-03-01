@@ -92,11 +92,16 @@ h1 {
 	border: solid 1px #000;
 	background: #252525;
 	padding: 5px 0;
+	border-radius: 5px;
+	box-shadow: 1px 1px 20px #6F0300;
 }
 
 .dependenciesArea {
-	background: #C3002C;
-	padding: 5px;
+	border: solid 1px #B00000;
+	background: #CF0000;
+	padding: 10px 15px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 20px #6F0300;
 }
 
 #child_window_content_layer #content code>pre {

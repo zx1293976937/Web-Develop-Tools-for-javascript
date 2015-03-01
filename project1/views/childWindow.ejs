@@ -19,11 +19,11 @@
 			</div>
 			<div id="content" class="stayLeft">
 				<div><a name="desc" href="javascript:void(0)">概述</a></div>
-				<div id="description"></div>
+				<div id="description" class="dependenciesArea"></div>
 				<div><a href="javascript:void(0)">依赖</a></div>
 				<div id="dependencies" class="dependenciesArea"></div>
 				<div><a href="javascript:void(0)">返回</a></div>
-				<div id="returnType"></div>
+				<div id="returnType" class="dependenciesArea"></div>
 				<div><a name="params" href="javascript:void(0)">参数列表</a></div>
 				<div id="parametersItemTemplate" style="display:none;">
 					<div class="parameterItem">
@@ -33,13 +33,13 @@
 						<div style="clear: left"></div>
 					</div>
 				</div>
-				<div id="parameters"></div>
+				<div id="parameters" class="dependenciesArea"></div>
 				<div><a name="example" href="javascript:void(0)">示例</a></div>
 				<div class="codeArea">
 					<code id="example"></code>
 				</div>
 				<div><a name="others" href="javascript:void(0)">Mark</a></div>
-				<div id="others"></div>
+				<div id="others" class="dependenciesArea"></div>
 			</div>
 			<div style="clear: both;"></div>
 		</div>
@@ -100,6 +100,11 @@
 			.property("items", null, {build: function(str) {
 				var view = $("<div>").text(str);
 				return view.get(0);
+			}}).linkTo(childWindowEntity, "Others");
+
+		$("#others", "#child_window_content_layer")
+			.property("style.display", {convert: function(value) {
+				return value.length ? "" : "none";
 			}}).linkTo(childWindowEntity, "Others");
 
 		var cover = document.getElementById("child_window_cover_layer");
