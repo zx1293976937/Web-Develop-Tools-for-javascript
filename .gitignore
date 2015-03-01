@@ -221,4 +221,4 @@ pip-log.txt
 
 # Import node modules
 */node_modules/*
-.sublime*
+*.sublime*
