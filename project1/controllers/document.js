@@ -87,30 +87,4 @@ router.get("/query/:key", function(req, res) {
 	res.json(itemObject);
 });
 
-router.get("/query", function(req, res) {
-	var docObject = {
-		success: true,
-		error: "",
-		title: "",
-		file: "",
-		download: "",
-		description: [],
-		api: [],
-		title2: "",
-		file2: "",
-		download2: "",
-		description2: [],
-		modules: []
-	};
-
-	try {
-		readToObject(docObject, "doc/document.txt");
-	} catch(e) {
-		docObject.success = false;
-		docObject.error = e.message;
-	};
-
-	res.json(docObject);
-});
-
 module.exports = router;

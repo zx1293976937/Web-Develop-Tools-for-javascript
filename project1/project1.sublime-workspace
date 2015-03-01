@@ -4,8 +4,40 @@
 		"selected_items":
 		[
 			[
+				"ret",
+				"ReturnType"
+			],
+			[
 				"mar",
-				"margin-right"
+				"margin-bottom"
+			],
+			[
+				"ra",
+				"border-radius"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"pro",
+				"property"
+			],
+			[
+				"ch",
+				"childWindowEntity"
+			],
+			[
+				"li",
+				"linkTo"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"pa",
+				"padding"
 			],
 			[
 				"ov",
@@ -40,10 +72,6 @@
 				"consoleObject"
 			],
 			[
-				"pro",
-				"properties"
-			],
-			[
 				"set",
 				"setter"
 			],
@@ -62,10 +90,6 @@
 			[
 				"text",
 				"text-align"
-			],
-			[
-				"pa",
-				"padding-left"
 			],
 			[
 				"group",
@@ -158,10 +182,6 @@
 			[
 				"marg",
 				"margin-right"
-			],
-			[
-				"pad",
-				"padding-top"
 			],
 			[
 				"font",
@@ -340,10 +360,6 @@
 				"pastePaper"
 			],
 			[
-				"bor",
-				"border-top"
-			],
-			[
 				"fo",
 				"font-size"
 			],
@@ -428,18 +444,10 @@
 	"buffers":
 	[
 		{
-			"file": "staticResources/js/milk/jquery.milk-1.0.0.js",
+			"file": "staticResources/css/index.css",
 			"settings":
 			{
-				"buffer_size": 6093,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "staticResources/css/layout.css",
-			"settings":
-			{
-				"buffer_size": 1203,
+				"buffer_size": 2127,
 				"line_ending": "Windows"
 			}
 		},
@@ -447,23 +455,15 @@
 			"file": "views/childWindow.ejs",
 			"settings":
 			{
-				"buffer_size": 4470,
+				"buffer_size": 6119,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/header.ejs",
+			"file": "controllers/document.js",
 			"settings":
 			{
-				"buffer_size": 570,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "staticResources/css/index.css",
-			"settings":
-			{
-				"buffer_size": 1841,
+				"buffer_size": 1802,
 				"line_ending": "Windows"
 			}
 		}
@@ -660,23 +660,25 @@
 	},
 	"file_history":
 	[
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/isRequired.txt",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/regExp.txt",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/IP.txt",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/digits.txt",
-		"/F/Github/Web-Develop-Tools-for-javascript/debug/test2.html",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/smartMouse.txt",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/views/footer.ejs",
 		"/F/Github/Web-Develop-Tools-for-javascript/project1/views/childWindow.ejs",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/staticResources/js/VM/clientApp.js",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/staticResources/css/index.css",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/property.txt",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/staticResources/css/layout.css",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/views/header.ejs",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/document.txt",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/subject.txt",
-		"/F/Github/Web-Develop-Tools-for-javascript/project1/app.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/project1/controllers/document.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/project1/views/index.ejs",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/staticResources/js/VM/clientApp.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/document.txt",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/digits.txt",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/IP.txt",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/isRequired.txt",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/regExp.txt",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/smartMouse.txt",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/subject.txt",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/doc/property.txt",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/staticResources/js/milk/jquery.milk-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/staticResources/css/layout.css",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/staticResources/css/index.css",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/views/header.ejs",
+		"/F/Github/Web-Develop-Tools-for-javascript/debug/test2.html",
+		"/F/Github/Web-Develop-Tools-for-javascript/project1/app.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/project1/staticResources/css/animation.css",
 		"/F/Github/Web-Develop-Tools-for-javascript/project1/staticResources/css/bgColor.css",
 		"/F/Github/Web-Develop-Tools-for-javascript/project1/views/index.hp",
@@ -752,6 +754,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" ",
 			"#000",
 			"getter",
 			"setter",
@@ -809,18 +812,72 @@
 			[
 				{
 					"buffer": 0,
-					"file": "staticResources/js/milk/jquery.milk-1.0.0.js",
+					"file": "staticResources/css/index.css",
 					"settings":
 					{
-						"buffer_size": 6093,
+						"buffer_size": 2127,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1123,
-								1123
+								1847,
+								1847
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1425.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/childWindow.ejs",
+					"settings":
+					{
+						"buffer_size": 6119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3667,
+								3667
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1140.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "controllers/document.js",
+					"settings":
+					{
+						"buffer_size": 1802,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								123,
+								123
 							]
 						],
 						"settings":
@@ -829,115 +886,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "staticResources/css/layout.css",
-					"settings":
-					{
-						"buffer_size": 1203,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								709,
-								709
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1311.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "views/childWindow.ejs",
-					"settings":
-					{
-						"buffer_size": 4470,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4058,
-								4058
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 57.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "views/header.ejs",
-					"settings":
-					{
-						"buffer_size": 570,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								570,
-								570
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "staticResources/css/index.css",
-					"settings":
-					{
-						"buffer_size": 1841,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								442,
-								442
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 969.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
