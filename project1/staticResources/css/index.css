@@ -88,6 +88,17 @@ h1 {
 	min-width: 100px;
 }
 
+.codeArea {
+	border: solid 1px #000;
+	background: #252525;
+	padding: 5px 0;
+}
+
+.dependenciesArea {
+	background: #C3002C;
+	padding: 5px;
+}
+
 #child_window_content_layer #content code>pre {
 	margin-left: 20px;
 }

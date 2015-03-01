@@ -5,118 +5,89 @@
 	<link rel="stylesheet" type="text/css" href="/staticResources/css/index.css">
 	<link rel="stylesheet" type="text/css" href="/staticResources/css/animation.css">
 	<title>
-		<%= title %>
+		MILKJS 在线帮助
 	</title>
 	<script type="text/javascript" src="/staticResources/js/milk/milk.base-1.0.0.js"></script>
 	<script type="text/javascript" src="/staticResources/js/milk/milk.linker-1.0.0.js"></script>
 	<script type="text/javascript" src="/staticResources/js/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="/staticResources/js/milk/jquery.milk-1.0.0.js"></script>
-	<script type="text/javascript" src="/staticResources/js/VM/clientApp.js"></script>
 </head>
 <body>
 	<%- include header.ejs %>
 	<div class="layoutPanel_center mainPanel">
 		<div><a name="jq" href="javascript:void(0)"><h1>with jQuery</h1></a></div>
-		<div id="jqDescription" class="description"></div>
-		<a id="jqDownload" href="#"></a>
-		<ul id="jqMethodPanelItemTemplate" style="display: none;">
-			<li>
-				<div class="stayLeft"><!-- property --></div>
-				<div class="stayLeft"><!-- 描述 --></div>
-			</li>
-		</ul>
+		<div id="jqDescription" class="description">
+			<%
+				if (success) {
+					for (var i=0; i<description.length; i++) {
+						var item = description[i];
+			%>
+			<div><%= item %></div>
+			<%
+					};
+				};
+			%>
+		</div>
+		<a id="jqDownload" href="<%= success ? download : '#' %>"><%= success ? file : "" %></a>
 		<ul id="jqMethodPanel">
-			<!-- 
-			<li>
-				<div>property</div>
-				<div>描述</div>
-			</li>
-			 -->
+			<% 
+				if (success) { 
+					for (var i=0; i<api.length; i++) {
+						var item = api[i].split("\t");
+			%>
+			<li key="<%= item[0] %>">
+				<div class="stayLeft"><%= item[0] %></div>
+				<div class="stayLeft"><%= item[1] %></div>
+			</li>			
+			<%
+					};
+				};
+			%>
 		</ul>
-		<code>
-			<!--  -->
-		</code>
 		<div style="border-top: solid 1px #B8B8B8;"></div>
 	</div>
 
 	<div class="layoutPanel_center mainPanel">
 		<div><a name="md" href="javascript:void(0)"><h1>the Modules</h1></a></div>
-		<div id="moduleDescription" class="description"></div>
-		<a id="mdDownload" href="#"></a>
-		<ul id="modulePanelItemTemplate" style="display: none;">
-			<li>
-				<div class="stayLeft"><!-- property --></div>
-				<div class="stayLeft"><!-- 描述 --></div>
-			</li>	
-		</ul>
+		<div id="moduleDescription" class="description">
+			<%
+				if (success) {
+					for (var i=0; i<description2.length; i++) {
+						var item = description2[i];
+			%>
+			<div><%= item %></div>
+			<%
+					};
+				};
+			%>
+		</div>
+		<a id="mdDownload" href="<%= success ? download2 : '#' %>"><%= success ? file2 : "" %></a>
 		<ul id="modulePanel">
-			<!-- 
-			<li>
-				<div>property</div>
-				<div>描述</div>
-			</li>
-			 -->
+			<% 
+				if (success) { 
+					for (var i=0; i<modules.length; i++) {
+						var item = modules[i].split("\t");
+			%>
+			<li key="<%= item[0] %>">
+				<div class="stayLeft"><%= item[0] %></div>
+				<div class="stayLeft"><%= item[1] %></div>
+			</li>			
+			<%
+					};
+				};
+			%>
 		</ul>
 	</div>
 	<%- include footer.ejs %>
 	<%- include childWindow.ejs %>
 
 	<script type="text/javascript">
-		var app = $M.alloc("milk.helper.App");
-
-		// 数据绑定
-		$(function() {
-			$("#jqMethodPanel").property("items", null, { build: function(ctx) {
-				// var li = document.createElement("li");
-				// li.innerHTML = ctx.MethodName;
-				// return li;
-				var view = $("#jqMethodPanelItemTemplate>li").clone();
-				
-				view.property("key").linkTo(ctx, "Key");
-
-				$("div:eq(0)", view).property("innerHTML").linkTo(ctx, "MethodName");
-				$("div:eq(1)", view).property("innerHTML").linkTo(ctx, "Desc");
-
-				ctx.notify();
-
-				return view.get(0);
-			}}).linkTo(app, "JQueryMethods");
-
-			$("#modulePanel").property("items", null, { build: function(ctx) {
-				var view = $("#modulePanelItemTemplate>li").clone();
-
-				view.property("key").linkTo(ctx, "Key");
-				
-				$("div:eq(0)", view).property("innerHTML").linkTo(ctx, "ModuleName");
-				$("div:eq(1)", view).property("innerHTML").linkTo(ctx, "Desc");
-
-				ctx.notify();
-
-				return view.get(0);
-			}}).linkTo(app, "Modules");
-
-			$("#jqDescription").property("innerHTML").linkTo(app, "JqDescription");
-			$("#moduleDescription").property("innerHTML").linkTo(app, "MdDescription");
-
-			$("#jqDownload").property("href").linkTo(app, "JqDownloadUrl");
-			$("#jqDownload").property("innerHTML").linkTo(app, "JqFileName");
-
-			$("#mdDownload").property("href").linkTo(app, "MdDownloadUrl");
-			$("#mdDownload").property("innerHTML").linkTo(app, "MdFileName");
-
-			app.load("/document/query");
-		});
-
 		// 事件绑定
 		$(function() {
 			$("#jqMethodPanel, #modulePanel").delegate("li", "click", function() {
-				var vm = $(this).subject();
-				if (vm) {
-					// vm is a milk.helper.JQueryMethod object or milk.helper.Module object
-					// and they all have "Key" property
-					childWindow.open();
-					childWindow.setData({title: vm.Key});
-				};
+				var key = $(this).attr("key");
+				childWindow.open();
+				childWindow.setData({title: key});
 			});
 		});
 	</script>

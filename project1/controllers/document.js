@@ -3,12 +3,34 @@ var readLines = require('n-readlines');
 var express = require('express');
 var router = express.Router();
 
-var config = {
+/*var config = {
 	title: "Milk在线帮助文档"
-};
+};*/
 
 var indexHandler = function(req, res) {
-	res.render("index", { title: config.title });
+	var docObject = {
+		success: true,
+		error: "",
+		title: "",
+		file: "",
+		download: "",
+		description: [],
+		api: [],
+		title2: "",
+		file2: "",
+		download2: "",
+		description2: [],
+		modules: []
+	};
+
+	try {
+		readToObject(docObject, "doc/document.txt");
+	} catch(e) {
+		docObject.success = false;
+		docObject.error = e.message;
+	};
+	
+	res.render("index", docObject);
 };
 
 router.get("/", indexHandler);
@@ -47,11 +69,12 @@ router.get("/query/:key", function(req, res) {
 		success: true,
 		error: "",
 		title: "",
-		description: "",
+		description: [],
 		dependencies: [],
 		returnType: "",
 		parameters: [],
-		example:[]
+		example:[],
+		others: []
 	};
 
 	try {
@@ -71,12 +94,12 @@ router.get("/query", function(req, res) {
 		title: "",
 		file: "",
 		download: "",
-		description: "",
+		description: [],
 		api: [],
 		title2: "",
 		file2: "",
 		download2: "",
-		description2: "",
+		description2: [],
 		modules: []
 	};
 

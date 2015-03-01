@@ -1,10 +1,11 @@
+<script type="text/javascript" src="/staticResources/js/VM/clientApp.js"></script>
 <div id="child_window_cover_layer" style="display: none;">
 </div>
 <div class="child_window_content_layer" id="child_window_content_layer" style="display: none;">
 	<div>
 		<div class="headerPart">
 			<div id="title" class="stayLeft"></div>
-			<div id="lnkClose" class="stayRight"><a href="javascript:void(0)">x</a></div>
+			<div id="lnkClose" class="stayRight"><a href="javascript:void(0)">X</a></div>
 			<div style="clear: both;"></div>
 		</div>
 		<div class="contentPart">
@@ -13,13 +14,14 @@
 					<li><a href="#desc">概述</a></li>
 					<li><a href="#params">参数列表</a></li>
 					<li><a href="#example">示例</a></li>
+					<li><a href="#others">Mark</a></li>
 				</ul>
 			</div>
 			<div id="content" class="stayLeft">
 				<div><a name="desc" href="javascript:void(0)">概述</a></div>
 				<div id="description"></div>
 				<div><a href="javascript:void(0)">依赖</a></div>
-				<div id="dependencies"></div>
+				<div id="dependencies" class="dependenciesArea"></div>
 				<div><a href="javascript:void(0)">返回</a></div>
 				<div id="returnType"></div>
 				<div><a name="params" href="javascript:void(0)">参数列表</a></div>
@@ -33,7 +35,11 @@
 				</div>
 				<div id="parameters"></div>
 				<div><a name="example" href="javascript:void(0)">示例</a></div>
-				<code id="example"></code>
+				<div class="codeArea">
+					<code id="example"></code>
+				</div>
+				<div><a name="others" href="javascript:void(0)">Mark</a></div>
+				<div id="others"></div>
 			</div>
 			<div style="clear: both;"></div>
 		</div>
@@ -50,11 +56,18 @@
 			.property("innerHTML").linkTo(childWindowEntity, "Title");
 
 		$("#description", "#child_window_content_layer")
-			.property("innerHTML").linkTo(childWindowEntity, "Desc");
+			.property("items", null, {build: function(str) {
+				var view = $("<div>").text(str);
+				return view.get(0);
+			}}).linkTo(childWindowEntity, "Desc");
 
 		$("#dependencies", "#child_window_content_layer")
 			.property("items", null, {build: function(str) {
 				return $("<div>").text(str).get(0);
+			}}).linkTo(childWindowEntity, "Dependencies");
+		$("#dependencies", "#child_window_content_layer")
+			.property("style.display", {convert: function(value) {
+				return value.length ? "" : "none";
 			}}).linkTo(childWindowEntity, "Dependencies");
 
 		$("#returnType", "#child_window_content_layer")
@@ -72,11 +85,22 @@
 				return view.get(0);
 			}}).linkTo(childWindowEntity, "Parameters");
 
+		$(".codeArea", "#child_window_content_layer")
+			.property("style.display", {convert: function(value) {
+				return value.length ? "" : "none";
+			}}).linkTo(childWindowEntity, "Example");
+
 		$("#example", "#child_window_content_layer")
 			.property("items", null, {build: function(str) {
 				var view = $("<pre>").text(str);
 				return view.get(0);
 			}}).linkTo(childWindowEntity, "Example");
+
+		$("#others", "#child_window_content_layer")
+			.property("items", null, {build: function(str) {
+				var view = $("<div>").text(str);
+				return view.get(0);
+			}}).linkTo(childWindowEntity, "Others");
 
 		var cover = document.getElementById("child_window_cover_layer");
 		var content = document.getElementById("child_window_content_layer");

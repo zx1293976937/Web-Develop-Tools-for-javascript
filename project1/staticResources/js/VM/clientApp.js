@@ -1,90 +1,6 @@
 /*
  */
 
-$M.define("milk.helper.JQueryMethod", ["milk.linker.Entity"], function() {
-	var self = this;
-
-	self.declareProperty("MethodName")
-		.declareProperty("Desc")
-		.declareProperty("Key");
-
-	return self;
-});
-
-$M.define("milk.helper.Module", ["milk.linker.Entity"], function() {
-	var self = this;
-
-	self.declareProperty("ModuleName")
-		.declareProperty("Desc")
-		.declareProperty("Key");
-
-	return self;
-});
-
-$M.define("milk.helper.App", ["milk.linker.Entity"], function() {
-	var self = this;
-
-	self.declareProperty("JQueryMethods")
-		.declareProperty("Modules")
-		.declareProperty("JqDescription")
-		.declareProperty("MdDescription")
-		.declareProperty("JqDownloadUrl")
-		.declareProperty("JqFileName")
-		.declareProperty("MdDownloadUrl")
-		.declareProperty("MdFileName");
-
-	self.load = function(dataUrl) {
-		$.getJSON(dataUrl, function(res) {
-			if (res && res.success) {
-
-				self.JqDescription = res.description;
-				self.MdDescription = res.description2;
-
-				self.JqDownloadUrl = res.download;
-				self.JqFileName = res.file;
-
-				self.MdDownloadUrl = res.download2;
-				self.MdFileName = res.file2;
-
-				var array = [];
-				for (var i=0;i<res.api.length;i++) {
-					var itemData = res.api[i].split("\t");
-					if (itemData.length >= 2) {
-						var itemObject = $M.alloc("milk.helper.JQueryMethod");
-						itemObject.MethodName = itemData[0];
-						itemObject.Desc = itemData[1];
-
-						itemObject.Key = itemData[0];
-
-						array.push(itemObject);
-					};
-				};
-				self.JQueryMethods = array;
-
-				array = [];
-				for (var i = 0; i < res.modules.length; i++) {
-					var itemData = res.modules[i].split("\t");
-					if (itemData.length >= 2) {
-						var itemObject = $M.alloc("milk.helper.Module");
-						itemObject.ModuleName = itemData[0];
-						itemObject.Desc = itemData[1];
-
-						itemObject.Key = itemData[0];
-
-						array.push(itemObject);
-					};
-				};
-				self.Modules = array;
-			} else {
-				alert(res.error);
-			};
-		});
-		return self;
-	};
-
-	return self;
-});
-
 $M.define("milk.helper.Parameter", ["milk.linker.Entity"], function() {
 	var self = this;
 
@@ -103,7 +19,8 @@ $M.define("milk.helper.ChildWindow", ["milk.linker.Entity"], function() {
 		.declareProperty("Dependencies")
 		.declareProperty("ReturnType")
 		.declareProperty("Parameters")
-		.declareProperty("Example");
+		.declareProperty("Example")
+		.declareProperty("Others");
 
 	self.loadMore = function(dataUrl) {
 		self.clear();
@@ -130,6 +47,7 @@ $M.define("milk.helper.ChildWindow", ["milk.linker.Entity"], function() {
 				};
 				self.Parameters = array;
 				self.Example = res.example;
+				self.Others = res.others;
 			} else {
 				// res.error
 
@@ -143,11 +61,12 @@ $M.define("milk.helper.ChildWindow", ["milk.linker.Entity"], function() {
 
 	self.clear = function() {
 		// self.Title = "";
-		self.Desc = "";
+		self.Desc = [];
 		self.Dependencies = [];
 		self.ReturnType = "";
 		self.Parameters = [];
 		self.Example = [];
+		self.Others = [];
 
 		return self;
 	};
