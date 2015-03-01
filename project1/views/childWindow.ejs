@@ -72,6 +72,10 @@
 
 		$("#returnType", "#child_window_content_layer")
 			.property("innerHTML").linkTo(childWindowEntity, "ReturnType");
+		$("#returnType", "#child_window_content_layer")
+			.property("style.display", {convert: function(value) {
+				return value.length ? "" : "none";
+			}}).linkTo(childWindowEntity, "ReturnType");
 
 		$("#parameters", "#child_window_content_layer")
 			.property("items", null, {build: function(ctx) {
@@ -83,6 +87,10 @@
 				ctx.notify();
 
 				return view.get(0);
+			}}).linkTo(childWindowEntity, "Parameters");
+		$("#parameters", "#child_window_content_layer")
+			.property("style.display", {convert: function(value) {
+				return value.length ? "" : "none";
 			}}).linkTo(childWindowEntity, "Parameters");
 
 		$(".codeArea", "#child_window_content_layer")
