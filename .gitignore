@@ -222,3 +222,4 @@ pip-log.txt
 # Import node modules
 node_modules/
 .sublime-workspace
+*.sublime-workspace
