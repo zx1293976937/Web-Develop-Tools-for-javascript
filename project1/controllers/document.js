@@ -50,7 +50,7 @@ var readToObject = function(jsonObject, file) {
 			continue;
 
 		line = line.toString()
-			.replace("\r", "").replace("\n", "").replace(" ", "");
+			.replace("\r", "").replace("\n", "");//.replace(" ", "");
 
 		if (line.indexOf("[") == 0) {
 			key = line.replace("[", "").replace("]", "");

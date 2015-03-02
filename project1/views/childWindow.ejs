@@ -36,7 +36,9 @@
 				<div id="parameters" class="dependenciesArea"></div>
 				<div><a name="example" href="javascript:void(0)">示例</a></div>
 				<div class="codeArea">
-					<code id="example"></code>
+					<code id="example">
+						<pre></pre>
+					</code>
 				</div>
 				<div><a name="others" href="javascript:void(0)">Mark</a></div>
 				<div id="others" class="dependenciesArea"></div>
@@ -51,6 +53,7 @@
 <script>
 	var childWindow = (function() {
 		var childWindowEntity = $M.alloc("milk.helper.ChildWindow");
+		var code = $M.alloc("milk.helper.Code");
 
 		$("#title", "#child_window_content_layer")
 			.property("innerHTML").linkTo(childWindowEntity, "Title");
@@ -98,9 +101,10 @@
 				return value.length ? "" : "none";
 			}}).linkTo(childWindowEntity, "Example");
 
-		$("#example", "#child_window_content_layer")
+		$("#example>pre", "#child_window_content_layer")
 			.property("items", null, {build: function(str) {
-				var view = $("<pre>").text(str);
+				str = code.render(str);
+				var view = $("<p>").html(str);
 				return view.get(0);
 			}}).linkTo(childWindowEntity, "Example");
 

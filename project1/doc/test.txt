@@ -1,0 +1,19 @@
+[title]
+test
+
+[example]
+<!-- 示例一 -->
+<input type="text" id="txt" />
+<div id="panel">Hello World</div>
+<div id="wave"><p></p></div>
+<p>
+	<span>
+		yo ho!
+	</span>
+</p>
+<script>
+	// summary
+	/* summary */
+	var i = 9;
+	$M.alloc("class");
+</script>

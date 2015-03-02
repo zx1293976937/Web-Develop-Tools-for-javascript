@@ -50,8 +50,7 @@ $M.define("milk.helper.ChildWindow", ["milk.linker.Entity"], function() {
 				self.Others = res.others;
 			} else {
 				// res.error
-
-				// alert("帮助文档仍在编辑中, 请等待.");
+				// alert(res.error);
 				self.Desc = ["帮助文档仍在编辑中, 请等待."];
 			};
 		});
@@ -72,4 +71,60 @@ $M.define("milk.helper.ChildWindow", ["milk.linker.Entity"], function() {
 	};
 
 	return this;
+});
+
+$M.define("milk.helper.Code", [], function() {
+	var self = this;
+
+	var symbolMap = {
+		"=": " = ",
+		"\\(": " ( ",
+		"\\)": " ) ",
+		"<": " &lt; ",
+		">": " &gt; ",
+		"\b/\b": " / "
+	};
+
+	var summaryMap = {
+		"//": 1,
+		"/*": 1,
+		"*/": 1,
+		"!--": 1,
+		"--": 1
+	}
+
+	function prepra(line) {
+		// console.log(line);
+		for (var key in symbolMap) {
+			line = line.replace(new RegExp(key, "igm"), symbolMap[key]);
+		};
+		// console.log(line);
+
+		return line;
+	};
+
+	function highlight(line) {
+		var newLine = Array("");
+
+		var arr = line.split(' ');
+		for (var i = 0; i < arr.length; i++) {
+			var item = arr[i];
+
+			if (item == "")
+				continue;
+
+			newLine.push(item+" ");
+		};
+
+		return newLine.join("");
+	};
+
+	self.render = function(line) {
+		line = prepra(line);
+		line = highlight(line);
+
+		return line;
+	};
+
+	return self;
 });
