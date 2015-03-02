@@ -14,16 +14,18 @@ jQuery
 
 [parameters]
 String	regexp	正则表达式
-String	errMsg	验证不通过时的通知消息
 
 [example]
 <!--  示例一  -->
 <input  type="text"  id="txt"  />
 <script>
-	$("#txt").regExp("\\d",  "只能输入数字")
+	$("#txt").regExp("\\d")
 		.onError(function(sender,  err)  {
 			alert(err);
-			//  在输入非数字时获得提示:  只能输入数字
+			//  在输入非数字时获得提示
 		});
 	//  注意!  需要提供onError处理函数才能获得通知消息
 </script>
+
+[others]
+更多信息查看milk.validater.ElementObject类

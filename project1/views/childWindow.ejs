@@ -50,6 +50,8 @@
 
 <script>
 	var childWindow = (function() {
+
+		var codeDisplayer = $M.alloc("milk.helper.CodeDisplayer");
 		var childWindowEntity = $M.alloc("milk.helper.ChildWindow");
 
 		$("#title", "#child_window_content_layer")
@@ -99,8 +101,10 @@
 			}}).linkTo(childWindowEntity, "Example");
 
 		$("#example", "#child_window_content_layer")
-			.property("items", null, {build: function(str) {
-				var view = $("<pre>").text(str);
+			.property("items", {convert:function(value) {
+				return codeDisplayer.box(value);
+			}}, {build: function(str) {
+				var view = $("<pre>").html(str);
 				return view.get(0);
 			}}).linkTo(childWindowEntity, "Example");
 

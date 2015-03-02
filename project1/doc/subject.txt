@@ -27,3 +27,6 @@ milk.linker.Entity  或  milk.linker.Entity的派生类
 	//  output:
 	//  Hello  World
 </script>
+
+[others]
+更多信息查看milk对象的getObject函数. 在milk.base.js文件中.

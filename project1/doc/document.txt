@@ -2,7 +2,8 @@
 jquery.milk
 
 [description]
-与jquery(version 1.11.1+)联合使用的快捷函数库
+与jquery(version 1.11.1+)联合使用的快捷函数库. 
+需要先引入jquery库(jquery.js)和milk库(milk.base.js)
 
 [file]
 下载 jquery.milk-1.0.0.zip

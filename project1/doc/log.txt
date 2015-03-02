@@ -1,0 +1,29 @@
+[title]
+log
+
+[description]
+访问页面时, 在地址栏的地址后面加上?debug=yes. 例如: http://localhost:3000/document?debug=yes
+即可在页面上看到一个HTML形式的可拖动控制台. 使用log函数可将内容写入其中.
+建议仅在开发时使用, 产品上线后建议不再在地址中加入debug=yes.
+
+[dependencies]
+jquery.milk-1.0.0.js
+milk.console-1.0.0.js
+
+[returnType]
+Boolean
+
+[parameters]
+String	message	消息内容
+String	tagName	消息标签(可选)
+String	color	消息颜色(可选)
+
+[example]
+<!--  示例一  -->
+<script>
+	$.log("Hello World");
+	// 控制台将打印Hello World
+</script>
+
+[others]
+更多信息查看milk.util.Console类
