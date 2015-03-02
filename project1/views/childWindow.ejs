@@ -102,7 +102,7 @@
 
 		$("#example", "#child_window_content_layer")
 			.property("items", {convert:function(value) {
-				return codeDisplayer.box(value);
+				return codeDisplayer.render(value);
 			}}, {build: function(str) {
 				var view = $("<pre>").html(str);
 				return view.get(0);

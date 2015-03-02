@@ -114,7 +114,7 @@ $M.define("milk.helper.CodeDisplayer", [], function() {
 		return str.replace(/</igm, "&lt;").replace(/>/igm, "&gt;");
 	};
 
-	self.box = function(str) {
+	self.render = function(str) {
 		str = self.prepra(str);
 		str = self.highlight(str);
 
