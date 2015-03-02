@@ -93,7 +93,7 @@ h1 {
 	background: #252525;
 	padding: 5px 0;
 	border-radius: 5px;
-	box-shadow: 1px 1px 20px #6F0300;
+	box-shadow: 0px 0px 20px #000 inset;
 }
 
 .dependenciesArea {
@@ -101,7 +101,7 @@ h1 {
 	background: #CF0000;
 	padding: 10px 15px;
 	border-radius: 5px;
-	box-shadow: 1px 1px 20px #6F0300;
+	box-shadow: 0px 0px 20px #6F0300 inset;
 }
 
 #child_window_content_layer #content code>pre {
