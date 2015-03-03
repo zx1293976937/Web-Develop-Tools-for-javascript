@@ -11,6 +11,7 @@ jquery.milk
 /staticResources/js/milk/jquery.milk-1.0.0.zip
 
 [api]
+test	for test
 property	从DOM对象的属性列表中选取需要绑定数据的属性对象
 subject 	获得视图的视图模型对象
 smartMouse	使DOM对象可以捕获鼠标手势
