@@ -23,6 +23,7 @@
 	"dependencies": {
 		"express": "4.11.x",
 		"ejs": "2.3.x",
-		"n-readlines": "0.2.x"
+		"n-readlines": "0.2.x",
+		"highlight": "0.2.x"
 	}
 }

@@ -91,9 +91,9 @@ h1 {
 .codeArea {
 	border: solid 1px #000;
 	background: #252525;
-	padding: 5px 0;
 	border-radius: 5px;
 	box-shadow: 0px 0px 20px #000 inset;
+	padding: 10px 10px;
 }
 
 .dependenciesArea {

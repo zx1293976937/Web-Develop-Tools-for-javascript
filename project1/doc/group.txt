@@ -1,0 +1,40 @@
+[title]
+group
+
+[description]
+为对应的milk.validater.ElementObject对象分组, 以便按组进行验证
+
+[dependencies]
+jquery.milk-1.0.0.js
+milk.validater-1.0.0.js
+
+[returnType]
+jQuery
+
+[parameters]
+String	formName 	组名称, 不能与其他组重复
+
+[example]
+<!-- 示例一 -->
+<input type="text" id="txt" />
+<input type="text" id="txt2" />
+<script>
+	$("#txt").isRequired().group("form1")
+		.onError(function(sender, err) {
+			alert(err);
+			// txt元素的value属性值与confirm元素的value属性值不相同是获得提示
+		});
+	// 注意! 需要提供onError处理函数才能获得通知消息
+	$("#txt2").max(5).group("form2")
+		.onError(function(sender, err) {
+			alert(err);
+		});
+
+	// 启动form1组的验证, form2不会被验证
+	if ($.validate("form1")) {
+		alert("验证通过");
+	};
+</script>
+
+[others]
+更多信息查看milk.validater.ElementObject类与milk.validater.FormObject类

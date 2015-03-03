@@ -36,7 +36,9 @@
 				<div id="parameters" class="dependenciesArea"></div>
 				<div><a name="example" href="javascript:void(0)">示例</a></div>
 				<div class="codeArea">
-					<code id="example"></code>
+					<pre id="example">
+						<!-- <code></code> -->
+					</pre>
 				</div>
 				<div><a name="others" href="javascript:void(0)">Mark</a></div>
 				<div id="others" class="dependenciesArea"></div>
@@ -99,10 +101,8 @@
 			}}).linkTo(childWindowEntity, "Example");
 
 		$("#example", "#child_window_content_layer")
-			.property("items", {convert:function(value) {
-				return codeDisplayer.render(value);
-			}}, {build: function(str) {
-				var view = $("<pre>").html(str);
+			.property("items", null, {build: function(str) {
+				var view = $("<code>").html(str);
 				return view.get(0);
 			}}).linkTo(childWindowEntity, "Example");
 

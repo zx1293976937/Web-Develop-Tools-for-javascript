@@ -1,4 +1,5 @@
 var readLines = require('n-readlines');
+var highlight = require("highlight").Highlight;
 
 var express = require('express');
 var router = express.Router();
@@ -79,6 +80,11 @@ router.get("/query/:key", function(req, res) {
 
 	try {
 		readToObject(itemObject, "doc/" + req.params.key + ".txt");
+
+		for (var i = 0; i < itemObject.example.length; i++) {
+			itemObject.example[i] = highlight(itemObject.example[i]) + "\r\n";
+			console.log(itemObject.example[i]);
+		};
 	} catch(e) {
 		itemObject.success = false;
 		itemObject.error = e.message;

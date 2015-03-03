@@ -1,7 +1,6 @@
-pre>p {
-	font-size: 12px;
-}
-
+/* 
+ */
+ 
 .htmlTag {
 	color: #FF3366;
 }
@@ -14,6 +13,10 @@ pre>p {
 
 }
 
-.summary {
+.keyword {
+	color: #FF3366;
+}
+
+.comment {
 	color: #009900;
 }
