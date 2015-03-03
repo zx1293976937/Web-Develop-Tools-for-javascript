@@ -14,19 +14,16 @@ milk.validater-1.0.0.js
 jQuery
 
 [parameters]
-不需要任何参数		
+String	errMsg	验证不通过时的通知消息
 
 [example]
 <!--  示例一  -->
 <input  type="text"  id="txt"  />
 <script>
-	$("#txt").IP()
+	$("#txt").IP("IP地址不合法")
 		.onError(function(sender,  err)  {
 			alert(err);
-			//  在输入非法IP时获得提示
+			//  在输入非法IP时获得提示:  IP地址不合法
 		});
 	//  注意!  需要提供onError处理函数才能获得通知消息
 </script>
-
-[others]
-更多信息查看milk.validater.ElementObject类

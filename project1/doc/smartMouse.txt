@@ -51,5 +51,3 @@ onBottomToTop	从下到上
 onWheel			滑动滚轮
 onMove			朝任意方向滑动
 onClickUp		点击一下,  在释放时触发
-/
-更多信息查看milk.util.Mouse类

@@ -13,19 +13,16 @@ milk.validater-1.0.0.js
 jQuery
 
 [parameters]
-不需要任何参数		
+String	errMsg	验证不通过时的通知消息
 
 [example]
 <!--  示例一  -->
 <input  type="text"  id="txt"  />
 <script>
-	$("#txt").isRequired()
+	$("#txt").isRequired("文本内容不能为空")
 		.onError(function(sender,  err)  {
 			alert(err);
-			//  在没有输入任何字符时获得提示
+			//  在没有输入任何字符时获得提示:  文本内容不能为空
 		});
 	//  注意!  需要提供onError处理函数才能获得通知消息
 </script>
-
-[others]
-更多信息查看milk.validater.ElementObject类

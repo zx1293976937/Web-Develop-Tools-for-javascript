@@ -28,6 +28,3 @@ JSON	creater  	数据转换器
 	//  result:
 	//  ID为userName的DIV的内容将被改变为"Hello  World"
 </script>
-
-[others]
-更多信息查看milk.linker.DOMAttribute类
