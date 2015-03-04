@@ -23,6 +23,7 @@ app.all("/*", function(req, res, next) {
 
 // 挂载 /document 路由
 app.use("/document", doc);
+app.use("/", doc);
 
 /*app.get("/", function(req, res) {
 	// 使用视图引擎

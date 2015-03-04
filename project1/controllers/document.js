@@ -13,15 +13,12 @@ var indexHandler = function(req, res) {
 		success: true,
 		error: "",
 		title: "",
-		file: "",
-		download: "",
 		description: [],
 		api: [],
 		title2: "",
-		file2: "",
-		download2: "",
 		description2: [],
-		modules: []
+		modules: [],
+		download: ""
 	};
 
 	try {

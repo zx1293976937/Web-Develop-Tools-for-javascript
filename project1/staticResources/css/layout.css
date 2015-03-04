@@ -56,15 +56,16 @@ a:active  {color:blue;}
 
 .headPanel .menu {
 	cursor: pointer;
-	width: 100px;
 	text-align: center;
 }
 
-.headPanel .menuSplit {
-	width: 5px;
-	text-align: center;
-	margin-left: 5px;
-	margin-right: 5px;
+.headPanel .menu a {
+	border-right: solid 1px;
+	padding: 0 10px;
+}
+
+.headPanel .lastMenu a {
+	border: none;
 }
 
 .headPanel .menu a {

@@ -5,12 +5,6 @@ jquery.milk
 与jquery(version 1.11.1+)联合使用的快捷函数库. 
 需要先引入jquery库(jquery.js)和milk库(milk.base.js)
 
-[file]
-下载 jquery.milk-1.0.0.zip
-
-[download]
-/staticResources/js/milk/jquery.milk-1.0.0.zip
-
 [api]
 property	从DOM对象的属性列表中选取需要绑定数据的属性对象
 subject 	获得视图的视图模型对象
@@ -36,12 +30,6 @@ Milk模块
 [description2]
 milk中的各个模块, 适用于基于Milk的高级编程
 
-[file2]
-下载 milk.zip
-
-[download2]
-/staticResources/js/milk/milk.zip
-
 [modules]
 milk 	milk全局对象
 milk.Object 	milk基础类
@@ -56,3 +44,6 @@ milk.util.Mouse 	鼠标手势类
 milk.storage.LocalDataManager 	本地存储类
 milk.validater.ElementObject 	表单元素类
 milk.validater.FormObject 	表单类
+
+[download]
+/staticResources/download/milk.zip
