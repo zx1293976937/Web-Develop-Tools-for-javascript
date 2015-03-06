@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../js/milk/milk.base-1.0.0.js"></script>
+	<script type="text/javascript" src="../js/milk/milk.linker-1.0.0.js"></script>
+	<script type="text/javascript" src="../js/milk/jquery.milk-1.0.0.js"></script>
+	<title>魔方</title>
+	<style type="text/css">
+		.arena {
+			width: 620px; height: 620px; margin: 0 auto;
+
+			-webkit-perspective: 800px;
+			perspective: 800px;
+		}
+		.container {
+			height: 100%;
+			width: 100%;
+
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+
+			position: relative;
+		}
+
+		.levelOne {
+			height: 100%;
+			width: 100%;
+
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+		}
+
+		.levelTwo {
+			position: absolute;
+			height: 120px;
+			width: 120px;
+			top: 250px;
+			left: 250px;
+
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+		}
+
+		.levelThree {
+			position: absolute;
+			height: 120px;
+			width: 120px;
+			top: 0;
+			left: 0;
+			opacity: 0.2;
+			box-shadow: 0px 0px 20px #000; 
+
+			background: #000;
+		}
+
+				#ctrl  {
+			width: 720px; margin: 0 auto; position:fixed; bottom: 20px; left: 20px; right: 20px;
+			z-index: 9999;
+		}
+
+		#ctrl > div {
+			position: relative;
+			width: 100%;
+			padding: 8px 0;
+			margin: 5px 0;
+
+		}
+
+
+
+		#ctrl > div > #ff {
+			top: 8px; left: -5px;
+			position: absolute;
+			width: 10px;
+			height: 16px;
+			border-radius: 5px;
+			border: solid 1px #000;
+			background: #FFF;
+		}
+	</style>
+</head>
+<body>
+	<div class="arena">
+		<div id="panel" class="container">
+			<div id="magicSquare" class="levelOne">
+				<div class="levelTwo" style="transform: translate3d(-120px, -120px, 121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(0, -120px, 121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(120px, -120px, 121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(-120px, 0, 121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(0, 0, 121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(120px, 0, 121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(-120px, 120px, 121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(0, 120px, 121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(120px, 120px, 121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+
+				<div class="levelTwo" style="transform: translate3d(-120px, -120px, 0)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(0, -120px, 0)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(120px, -120px, 0)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(-120px, 0, 0)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(0, 0, 0)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(120px, 0, 0)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(-120px, 120px, 0)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(0, 120px, 0)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(120px, 120px, 0)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+
+				<div class="levelTwo" style="transform: translate3d(-120px, -120px, -121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(0, -120px, -121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(120px, -120px, -121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(-120px, 0, -121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(0, 0, -121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(120px, 0, -121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(-120px, 120px, -121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(0, 120px, -121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+				<div class="levelTwo" style="transform: translate3d(120px, 120px, -121px)">
+					<div class="levelThree" style="transform: rotateY(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(-90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateX(90deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(-180deg) translateZ(61px)"></div>
+					<div class="levelThree" style="transform: rotateY(0deg) translateZ(61px)"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="ctrl" onselectstart="return false">
+		<div id="C1">
+			<hr/>
+			<div id="ff"></div>
+			<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+		</div>
+		<div id="C2">
+			<hr/>
+			<div id="ff"></div>
+			<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+		</div>
+		<div id="C3">
+			<hr/>
+			<div id="ff"></div>
+			<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$M.define("magicSquare", ["milk.linker.Entity"], function() {
+			var self = this;
+
+			// 属性列表
+			var properties = self.getProperties();
+
+			self.init = function() {
+				self.declareProperty("X", 0);
+				self.declareProperty("Y", 0);
+				self.declareProperty("Z", 0);
+				self.declareProperty("FinalStyle")
+
+				return self;
+			};
+
+			self.setX = function(v) {
+				var x = properties["X"].value = v;
+				var y = properties["Y"].value;
+				var z = properties["Z"].value;
+
+				properties["FinalStyle"].value = "rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
+				self.onPropertyChanged(properties["FinalStyle"].name);
+
+				return self;
+			};
+			self.setY = function(v) {
+				var x = properties["X"].value;
+				var y = properties["Y"].value = v;
+				var z = properties["Z"].value;
+
+				properties["FinalStyle"].value = "rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
+				self.onPropertyChanged(properties["FinalStyle"].name);
+
+				return self;
+			};
+			self.setZ = function(v) {
+				var x = properties["X"].value;
+				var y = properties["Y"].value;
+				var z = properties["Z"].value = v;
+
+				properties["FinalStyle"].value = "rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
+				self.onPropertyChanged(properties["FinalStyle"].name);
+
+				return self;
+			};
+
+			return self;
+		});
+
+		var vm = $M.alloc("magicSquare");
+		$("#magicSquare").property("style.transform").linkTo(vm, "FinalStyle");
+
+		$("#C1,#C2,#C3").mousedown(function() {
+			$(this).attr("moving", 1);
+		}).mousemove(function(event) {
+			if ($(this).attr("moving") == "1") {
+				var v = event.offsetX - 5;
+				$("#ff", $(this)).css("left", event.offsetX-5);
+
+				v = v / 2;
+				v = v < 0 ? 0 : v;
+				v = v > 360 ? 360 : v;
+
+				if (this.id == "C1") 
+					vm.X = v;
+				else if (this.id == "C2") 
+					vm.Y = v;
+				else if(this.id == "C3")
+					vm.Z = v;
+			};
+		}).mouseup(function() {
+			$(this).attr("moving", 0);
+		}).mouseout(function() {
+			$(this).attr("moving", 0);
+		});
+	</script>
+</body>
+</html>
