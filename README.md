@@ -11,7 +11,7 @@ nodejs
 Window 7 / Ubuntu 14 / Mac OS 10.9
 
 #启动
-1. 在命令行跳转到应用根目录
+1. 在命令行跳转到应用根目录, 例如: cd F:/workspace/Web-Develop-Tools-for-javascript/documentOnLine/
 2. 执行npm install 命令
 3. 执行npm start 命令
 4. 在浏览器地址栏输入 http://localhost:3000/ 访问
