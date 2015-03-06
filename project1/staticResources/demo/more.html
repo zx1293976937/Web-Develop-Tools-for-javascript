@@ -11,12 +11,14 @@
 		.arena {
 			width: 620px; height: 620px; margin: 0 auto;
 
-			-webkit-perspective: 800px;
-			perspective: 800px;
+			
 		}
 		.container {
 			height: 100%;
 			width: 100%;
+
+			-webkit-perspective: 800px;
+			perspective: 800px;
 
 			-webkit-transform-style: preserve-3d;
 			transform-style: preserve-3d;
@@ -52,12 +54,15 @@
 			opacity: 0.2;
 			box-shadow: 0px 0px 20px #000; 
 
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+
 			background: #000;
 		}
 
-				#ctrl  {
+		#ctrl  {
 			width: 720px; margin: 0 auto; position:fixed; bottom: 20px; left: 20px; right: 20px;
-			z-index: 9999;
+			z-index: 999;
 		}
 
 		#ctrl > div {
@@ -65,13 +70,10 @@
 			width: 100%;
 			padding: 8px 0;
 			margin: 5px 0;
-
 		}
 
-
-
 		#ctrl > div > #ff {
-			top: 8px; left: -5px;
+			top: 8px; left: 0px;
 			position: absolute;
 			width: 10px;
 			height: 16px;
@@ -81,7 +83,7 @@
 		}
 	</style>
 </head>
-<body>
+<body style="overflow: hidden;">
 	<div class="arena">
 		<div id="panel" class="container">
 			<div id="magicSquare" class="levelOne">
@@ -307,20 +309,20 @@
 		</div>
 	</div>
 	<div id="ctrl" onselectstart="return false">
-		<div id="C1">
+		<div>
 			<hr/>
 			<div id="ff"></div>
-			<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+			<div id="C1" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 900; opacity: 0; background: #FFF;"></div>
 		</div>
-		<div id="C2">
+		<div>
 			<hr/>
 			<div id="ff"></div>
-			<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+			<div id="C2" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 900; opacity: 0; background: #FFF;"></div>
 		</div>
-		<div id="C3">
+		<div>
 			<hr/>
 			<div id="ff"></div>
-			<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+			<div id="C3" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 900; opacity: 0; background: #FFF;"></div>
 		</div>
 	</div>
 
@@ -347,6 +349,7 @@
 
 				properties["FinalStyle"].value = "rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
 				self.onPropertyChanged(properties["FinalStyle"].name);
+				self.onPropertyChanged(properties["X"].name);
 
 				return self;
 			};
@@ -357,6 +360,7 @@
 
 				properties["FinalStyle"].value = "rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
 				self.onPropertyChanged(properties["FinalStyle"].name);
+				self.onPropertyChanged(properties["Y"].name);
 
 				return self;
 			};
@@ -367,6 +371,7 @@
 
 				properties["FinalStyle"].value = "rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
 				self.onPropertyChanged(properties["FinalStyle"].name);
+				self.onPropertyChanged(properties["Z"].name);
 
 				return self;
 			};
@@ -374,15 +379,23 @@
 			return self;
 		});
 
+		var converter = {
+			convert: function(value) { 
+				return (value * 2) + "px"; 
+			}
+		};
+
 		var vm = $M.alloc("magicSquare");
 		$("#magicSquare").property("style.transform").linkTo(vm, "FinalStyle");
+		$("#C1").siblings("#ff").property("style.left", converter).linkTo(vm, "X");
+		$("#C2").siblings("#ff").property("style.left", converter).linkTo(vm, "Y");
+		$("#C3").siblings("#ff").property("style.left", converter).linkTo(vm, "Z");
 
 		$("#C1,#C2,#C3").mousedown(function() {
 			$(this).attr("moving", 1);
 		}).mousemove(function(event) {
 			if ($(this).attr("moving") == "1") {
 				var v = event.offsetX - 5;
-				$("#ff", $(this)).css("left", event.offsetX-5);
 
 				v = v / 2;
 				v = v < 0 ? 0 : v;
