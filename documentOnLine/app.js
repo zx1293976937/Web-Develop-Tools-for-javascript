@@ -7,10 +7,17 @@ var ejsTemplateEngine = require("ejs");
 // 引入 /document 路由
 var doc = require("./controllers/document");
 // 引入express
-var express = require('express');
+var express = require("express");
+// 引入path
+var path = require("path");
+// 引入serve-favicon
+var favicon = require("serve-favicon");
 
 // 创建应用程序
 var app = express();
+
+// 设置icon
+app.use(favicon(path.join(__dirname, "./favicon.ico")));
 
 // 定义静态资源目录(中间件的一种用法)
 app.use("/staticResources", express.static(__dirname + "/staticResources"));
