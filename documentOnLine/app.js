@@ -32,7 +32,7 @@ app.all("/*", function(req, res, next) {
 app.use("/document", doc);
 app.use("/", doc);
 
-/*app.get("/", function(req, res) {
+/*app.use("/", function(req, res) {
 	// 使用视图引擎
 	res.render("index", {title: "My first page", content: "Hello World"});
 });*/
