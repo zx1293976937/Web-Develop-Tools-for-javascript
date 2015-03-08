@@ -1,5 +1,6 @@
 #概述
-这是一个基于nodejs+express(ejs)+jquery+milk的Web单页应用, 用于展示milk框架的各个函数用法
+这是一个基于nodejs+express(ejs)+jquery+milk的Web单页应用, 用于展示milk框架的各个函数用法.
+MILK是一个有助于开发Web App的前端框架, 其核心功能是提供基于MVVM模式的视图与视图模型的数据绑定.
 
 #源代码管理(开源)
 https://github.com/WellerQu/Web-Develop-Tools-for-javascript/
