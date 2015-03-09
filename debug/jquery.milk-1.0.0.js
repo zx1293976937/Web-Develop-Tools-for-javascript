@@ -252,14 +252,10 @@
 
 	//* Console 需要的函数
 	if (window.milk.MILK_CONSOLE_DEFINE) {
+		var consoleObject = window.milk.alloc("milk.util.Console").initWithWelcome();
 		window.jQuery.extend({
-			consoleObject: null,
 			log: function(message, tag, color) {
-				if(!this.consoleObject)
-					this.consoleObject = window.milk.alloc("milk.util.Console").initWithWelcome();
-
-				this.consoleObject.log(message, tag, color);
-
+				consoleObject.log(message, tag, color);
 				return this;
 			}
 		});

@@ -68,7 +68,7 @@
 				var positionData = dataManager.getData(STORAGE_POSITION_KEY);
 				if (positionData) {
 					position = JSON.parse(positionData);
-					dataManager.removeData(STORAGE_POSITION_KEY);
+					// dataManager.removeData(STORAGE_POSITION_KEY);
 				};
 
 				consoleWindow.style.bottom = position.bottom + 'px';
