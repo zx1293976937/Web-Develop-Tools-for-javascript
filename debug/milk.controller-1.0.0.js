@@ -160,23 +160,29 @@
 	window.milk.define("milk.controller.StringController", [], function() {
 		var self = this;
 
-		var _string = null;
+		var _string = [];
 
 		self.initWithString = function(str) {
-			_string = str;
+			_string.push(str);
 			return self;
 		};
 
 		self.toDate = function() {
-	        var arr = _string.split(/[: -]/igm);
+	        var arr = _string.join("").split(/[: -]/igm);
 	        var sdt = new Date(arr[0], parseInt(arr[1]) - 1, arr[2], arr[3], arr[4], arr[5]);
 
 	        return sdt;
 	    };
 
+	    self.append = function(str) {
+	    	_string.push(str);
+
+	    	return self;
+	    };
+
 	    self.format = function(value) {
 	        //取得参数副本
-	        var formatStr = _string;
+	        var formatStr = _string.join("");
 	        var valueObject = value;
 
 	        //定义格式化字符串正则
