@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"di",
+				"digits"
+			],
+			[
 				"va",
 				"value"
 			],
@@ -412,26 +416,10 @@
 	"buffers":
 	[
 		{
-			"file": "/F/Github/Web-Develop-Tools-for-javascript/jquery.valider-1.0.1.js",
+			"file": "/E/1_事业一部/101-TrinityAres-Server/Code/trunk/101-TrinityAres-Server/Web/Config/Basic/OSDSetting.aspx",
 			"settings":
 			{
-				"buffer_size": 5930,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "milk.validater-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 4861,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "test2.html",
-			"settings":
-			{
-				"buffer_size": 1083,
+				"buffer_size": 8037,
 				"line_ending": "Windows"
 			}
 		},
@@ -439,7 +427,7 @@
 			"file": "jquery.milk-1.0.0.js",
 			"settings":
 			{
-				"buffer_size": 3129,
+				"buffer_size": 6030,
 				"line_ending": "Windows"
 			}
 		}
@@ -452,7 +440,11 @@
 		[
 			[
 				"sethtml",
-				"Snippet: html"
+				"Set Syntax: HTML"
+			],
+			[
+				"setasp",
+				"Set Syntax: ASP"
 			],
 			[
 				"setjs",
@@ -607,11 +599,15 @@
 				"Set Syntax: HTML"
 			]
 		],
-		"width": 512.0
+		"width": 472.0
 	},
 	"console":
 	{
-		"height": 153.0
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
 	},
 	"distraction_free":
 	{
@@ -622,8 +618,19 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug"
+	],
 	"file_history":
 	[
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.validater-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/test2.html",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/jquery.milk-1.0.0.js",
+		"/C/Users/Qiuwei/Desktop/OSD.html",
+		"/C/Users/Qiuwei/Desktop/OSD(1).html",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
+		"/F/Github/Web-Develop-Tools-for-javascript/jquery.valider-1.0.1.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.mouse-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.console-1.0.0.js",
@@ -732,115 +739,67 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/F/Github/Web-Develop-Tools-for-javascript/jquery.valider-1.0.1.js",
+					"file": "/E/1_事业一部/101-TrinityAres-Server/Code/trunk/101-TrinityAres-Server/Web/Config/Basic/OSDSetting.aspx",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5930,
+						"buffer_size": 8037,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3454,
-								3454
+								3759,
+								3759
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2622.0,
+						"translation.y": 635.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "milk.validater-1.0.0.js",
-					"settings":
-					{
-						"buffer_size": 4861,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4598,
-								4598
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 171.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "test2.html",
-					"settings":
-					{
-						"buffer_size": 1083,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								165,
-								165
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "jquery.milk-1.0.0.js",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 3129,
+						"buffer_size": 6030,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2509,
-								2509
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"origin_encoding": "UTF-8",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 57.0,
+						"translation.x": -0.0,
+						"translation.y": 1845.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -877,6 +836,11 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "milk.kit.sublime-project",
 	"replace":
 	{
 		"height": 64.0
@@ -899,13 +863,32 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"E:\\1_事业一部\\125-TrinityAres-xServer-融合监管云平台系统\\Code\\trunk\\TrinityAres-xServer\\src\\main\\webapp\\xServer.sublime-project"
+			]
 		],
 		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
 	},
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 197.0,
-	"status_bar_visible": true
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }

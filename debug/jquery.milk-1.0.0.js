@@ -238,7 +238,7 @@
 
 				var formObject = formObjectsMap[formName];
 				if (formObject) {
-					if (onErrorHandler != undefined)
+					if (onErrorHandler !== undefined)
 						formObject.onError(onErrorHandler);
 					
 					return formObject.validate();

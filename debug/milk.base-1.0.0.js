@@ -178,6 +178,9 @@
 
 					self = module.descriptor.call(self);
 
+					if (!self)
+						throw new Error(name + "'s descriptor method need return this pointer.");
+
 					if (self.init) {
 						initializers.push(self.init);
 					};
