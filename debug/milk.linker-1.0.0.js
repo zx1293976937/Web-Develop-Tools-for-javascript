@@ -75,7 +75,7 @@
 	    self.initWithJson = function(jsonObject, map) {
 	    	map = map || {};
 
-	        for (var key in _properties) {
+	        for (var key in properties) {
 	        	var mapKey = map[key];
 
 	        	if (mapKey) 
@@ -93,7 +93,7 @@
 
 	        var jsonObject = {};
 
-	        for (var key in _properties) {
+	        for (var key in properties) {
 	        	var mapKey = map[key];
 	        	var value = self.getValue(key);
 
@@ -263,7 +263,7 @@
 				if (_converter && _converter.convert)
 					v = _converter.convert(value);
 
-				if (_DOMObject[_attribute] == undefined)
+				if (_DOMObject[_attribute] === undefined)
 					_DOMObject.setAttribute(_attribute, v);
 				else
 					_DOMObject[_attribute] = v;
@@ -294,7 +294,7 @@
 					};
 				};
 			} else {
-				if (_DOMObject[_attribute] == undefined)
+				if (_DOMObject[_attribute] !== undefined)
 					v = _DOMObject[_attribute];
 				else
 					v = _DOMObject.getAttribute(_attribute);
