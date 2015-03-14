@@ -419,7 +419,7 @@
 			"file": "/E/1_事业一部/101-TrinityAres-Server/Code/trunk/101-TrinityAres-Server/Web/Config/Basic/OSDSetting.aspx",
 			"settings":
 			{
-				"buffer_size": 8037,
+				"buffer_size": 9307,
 				"line_ending": "Windows"
 			}
 		},
@@ -427,7 +427,15 @@
 			"file": "jquery.milk-1.0.0.js",
 			"settings":
 			{
-				"buffer_size": 6030,
+				"buffer_size": 6031,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "milk.validater-1.0.0.js",
+			"settings":
+			{
+				"buffer_size": 5338,
 				"line_ending": "Windows"
 			}
 		}
@@ -624,12 +632,12 @@
 	],
 	"file_history":
 	[
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
 		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.validater-1.0.0.js",
 		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/test2.html",
 		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/jquery.milk-1.0.0.js",
 		"/C/Users/Qiuwei/Desktop/OSD.html",
 		"/C/Users/Qiuwei/Desktop/OSD(1).html",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/jquery.valider-1.0.1.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
 		"/F/Github/Web-Develop-Tools-for-javascript/debug/milk.mouse-1.0.0.js",
@@ -692,6 +700,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"wheel",
+			"_properties",
+			"_properties ",
+			"properties ",
 			"方法",
 			"txt2",
 			"onWindowLoadHandler",
@@ -739,7 +751,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -748,15 +760,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8037,
+						"buffer_size": 9307,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3759,
-								3759
+								4991,
+								4991
 							]
 						],
 						"settings":
@@ -766,27 +778,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 635.0,
+						"translation.y": 699.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
 					"file": "jquery.milk-1.0.0.js",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6030,
+						"buffer_size": 6031,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								4099,
+								4105
 							]
 						],
 						"settings":
@@ -795,11 +807,41 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
-						"translation.y": 1845.0,
+						"translation.x": 0.0,
+						"translation.y": 900.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "milk.validater-1.0.0.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5338,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2345,
+								2345
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 855.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -807,7 +849,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -843,7 +885,7 @@
 	"project": "milk.kit.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
