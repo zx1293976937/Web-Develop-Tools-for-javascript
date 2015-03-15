@@ -219,6 +219,15 @@
 
 				return this;
 			},
+			onPassed: function(handler) {
+				var arr = this.__regsiter();
+				for (var i = 0; i < arr.length; i++) {
+					var item = arr[i];
+					item.onPassed(handler);
+				};
+
+				return this;
+			},
 			__regsiter: function() {
 				var selector = this.selector;
 				var arr = elementObjectsMap[selector];

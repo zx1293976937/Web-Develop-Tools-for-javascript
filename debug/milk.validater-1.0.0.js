@@ -16,7 +16,8 @@
 	// 常用正则表达式
 	window.milk.readonly("regExps", {
 		IP: "^((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$",
-		digits: "^[1-9]\\d*$"
+		digits: "^[1-9]\\d*$",
+		number: "^\\d+$"
 	});
 
 	// 表单元素类
@@ -27,8 +28,11 @@
 		var _DOMObject = null;
 
 		var _onErrorHandler = [];
+		var _onPassedHandler = [];
 
 		var _error = "";
+
+		var _hasError = false;
 
 		self.config = {
 			isRequired: { on: false, msg: "", innerMsg: "", process: (function(value) { 
@@ -155,8 +159,16 @@
 			return _DOMObject;
 		};
 
+		// 当无法通过验证时
 		self.onError = function(handler) {
 			_onErrorHandler.push(handler);
+
+			return self;
+		};
+
+		// 当可以通过验证时
+		self.onPassed = function(handler) {
+			_onPassedHandler.push(handler);
 
 			return self;
 		};
@@ -168,6 +180,7 @@
 				var item = self.config[key];
 
 				if (item.on !== false && !item.process(value)) {
+					_hasError = true;
 					_error = { msg: item.msg, innerMsg: item.innerMsg };
 
 					for (var i = 0; i < _onErrorHandler.length; i++) {
@@ -179,6 +192,18 @@
 					};
 
 					return false;
+				} else if (_hasError) {
+					_hasError = false;
+
+					for (var i = 0; i < _onPassedHandler.length; i++) {
+						try {
+							_onPassedHandler[i](self);
+						} catch(e) {
+							// do nothing
+						};
+					};
+
+					return true;
 				};
 			};
 
