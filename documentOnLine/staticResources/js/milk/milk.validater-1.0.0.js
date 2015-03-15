@@ -16,7 +16,8 @@
 	// 常用正则表达式
 	window.milk.readonly("regExps", {
 		IP: "^((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$",
-		digits: "^[1-9]\\d*$"
+		digits: "^[1-9]\\d*$",
+		number: "^\\d+$"
 	});
 
 	// 表单元素类
@@ -27,78 +28,86 @@
 		var _DOMObject = null;
 
 		var _onErrorHandler = [];
+		var _onPassedHandler = [];
 
-		var _errorMessage = "";
+		var _error = "";
+
+		var _hasError = false;
 
 		self.config = {
-			isRequired: { on: false, msg: "", process: (function(value) { 
+			isRequired: { on: false, msg: "", innerMsg: "", process: (function(value) { 
 				if (value == "") {
-					this.msg = "不能为空";
+					this.innerMsg = "不能为空";
 					return false;
 				};
 				return true;
 			}) },
-			regExp: { on: false, msg: "", process: (function(value) { 
+			regExp: { on: false, msg: "", innerMsg: "", process: (function(value) { 
 				if (value == "")
 					return true;
 
 				var reg = new RegExp(this.on, "igm");
 				if (!reg.test(value)) {
-					this.msg = "格式不符合正则表达式规则[" + this.on + "]";
+					this.innerMsg = "格式不符合正则表达式规则[" + this.on + "]";
 					return false;
 				};
 				return true;
 			}) },
-			max: { on: false, msg: "", process: (function(value) { 
+			max: { on: false, msg: "", innerMsg: "", process: (function(value) { 
 				if (value == "")
 					return true;
 
-				var v = parseInt(value);
+				var v = parseFloat(value).toFixed(2);
 				if (isNaN(v)) {
-					this.msg = "值不是数字, 无法比较大小";
+					this.innerMsg = "值不是数字, 无法比较大小";
 					return false;
 				} else if (v > this.on) {
-					this.msg = "[" + value + "]大于最大边界[" + this.on + "]";
+					this.innerMsg = "[" + value + "]大于最大边界[" + this.on + "]";
 					return false;
 				};
 				return true;
 			}) },
-			min: { on: false, msg: "", process: (function(value) { 
+			min: { on: false, msg: "", innerMsg: "", process: (function(value) { 
 				if (value == "")
 					return true;
 
-				var v = parseInt(value);
+				var v = parseFloat(value).toFixed(2);
 				if (isNaN(v)) {
-					this.msg = "值不是数字, 无法比较大小";
+					this.innerMsg = "值不是数字, 无法比较大小";
 					return false;
 				} else if (v < this.on) {
-					this.msg = "[" + value + "]小于最小边界[" + this.on + "]";
+					this.innerMsg = "[" + value + "]小于最小边界[" + this.on + "]";
 					return false;
 				};
 				return true;
 			}) },
-			maxLength: { on: false, msg: "", process: (function(value) {
+			maxLength: { on: false, msg: "", innerMsg: "", process: (function(value) {
 				if (value == "")
 					return true;
 
 				var v = value.length;
 				if (v > this.on) {
-					this.msg = "超过最大长度";
+					this.innerMsg = "超过最大长度[" + this.on + "]";
 					return false;
 				}; 
 				return true;
 			}) },
-			equals: { on: false, msg: "与目标值不相等", process: (function(value) {
+			equals: { on: false, msg: "", innerMsg: "", process: (function(value) {
 				if (value == "")
 					return true;
-				
+
 				var another = document.getElementById(this.on);
-				if (another) {
-					return another.value === value;
-				};
+
+				if (!another) 
+					this.innerMsg = "目标不存在";
+				else if (another.value !== value) 
+					this.innerMsg = "与目标值不相等";
+				else
+					return true;
+
 				return false;
 			}) },
-			ajax: { on: false, msg: "", process: (function(value) { 
+			ajax: { on: false, msg: "", innerMsg: "", process: (function(value) { 
 				return true;
 			}) }
 		};
@@ -142,12 +151,24 @@
 			return _formObject;
 		};
 
-		self.getErrorMessage = function() {
-			return _errorMessage;
+		self.getError = function() {
+			return _error;
 		};
 
+		self.getDOMObject = function() {
+			return _DOMObject;
+		};
+
+		// 当无法通过验证时
 		self.onError = function(handler) {
 			_onErrorHandler.push(handler);
+
+			return self;
+		};
+
+		// 当可以通过验证时
+		self.onPassed = function(handler) {
+			_onPassedHandler.push(handler);
 
 			return self;
 		};
@@ -159,17 +180,30 @@
 				var item = self.config[key];
 
 				if (item.on !== false && !item.process(value)) {
+					_hasError = true;
+					_error = { msg: item.msg, innerMsg: item.innerMsg };
+
 					for (var i = 0; i < _onErrorHandler.length; i++) {
 						try {
-							(_onErrorHandler[i])(self, item.msg);
+							(_onErrorHandler[i])(self, _error);
 						} catch(e) {
 							// do nothing
 						};
 					};
 
-					_errorMessage = item.msg;
-
 					return false;
+				} else if (_hasError) {
+					_hasError = false;
+
+					for (var i = 0; i < _onPassedHandler.length; i++) {
+						try {
+							_onPassedHandler[i](self);
+						} catch(e) {
+							// do nothing
+						};
+					};
+
+					return true;
 				};
 			};
 
@@ -196,7 +230,7 @@
 		var _onErrorHandler = function(formName, summary) {
 			var text = "请修正以下错误: \r\n";
 			for (var i = 0; i < summary.length; i++) {
-				var str = summary[i];
+				var str = summary[i].msg == "" ? summary[i].innerMsg : summary[i].msg;
 				text += ("    " + str + "\r\n");
 			};
 
@@ -237,7 +271,7 @@
 					var result = selected.validate();
 
 					if (!result) {
-						summary.push(selected.getErrorMessage());
+						summary.push(selected.getError());
 					};
 
 					finalResult = (finalResult && result);

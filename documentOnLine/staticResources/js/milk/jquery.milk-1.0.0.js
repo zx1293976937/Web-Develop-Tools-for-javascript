@@ -108,6 +108,7 @@
 				for (var i = 0; i < arr.length; i++) {
 					var item = arr[i];
 					item.config.isRequired.on = true;
+					item.config.isRequired.msg = (errMsg || "");
 				};
 				
 				return this;
@@ -117,6 +118,7 @@
 				for (var i = 0; i < arr.length; i++) {
 					var item = arr[i];
 					item.config.regExp.on = regexp;
+					item.config.regExp.msg = (errMsg || "");
 				};
 				
 				return this;
@@ -126,6 +128,7 @@
 				for (var i = 0; i < arr.length; i++) {
 					var item = arr[i];
 					item.config.regExp.on = window.milk.regExps.IP;
+					item.config.regExp.msg = (errMsg || "");
 				};
 				
 				return this;
@@ -135,6 +138,7 @@
 				for (var i = 0; i < arr.length; i++) {
 					var item = arr[i];
 					item.config.regExp.on = window.milk.regExps.digits;
+					item.config.regExp.msg = (errMsg || "");
 				};
 				
 				return this;
@@ -144,6 +148,7 @@
 				for (var i = 0; i < arr.length; i++) {
 					var item = arr[i];
 					item.config.maxLength.on = len;
+					item.config.maxLength.msg = (errMsg || "");
 				};
 				
 				return this;
@@ -153,6 +158,7 @@
 				for (var i = 0; i < arr.length; i++) {
 					var item = arr[i];
 					item.config.max.on = max;
+					item.config.max.msg = (errMsg || "");
 				};
 				
 				return this;
@@ -162,6 +168,7 @@
 				for (var i = 0; i < arr.length; i++) {
 					var item = arr[i];
 					item.config.min.on = min;
+					item.config.min.msg = (errMsg || "");
 				};
 				
 				return this;
@@ -172,6 +179,9 @@
 					var item = arr[i];
 					item.config.min.on = min;
 					item.config.max.on = max;
+
+					item.config.min.msg = (errMsg || "");
+					item.config.max.msg = (errMsg || "");
 				};
 				
 				return this;
@@ -181,6 +191,7 @@
 				for (var i = 0; i < arr.length; i++) {
 					var item = arr[i];
 					item.config.equals.on = id;
+					item.config.equals.msg = (errMsg || "");
 				};
 
 				return this;
@@ -204,6 +215,15 @@
 				for (var i = 0; i < arr.length; i++) {
 					var item = arr[i];
 					item.onError(handler);
+				};
+
+				return this;
+			},
+			onPassed: function(handler) {
+				var arr = this.__regsiter();
+				for (var i = 0; i < arr.length; i++) {
+					var item = arr[i];
+					item.onPassed(handler);
 				};
 
 				return this;
@@ -238,7 +258,7 @@
 
 				var formObject = formObjectsMap[formName];
 				if (formObject) {
-					if (onErrorHandler != undefined)
+					if (onErrorHandler !== undefined)
 						formObject.onError(onErrorHandler);
 					
 					return formObject.validate();
