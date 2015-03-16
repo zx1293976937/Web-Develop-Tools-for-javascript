@@ -30,10 +30,11 @@
 		var properties = self.getProperties();
 
 		// @Override
-		self.declareProperty = function(name, value) {
+		self.declareProperty = function(name, value, canJson) {
 	    	properties[name] = { 
 	    		name: name, 
 	    		value: value, 
+	    		canJson: canJson === false ? canJson : true,
 	    		setter: (function(newValue) {
 	    			properties[name].value = newValue;
 	    			self.onPropertyChanged(properties[name].name);
@@ -94,6 +95,9 @@
 	        var jsonObject = {};
 
 	        for (var key in properties) {
+	        	if (!properties[key].canJson)
+	        		continue;
+
 	        	var mapKey = map[key];
 	        	var value = self.getValue(key);
 
