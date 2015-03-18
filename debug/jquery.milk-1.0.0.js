@@ -44,6 +44,20 @@
 					}
 				};
 			},
+			// 手动触发DOM的事件, 用来通知主体数据已变化
+			fire: function(keyPath) {
+				var self = this;
+
+				for (var i = 0; i < self.length; i++) {
+					var item = self.get(i);
+
+					if (item.fire) {
+						item.fire(keyPath);
+					};
+				};
+
+				return self;
+			},
 			// 获取最后一个Link的视图模型对象
 			subject: function() {
 				var key = this.attr(window.milk.LINKER_IDENTIFIER_KEY);

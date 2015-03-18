@@ -169,7 +169,7 @@
 	window.milk.define("milk.linker.DOMAttribute", [], function() {
 		var self = this;
 
-		// DOM Object 的属性名或样式名
+		// DOM Object 的属性名
 		var _attribute = null;
 		// DOM Object
 		var _DOMObject = null;
@@ -222,6 +222,9 @@
 
 				_DOMObject = _DOMObject[part];
 			};
+
+			// debug code
+			onChangeEventHandler.name = keyPath;
 
 			return self;
 		};
@@ -355,6 +358,22 @@
 					_DOMObject.addEventListener("change", onChangeEventHandler, false);
 				else
 					_DOMObject.attachEvent("onchange", onChangeEventHandler);
+
+				if (!_DOMObject.fire) {
+					_DOMObject.fire = function(key) {
+						var evt = this.events[key];
+
+						if (evt) {
+							evt();
+						};
+
+						return this;
+					};
+
+					_DOMObject.events = {};
+				};
+
+				_DOMObject.events[onChangeEventHandler.name] = onChangeEventHandler;
 			};
 
 			return self;
@@ -374,5 +393,10 @@
 		};
 
 		return self;
+	});
+
+	// 事件管理
+	window.milk.define("milk.linker.Events", [], function() {
+
 	});
 })();
