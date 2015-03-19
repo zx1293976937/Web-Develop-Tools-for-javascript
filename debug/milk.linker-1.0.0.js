@@ -224,7 +224,7 @@
 			};
 
 			// debug code
-			onChangeEventHandler.name = keyPath;
+			onChangeEventHandler.key = keyPath;
 
 			return self;
 		};
@@ -373,7 +373,7 @@
 					_DOMObject.events = {};
 				};
 
-				_DOMObject.events[onChangeEventHandler.name] = onChangeEventHandler;
+				_DOMObject.events[onChangeEventHandler.key] = onChangeEventHandler;
 			};
 
 			return self;

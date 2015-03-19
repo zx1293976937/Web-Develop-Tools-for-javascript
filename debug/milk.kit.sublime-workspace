@@ -431,46 +431,17 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/E/1_事业一部/101-TrinityAres-Server/Code/trunk/101-TrinityAres-Server/Web/Config/Basic/OSDSetting.aspx",
-			"settings":
-			{
-				"buffer_size": 15736,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "milk.linker-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 9449,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "jquery.milk-1.0.0.js",
-			"settings":
-			{
-				"buffer_size": 6922,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?xml version=\"1.0\" encoding=\"GB2312\" standalone=\"yes\" ?> \n<Msg  Version=\"4\" \nMsgID=\"2\" \nType=\"MonUp\" \nDateTime=\"2002-08-17 15:30:00\" \nSrcCode=\"110000M01\" \nDstCode=\"110000G01\"\nReplyID=\"1000_ID\"\n>\n<Return Type=\"OSDSet\" Value=\"0\" Desc=\"成功\"/>\n<!-- \n   <ErrReport>\n     <OSDSet Index=\"1\" InfoOSD=\"大连电台\" InfoOSDX=\"10\" InfoOSDY=\"20\" TimeOSDType=\"1\" TimeOSDX=\"20\" TimeOSDY=\"20\" Comment=\"内部错误\"/>\n   </ErrReport>\n  -->\n</Msg>\n",
-			"settings":
-			{
-				"buffer_size": 417,
-				"line_ending": "Windows",
-				"name": "<?xml version=\"1.0\" encoding=\"GB2312\" standalone=\""
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 311.0,
 		"selected_items":
 		[
+			[
+				"setjs",
+				"Set Syntax: JavaScript"
+			],
 			[
 				"sethtml",
 				"Set Syntax: HTML"
@@ -478,10 +449,6 @@
 			[
 				"setasp",
 				"Set Syntax: ASP"
-			],
-			[
-				"setjs",
-				"Set Syntax: JavaScript"
 			],
 			[
 				"html",
@@ -657,9 +624,15 @@
 	],
 	"file_history":
 	[
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/jquery.milk-1.0.0.js",
-		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.validater-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.base-1.0.0.js",
+		"/C/Users/Qiuwei/Desktop/app.js",
+		"/E/1_事业一部/101-TrinityAres-Server/Code/trunk/101-TrinityAres-Server/Web/Config/Basic/OSDSetting.aspx",
+		"/E/1_事业一部/101-TrinityAres-Server/Code/trunk/101-TrinityAres-Server/Web/JS/AlarmTime.js",
+		"/E/1_事业一部/101-TrinityAres-Server/Code/trunk/101-TrinityAres-Server/Web/Config/Advanced/AlarmTimeSet.aspx",
 		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.linker-1.0.0.js",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/jquery.milk-1.0.0.js",
+		"/C/Users/Qiuwei/Desktop/bookmarks_15_3_18.html",
+		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/milk.validater-1.0.0.js",
 		"/E/Private Workspace/MyWork/Web-Develop-Tools-for-javascript/debug/test2.html",
 		"/C/Users/Qiuwei/Desktop/OSD.html",
 		"/C/Users/Qiuwei/Desktop/OSD(1).html",
@@ -725,6 +698,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console",
 			"selectDevice",
 			"btnSelect",
 			"TimeFormatter",
@@ -791,127 +765,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/E/1_事业一部/101-TrinityAres-Server/Code/trunk/101-TrinityAres-Server/Web/Config/Basic/OSDSetting.aspx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15736,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4420,
-								4420
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1170.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "milk.linker-1.0.0.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9449,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8972,
-								8992
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1935.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "jquery.milk-1.0.0.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6922,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1163,
-								1163
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 335.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 417,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								417
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<?xml version=\"1.0\" encoding=\"GB2312\" standalone=\"",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],
