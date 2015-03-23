@@ -11,6 +11,8 @@
 	if (!window.jQuery) 
 		throw new Error("requires jquery.js file");
 
+
+
 	if (!window.milk)
 		throw new Error("requires milk.base.js file");
 
